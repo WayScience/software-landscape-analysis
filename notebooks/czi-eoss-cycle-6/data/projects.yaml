@@ -1,18 +1,17 @@
----
 # project data for landscape analysis
 projects:
   - name: pycytominer
-    tags: 
+    tags:
       - loi-focus
     homepage_url: https://pycytominer.readthedocs.io/en/latest/
     repo_url: https://github.com/cytomining/pycytominer
   - name: cyosnake
-    tags: 
-        - loi-focus
+    tags:
+      - loi-focus
     homepage_url: https://cytosnake.readthedocs.io/en/latest/
     repo_url: https://github.com/WayScience/CytoSnake
   - name: cytotable
-    tags: 
-        - loi-focus
+    tags:
+      - loi-focus
     homepage_url: https://cytomining.github.io/CytoTable/
     repo_url: https://github.com/cytomining/CytoTable

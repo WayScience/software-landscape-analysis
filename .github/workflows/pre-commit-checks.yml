@@ -1,13 +1,10 @@
----
 # used for running pre-commit checks
 name: pre-commit checks
-
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
-
 jobs:
   run_pre_commit_tests:
     runs-on: ubuntu-latest
