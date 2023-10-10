@@ -1,6 +1,6 @@
 # Landscape Analysis
 
-A "landscape analysis" is an informational survey of existing software and other tooling that solve similar problems or use similar technologies. 
+A "landscape analysis" is an informational survey of existing software and other tooling that solve similar problems or use similar technologies.
 This repository performs landscape analyses for specific projects.
 
 ## Installation
