@@ -1,0 +1,6 @@
+# project discovery queries for landscape analysis
+queries:
+  - "single-cell image morphology"
+  - "cell image morphology"
+  - "high-dimensional cell morphology"
+  - "cell image-based profiling"
