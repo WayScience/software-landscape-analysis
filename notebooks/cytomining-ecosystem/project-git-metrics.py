@@ -14,7 +14,7 @@
 
 # # Project Git Metrics for Landscape Analysis
 #
-# Project git metrics for landscape analysis as part of [CZI EOSS Cycle 6](https://chanzuckerberg.com/rfa/essential-open-source-software-for-science/).
+# Project git metrics for software landscape analysis related to Cytomining ecosystem.
 #
 # ## Setup
 #
