@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "landscape-analysis"
+version = "0.0.1"
+description = "Enabling landscape analysis to better understand existing efforts or solutions."
+authors = ["Way Science community"]
+license = "BSD-3-Clause"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+pandas = "^2.1.1"
+numpy = "^1.26.0"
+matplotlib = "^3.8.0"
+plotly = "^5.17.0"
+duckdb = "^0.9.0"
+requests = "^2.31.0"
+pygithub = "^2.1.1"
+python-box = "^7.1.1"
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.12.0"
+black = "^23.9.1"
+jupyterlab-code-formatter = "^2.2.1"
+jupytext = "^1.15.2"
+jupyterlab = "^3.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.jupytext]
+formats = "ipynb,py:light"
+
+[tool.vulture]
+min_confidence = 80
+paths = ["notebooks"]
+sort_by_size = true
+verbose = true
