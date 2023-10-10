@@ -37,3 +37,6 @@ min_confidence = 80
 paths = ["notebooks"]
 sort_by_size = true
 verbose = true
+
+[tool.isort]
+profile = "black"
