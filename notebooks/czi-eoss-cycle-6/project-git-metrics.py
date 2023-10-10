@@ -42,7 +42,8 @@ current_datetime = datetime.now(tz)
 projects = Box.from_yaml(filename="data/projects.yaml").projects
 
 # check the number of projects
-len(projects)
+print("number of projects: ", len(projects))
+print("project names: ", [project["name"] for project in projects])
 # -
 
 # show the keys available for the projects
