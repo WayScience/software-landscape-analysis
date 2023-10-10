@@ -4,7 +4,7 @@ default_language_version:
   python: python3.10
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
@@ -12,17 +12,20 @@ repos:
       - id: check-added-large-files
       - id: check-toml
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.5
+    rev: v2.2.6
     hooks:
       - id: codespell
         exclude: >
-              (?x)^(
-                  .*\.lock|.*\.csv|.*\.ipynb
-              )$
+          (?x)^(
+
+
+              .*\.lock|.*\.csv|.*\.ipynb
+          )$
+
         additional_dependencies:
           - tomli
   - repo: https://github.com/executablebooks/mdformat
-    rev: 0.7.16
+    rev: 0.7.17
     hooks:
       - id: mdformat
   - repo: https://github.com/nbQA-dev/nbQA
@@ -31,14 +34,18 @@ repos:
       - id: nbqa-black
       - id: nbqa-isort
   - repo: https://github.com/psf/black
-    rev: 23.3.0
+    rev: 23.9.1
     hooks:
       - id: black
   - repo: https://github.com/asottile/blacken-docs
-    rev: 1.14.0
+    rev: 1.16.0
     hooks:
       - id: blacken-docs
   - repo: https://github.com/PyCQA/isort
     rev: 5.12.0
     hooks:
       - id: isort
+  - repo: https://github.com/google/yamlfmt
+    rev: v0.10.0
+    hooks:
+      - id: yamlfmt
