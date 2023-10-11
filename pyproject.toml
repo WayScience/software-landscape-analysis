@@ -17,6 +17,8 @@ requests = "^2.31.0"
 pygithub = "^2.1.1"
 python-box = "^7.1.1"
 pytz = "^2023.3.post1"
+poetry = "^1.6.1"
+poethepoet = "^0.24.1"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.12.0"
@@ -28,6 +30,16 @@ jupyterlab = "^3.0.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+# defines a workflow for cytomining ecosystem software landscape analysis
+[tool.poe.tasks.cytomining_ecosystem]
+# sets a cwd relative for the shell script below
+cwd = "notebooks/cytomining-ecosystem"
+# defines workflow as sequence of
+shell = """
+  python seek-landscape-entries.py &&
+  python project-git-metrics.py
+"""
 
 [tool.jupytext]
 formats = "ipynb,py:light"
