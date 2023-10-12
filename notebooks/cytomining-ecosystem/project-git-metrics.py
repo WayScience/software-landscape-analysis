@@ -49,18 +49,34 @@ print("project names: ", [project["name"] for project in projects])
 # show the keys available for the projects
 projects[0].keys()
 
+
+def try_to_detect_license(repo):
+    """
+    Tries to detect the license from GitHub API
+    """
+
+    try:
+        return repo.get_license().license.spdx_id
+    except:
+        return None
+
+
 # +
 df_projects = pd.DataFrame(
     # create a list of repo data records for a dataframe
     [
         {
             "Project Name": repo.name,
+            "Project Homepage": repo.homepage,
+            "Project Repo URL": repo.html_url,
+            "Commit Count": len(list(repo.get_commits())),
             "GitHub Stars": repo.stargazers_count,
             "GitHub Forks": repo.forks_count,
             "GitHub Watchers": repo.subscribers_count,
             "GitHub Open Issues": repo.get_issues(state="open").totalCount,
             "GitHub Contributors": repo.get_contributors().totalCount,
-            "GitHub License Type": repo.get_license().license.spdx_id,
+            "GitHub License Type": try_to_detect_license(repo),
+            "GitHub Detected Languages": repo.get_languages(),
             "Date Created": repo.created_at.replace(tzinfo=pytz.UTC),
             "Date Most Recent Commit": repo.get_commits()[0].commit.author.date.replace(
                 tzinfo=pytz.UTC
@@ -68,6 +84,7 @@ df_projects = pd.DataFrame(
             "Duration Created to Most Recent Commit": "",
             "Duration Most Recent Commit to Now": "",
             "Repository Size (KB)": repo.size,
+            "GitHub Repo Archived": repo.archived,
         }
         # make a request for github repo data with pygithub
         for repo in [
@@ -86,4 +103,34 @@ df_projects["Duration Most Recent Commit to Now"] = (
 )
 
 # show the result
+df_projects
+# -
+
+# filter the results
+df_projects = df_projects[
+    # filter projects which are < 50 KB
+    df_projects["Repository Size (KB)"]
+    >= 50
+    # filter projects which have been archived
+    & ~df_projects["GitHub Repo Archived"]
+]
+df_projects.tail()
+
+# negate this duration value for sorting descendingly,
+# with projects that have been more recently changed sorting to the top
+df_projects["Negative Duration Most Recent Commit to Now"] = -df_projects[
+    "Duration Most Recent Commit to Now"
+]
+df_projects = df_projects.sort_values(
+    by=[
+        "GitHub Stars",
+        "GitHub Watchers",
+        "GitHub Contributors",
+        "GitHub Forks",
+        "GitHub Open Issues",
+        "Negative Duration Most Recent Commit to Now",
+        "Duration Created to Most Recent Commit",
+    ],
+    ascending=False,
+)
 df_projects

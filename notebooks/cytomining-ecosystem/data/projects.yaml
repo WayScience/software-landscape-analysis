@@ -1,17 +1,205 @@
-# project data for landscape analysis
 projects:
-  - name: pycytominer
-    tags:
-      - loi-focus
-    homepage_url: https://pycytominer.readthedocs.io/en/latest/
+  - homepage_url: https://pycytominer.readthedocs.io/en/latest/
+    name: pycytominer
     repo_url: https://github.com/cytomining/pycytominer
-  - name: cyosnake
     tags:
       - loi-focus
-    homepage_url: https://cytosnake.readthedocs.io/en/latest/
+  - homepage_url: https://cytosnake.readthedocs.io/en/latest/
+    name: cyosnake
     repo_url: https://github.com/WayScience/CytoSnake
-  - name: cytotable
     tags:
       - loi-focus
-    homepage_url: https://cytomining.github.io/CytoTable/
+  - homepage_url: https://cytomining.github.io/CytoTable/
+    name: cytotable
     repo_url: https://github.com/cytomining/CytoTable
+    tags:
+      - loi-focus
+  - homepage_url: null
+    name: single-cell-classifier
+    repo_url: https://github.com/cytodata/single-cell-classifier
+  - homepage_url: https://github.com/sxslabjhu/CellTypeClassification
+    name: CellTypeClassification
+    repo_url: https://github.com/sxslabjhu/CellTypeClassification
+  - homepage_url: ''
+    name: scDINO
+    repo_url: https://github.com/JacobHanimann/scDINO
+  - homepage_url: null
+    name: CellSegmenter
+    repo_url: https://github.com/Jamcor/CellSegmenter
+  - homepage_url: null
+    name: paper-bray2017
+    repo_url: https://github.com/gigascience/paper-bray2017
+  - homepage_url: null
+    name: LIBPB-1390-Image3C
+    repo_url: https://github.com/stowersinstitute/LIBPB-1390-Image3C
+  - homepage_url: https://www.nature.com/articles/s41592-019-0539-z
+    name: u-shape3D
+    repo_url: https://github.com/DanuserLab/u-shape3D
+  - homepage_url: null
+    name: CellWalker
+    repo_url: https://github.com/utraf-pasteur-institute/CellWalker
+  - homepage_url: ''
+    name: CellularComposition
+    repo_url: https://github.com/smujiang/CellularComposition
+  - homepage_url: null
+    name: CellQuant
+    repo_url: https://github.com/jfelectron/CellQuant
+  - homepage_url: ''
+    name: CellMorphology
+    repo_url: https://github.com/KnightofDawn/CellMorphology
+  - homepage_url: ''
+    name: Image-segmentation-and-feature-extraction-
+    repo_url: https://github.com/mrimis/Image-segmentation-and-feature-extraction-
+  - homepage_url: ''
+    name: CellEmbeddings
+    repo_url: https://github.com/djimenezsanchez/CellEmbeddings
+  - homepage_url: ''
+    name: pheno-ml
+    repo_url: https://github.com/dmitrav/pheno-ml
+  - homepage_url: ''
+    name: leafnet
+    repo_url: https://github.com/zhouyulab/leafnet
+  - homepage_url: https://danhealey.github.io/analyzing-leaf-morphology/README.pdf
+    name: analyzing-leaf-morphology
+    repo_url: https://github.com/DanHealey/analyzing-leaf-morphology
+  - homepage_url: null
+    name: cellwalker
+    repo_url: https://github.com/harshavardhan-khare-pasteur-institute/cellwalker
+  - homepage_url: null
+    name: Aging-Cell-Morphology-Cell-transformations-and-image-processing
+    repo_url: https://github.com/sumisingh/Aging-Cell-Morphology-Cell-transformations-and-image-processing
+  - homepage_url: null
+    name: Image-Analysis-of-Cellulose-Nanocrystals
+    repo_url: https://github.com/MansiDhanania/Image-Analysis-of-Cellulose-Nanocrystals
+  - homepage_url: null
+    name: segmorph
+    repo_url: https://github.com/phugen/segmorph
+  - homepage_url: null
+    name: ImagingCells
+    repo_url: https://github.com/jesnyder/ImagingCells
+  - homepage_url: null
+    name: Cell-Classifier
+    repo_url: https://github.com/AluniaZhou/Cell-Classifier
+  - homepage_url: null
+    name: CellWalker_old
+    repo_url: https://github.com/harshkhare/CellWalker_old
+  - homepage_url: null
+    name: CV-processing-cells-in-image
+    repo_url: https://github.com/arsham-khafan/CV-processing-cells-in-image
+  - homepage_url: ''
+    name: G_CELLIQ_IMAGE_PROCESSING_TOOL
+    repo_url: https://github.com/methodistsmab/G_CELLIQ_IMAGE_PROCESSING_TOOL
+  - homepage_url: ''
+    name: Table-recognition
+    repo_url: https://github.com/herrschmidt0/Table-recognition
+  - homepage_url: null
+    name: Objects-counting-on-images
+    repo_url: https://github.com/hibakhayati/Objects-counting-on-images
+  - homepage_url: null
+    name: SynapseMech
+    repo_url: https://github.com/birolab/SynapseMech
+  - homepage_url: https://vampire.readthedocs.io/en/latest/
+    name: vampire-analysis
+    repo_url: https://github.com/tengjuilin/vampire-analysis
+  - homepage_url: ''
+    name: Cell-segmentation-and-feature-extraction
+    repo_url: https://github.com/mikweeh/Cell-segmentation-and-feature-extraction
+  - homepage_url: null
+    name: Cell-virulence-Detection-using-Image-Processing
+    repo_url: https://github.com/arushigupta148/Cell-virulence-Detection-using-Image-Processing
+  - homepage_url: null
+    name: NeuroGAN
+    repo_url: https://github.com/dhadjia1/NeuroGAN
+  - homepage_url: ''
+    name: Nuclei-Detection-and-Counting
+    repo_url: https://github.com/Nikhil-Manglore/Nuclei-Detection-and-Counting
+  - homepage_url: null
+    name: drug-induced_morphology_changes_quantification
+    repo_url: https://github.com/maxxim333/drug-induced_morphology_changes_quantification
+  - homepage_url: null
+    name: Blood-Cancer-Detection-from-Image-dataset-
+    repo_url: https://github.com/immaksudalam/Blood-Cancer-Detection-from-Image-dataset-
+  - homepage_url: null
+    name: SpotAnalizer
+    repo_url: https://github.com/Xqua/SpotAnalizer
+  - homepage_url: ''
+    name: Image-analysis
+    repo_url: https://github.com/dguin/Image-analysis
+  - homepage_url: null
+    name: Segmentation-of-Fluorescent-Neuronal-Cells-in-Mice-Brain-Slices-Using-Modified-UNet-Autoencoder
+    repo_url: https://github.com/Hassanshah531/Segmentation-of-Fluorescent-Neuronal-Cells-in-Mice-Brain-Slices-Using-Modified-UNet-Autoencoder
+  - homepage_url: null
+    name: Acute-Lymphocytic-Leukemia-ALL-Cell-Classification
+    repo_url: https://github.com/rishipython/Acute-Lymphocytic-Leukemia-ALL-Cell-Classification
+  - homepage_url: ''
+    name: DeepCAN
+    repo_url: https://github.com/frknrnn/DeepCAN
+  - homepage_url: null
+    name: Automated-Detection-and-Classification-of-Blood-Cancer-Cells-Using-Decision-Tree-Algorithm-by-Matlab
+    repo_url: https://github.com/Adowan/Automated-Detection-and-Classification-of-Blood-Cancer-Cells-Using-Decision-Tree-Algorithm-by-Matlab
+  - homepage_url: null
+    name: UNWRAP
+    repo_url: https://github.com/imclab/UNWRAP
+  - homepage_url: ''
+    name: Supp_Heigwer_2021
+    repo_url: https://github.com/boutroslab/Supp_Heigwer_2021
+  - homepage_url: ''
+    name: CNN-Segmentation
+    repo_url: https://github.com/mcgoughlin/CNN-Segmentation
+  - homepage_url: null
+    name: Multi-Object-Portion-Tracking-in-4D-Fluorescence-Microscopy-Imagery-with-Deep-Feature-Maps
+    repo_url: https://github.com/YJDIFF/Multi-Object-Portion-Tracking-in-4D-Fluorescence-Microscopy-Imagery-with-Deep-Feature-Maps
+  - homepage_url: null
+    name: EXPLORING-THE-MOST-ACCURATE-STATISTICAL-METHOD
+    repo_url: https://github.com/wolalala4/EXPLORING-THE-MOST-ACCURATE-STATISTICAL-METHOD
+  - homepage_url: null
+    name: Sholl-Analysis
+    repo_url: https://github.com/mhabif/Sholl-Analysis
+  - homepage_url: null
+    name: Detection-Of-Brain-Tumor
+    repo_url: https://github.com/Beel234/Detection-Of-Brain-Tumor
+  - homepage_url: null
+    name: 2022_Haghighi_NatureMethods
+    repo_url: https://github.com/carpenter-singh-lab/2022_Haghighi_NatureMethods
+  - homepage_url: https://cytomining.github.io/cytominer/
+    name: cytominer
+    repo_url: https://github.com/cytomining/cytominer
+  - homepage_url: ''
+    name: pooled-cell-painting-profiling-recipe
+    repo_url: https://github.com/broadinstitute/pooled-cell-painting-profiling-recipe
+  - homepage_url: ''
+    name: 2023_Cimini_NatureProtocols
+    repo_url: https://github.com/carpenter-singh-lab/2023_Cimini_NatureProtocols
+  - homepage_url: ''
+    name: 2018_Rohban_NatComm
+    repo_url: https://github.com/carpenterlab/2018_Rohban_NatComm
+  - homepage_url: null
+    name: cellxpedite
+    repo_url: https://github.com/brunoboivin/cellxpedite
+  - homepage_url: null
+    name: Image-based-cell-profiling-enhancement-via-data-cleaning-methods
+    repo_url: https://github.com/rohban-lab/Image-based-cell-profiling-enhancement-via-data-cleaning-methods
+  - homepage_url: null
+    name: Image-based-single-cell-profiling-of-autophagy-related-phenotypes.
+    repo_url: https://github.com/nitinsai20/Image-based-single-cell-profiling-of-autophagy-related-phenotypes.
+  - homepage_url: https://github.com/broadinstitute/imaging_metric_comparison/blob/master/Duc_Marie_thesis.pdf
+    name: imaging_metric_comparison
+    repo_url: https://github.com/broadinstitute/imaging_metric_comparison
+  - homepage_url: ''
+    name: 2023_Arevalo_BatchCorrection
+    repo_url: https://github.com/carpenter-singh-lab/2023_Arevalo_BatchCorrection
+  - homepage_url: null
+    name: BioMorph_Space
+    repo_url: https://github.com/srijitseal/BioMorph_Space
+  - homepage_url: null
+    name: Blood-Cell-Characterization
+    repo_url: https://github.com/Jeevan-J/Blood-Cell-Characterization
+  - homepage_url: null
+    name: cytominer
+    repo_url: https://github.com/cran/cytominer
+  - homepage_url: null
+    name: history
+    repo_url: https://github.com/mhowerton91/history
+  - homepage_url: null
+    name: A
+    repo_url: https://github.com/chikitang/A
