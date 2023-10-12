@@ -25,9 +25,10 @@ poetry run jupyter lab
 
 ### Poe the Poet
 
-[Poe the Poet](https://poethepoet.natn.io/index.html) is used to define and run tasks defined within `pyproject.toml` under tables `[tool.poe.tasks*]`.
-This allows for the definition and use of task workflow when implementing multiple procedures in sequence.
-Use the following to run, for example, the `cytomining_ecosystem` task:
+We use [Poe the Poet](https://poethepoet.natn.io/index.html) to define and run tasks defined within `pyproject.toml` under the section `[tool.poe.tasks*]`.
+This allows for the definition and use of a task workflow when implementing multiple procedures in sequence.
+
+For example, use the following to run the `cytomining_ecosystem` task:
 
 ```bash
 # run cytomining_ecosystem using poethepoet
