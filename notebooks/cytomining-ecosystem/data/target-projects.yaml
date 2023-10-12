@@ -7,7 +7,7 @@ projects:
       - loi-focus
       - cytomining-ecosystem
   - homepage_url: https://cytosnake.readthedocs.io/en/latest/
-    name: cyosnake
+    name: cytosnake
     repo_url: https://github.com/WayScience/CytoSnake
     category:
       - loi-focus
