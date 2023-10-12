@@ -39,11 +39,10 @@ current_datetime = datetime.now(tz)
 
 # +
 # gather projects data
-projects = Box.from_yaml(filename="data/projects.yaml").projects
+projects = Box.from_yaml(filename="data/projects.yaml").projects[:10]
 
 # check the number of projects
 print("number of projects: ", len(projects))
-print("project names: ", [project["name"] for project in projects])
 # -
 
 # show the keys available for the projects
@@ -61,6 +60,28 @@ def try_to_detect_license(repo):
         return None
 
 
+def try_to_gather_commit_count(repo):
+    """
+    Tries to detect commit count of repo from GitHub API
+    """
+
+    try:
+        return len(list(repo.get_commits()))
+    except:
+        return 0
+
+
+def try_to_gather_most_recent_commit_date(repo):
+    """
+    Tries to detect most recent commit date of repo from GitHub API
+    """
+
+    try:
+        return repo.pushed_at.replace(tzinfo=pytz.UTC)
+    except:
+        return None
+
+
 # +
 df_projects = pd.DataFrame(
     # create a list of repo data records for a dataframe
@@ -69,18 +90,17 @@ df_projects = pd.DataFrame(
             "Project Name": repo.name,
             "Project Homepage": repo.homepage,
             "Project Repo URL": repo.html_url,
-            "Commit Count": len(list(repo.get_commits())),
             "GitHub Stars": repo.stargazers_count,
             "GitHub Forks": repo.forks_count,
             "GitHub Watchers": repo.subscribers_count,
             "GitHub Open Issues": repo.get_issues(state="open").totalCount,
             "GitHub Contributors": repo.get_contributors().totalCount,
             "GitHub License Type": try_to_detect_license(repo),
+            "GitHub Description": repo.description,
+            "GitHub Tags": [tag.name for tag in repo.get_tags()],
             "GitHub Detected Languages": repo.get_languages(),
             "Date Created": repo.created_at.replace(tzinfo=pytz.UTC),
-            "Date Most Recent Commit": repo.get_commits()[0].commit.author.date.replace(
-                tzinfo=pytz.UTC
-            ),
+            "Date Most Recent Commit": try_to_gather_most_recent_commit_date(repo),
             "Duration Created to Most Recent Commit": "",
             "Duration Most Recent Commit to Now": "",
             "Repository Size (KB)": repo.size,
@@ -134,3 +154,6 @@ df_projects = df_projects.sort_values(
     ascending=False,
 )
 df_projects
+
+# export to parquet for later use
+df_projects.to_parquet("data/project-github-metrics.parquet")
