@@ -23,7 +23,7 @@ projects:
     repo_url: https://github.com/WayScience/IDR_stream
     category:
       - loi-focus
-      - cytomining-ecosystem    
+      - cytomining-ecosystem
   - name: Pandas
     homepage_url: https://pandas.pydata.org/
     repo_url: https://github.com/pandas-dev/pandas
