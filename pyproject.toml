@@ -19,6 +19,7 @@ python-box = "^7.1.1"
 pytz = "^2023.3.post1"
 poetry = "^1.6.1"
 poethepoet = "^0.24.1"
+pyarrow = "^13.0.0"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.12.0"
