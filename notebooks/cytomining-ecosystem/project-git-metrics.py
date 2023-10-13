@@ -39,7 +39,7 @@ current_datetime = datetime.now(tz)
 
 # +
 # gather projects data
-projects = Box.from_yaml(filename="data/projects.yaml").projects[:10]
+projects = Box.from_yaml(filename="data/projects.yaml").projects
 
 # check the number of projects
 print("number of projects: ", len(projects))
@@ -90,6 +90,7 @@ df_projects = pd.DataFrame(
             "Project Name": repo.name,
             "Project Homepage": repo.homepage,
             "Project Repo URL": repo.html_url,
+            "Project Landscape Category": project.category,
             "GitHub Stars": repo.stargazers_count,
             "GitHub Forks": repo.forks_count,
             "GitHub Watchers": repo.subscribers_count,
@@ -97,18 +98,25 @@ df_projects = pd.DataFrame(
             "GitHub Contributors": repo.get_contributors().totalCount,
             "GitHub License Type": try_to_detect_license(repo),
             "GitHub Description": repo.description,
-            "GitHub Tags": [tag.name for tag in repo.get_tags()],
+            "GitHub Topics": repo.topics,
             "GitHub Detected Languages": repo.get_languages(),
             "Date Created": repo.created_at.replace(tzinfo=pytz.UTC),
             "Date Most Recent Commit": try_to_gather_most_recent_commit_date(repo),
+            # placeholders for later datetime calculcations
             "Duration Created to Most Recent Commit": "",
+            "Duration Created to Now": "",
             "Duration Most Recent Commit to Now": "",
             "Repository Size (KB)": repo.size,
             "GitHub Repo Archived": repo.archived,
         }
         # make a request for github repo data with pygithub
-        for repo in [
-            github_client.get_repo(project.repo_url.replace("https://github.com/", ""))
+        for project, repo in [
+            (
+                project,
+                github_client.get_repo(
+                    project.repo_url.replace("https://github.com/", "")
+                ),
+            )
             for project in projects
         ]
     ]
@@ -118,6 +126,7 @@ df_projects = pd.DataFrame(
 df_projects["Duration Created to Most Recent Commit"] = (
     df_projects["Date Most Recent Commit"] - df_projects["Date Created"]
 )
+df_projects["Duration Created to Now"] = current_datetime - df_projects["Date Created"]
 df_projects["Duration Most Recent Commit to Now"] = (
     current_datetime - df_projects["Date Most Recent Commit"]
 )
@@ -133,6 +142,8 @@ df_projects = df_projects[
     >= 50
     # filter projects which have been archived
     & ~df_projects["GitHub Repo Archived"]
+][  # filter projects which have no detected programming languages
+    df_projects["GitHub Detected Languages"].str.len() > 0
 ]
 df_projects.tail()
 
