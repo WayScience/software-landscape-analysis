@@ -187,7 +187,7 @@ def create_plots_for_categories(df_projects, category):
 
     # Update layout
     fig.update_layout(
-        title_text="Pie Chart and Scatter Plot Subplot",
+        title_text=f"{title_prefix}: {category}",
         # title_x=0.5,  # Center the title
         # showlegend=False,
         height=1200,
