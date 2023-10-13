@@ -84,6 +84,7 @@ df_projects["Duration Created to Now in Years"] = (
 
 # -
 
+
 def create_language_pie_chart(df_projects, category):
     # Flatten the dictionaries into a list of key-value pairs
     key_value_pairs = [
@@ -243,5 +244,3 @@ plot(fig, filename=f"{export_dir}/maturity.html", auto_open=False)
 # Show the chart
 fig.show()
 # -
-
-

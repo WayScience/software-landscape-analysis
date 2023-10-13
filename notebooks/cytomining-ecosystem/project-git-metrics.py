@@ -102,7 +102,7 @@ df_projects = pd.DataFrame(
             "GitHub Detected Languages": repo.get_languages(),
             "Date Created": repo.created_at.replace(tzinfo=pytz.UTC),
             "Date Most Recent Commit": try_to_gather_most_recent_commit_date(repo),
-            # placeholders for later datetime calculcations
+            # placeholders for later datetime calculations
             "Duration Created to Most Recent Commit": "",
             "Duration Created to Now": "",
             "Duration Most Recent Commit to Now": "",
