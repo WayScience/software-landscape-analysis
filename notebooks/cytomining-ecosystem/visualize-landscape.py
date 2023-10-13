@@ -12,23 +12,15 @@
 #     name: python3
 # ---
 
-# # Visualize Cytomining Ecosystem Landscape
+# # Visualize Cytomining Ecosystem Software Landscape
 #
 # Visualizations related to Cytomining ecosystem software landscape analysis.
 #
 # ## Plot Foci
 #
-# ### User base size
-#
-# Bubble scatter plot:
-# - Duration Created to Most Recent Commit: distinguishing projects which have been around longer may be used more.
-# - GitHub Stars: as a general metric of unique interested users.
-# - GitHub Watchers: as a general metric of unique interested users.
-# - Color: distinguishing categories of projects.
-#
-# ### Usage
-#
-# ### Maturity
+# - User base size
+# - Usage
+# - Maturity
 
 # +
 import os
@@ -42,7 +34,7 @@ from box import Box
 from plotly.offline import plot
 
 # set plotly default theme
-pio.templates.default = "simple_white"
+pio.templates.default = "plotly_white"
 
 # get the current datetime
 tz = pytz.timezone("UTC")
@@ -86,13 +78,45 @@ df_projects["Duration Created to Now in Years"] = (
 )
 
 # +
+# 3d bubble scatter plot
+fig = px.scatter_3d(
+    df_projects,
+    hover_name="Project Name",
+    x="Duration Created to Now in Years",
+    y="GitHub Stars",
+    z="GitHub Forks",
+    size="GitHub Watchers",
+    color="category",
+    width=1250,
+    height=800,
+)
+
+# set a minimum size for the plot points
+fig.update_traces(marker=dict(sizemin=11))
+
+# customize the chart layout
+fig.update_layout(
+    title=f"{title_prefix}: User Base Size",
+    xaxis_title="Project Age (years)",
+    yaxis_title="GitHub Stars Count",
+    # set legend placement over chart for space conservation
+    # legend=dict(x=0.005, y=1.0005, traceorder="normal", bgcolor="rgba(0,0,0,0)"),
+)
+
+# export to html
+plot(fig, filename=f"{export_dir}/user-base-size.html", auto_open=False)
+
+# Show the chart
+fig.show()
+
+# +
 # bubble scatter plot
 fig = px.scatter(
     df_projects,
     hover_name="Project Name",
     x="Duration Created to Now in Years",
-    y="GitHub Stars",
-    size="GitHub Watchers",
+    y="GitHub Forks",
+    size="GitHub Contributors",
     color="category",
     width=1250,
     height=500,
@@ -105,16 +129,13 @@ fig.update_traces(marker=dict(sizemin=3))
 fig.update_layout(
     title=f"{title_prefix}: User Base Size",
     xaxis_title="Project Age (years)",
-    yaxis_title="GitHub Stars Count",
+    yaxis_title="GitHub Forks Count",
     # set legend placement over chart for space conservation
     legend=dict(x=0.005, y=1.0005, traceorder="normal", bgcolor="rgba(0,0,0,0)"),
 )
 
+# export to html
+plot(fig, filename=f"{export_dir}/maturity.html", auto_open=False)
+
 # Show the chart
 fig.show()
-# -
-
-# export to html
-plot(fig, filename=f"{export_dir}/user-base-size.html", auto_open=False)
-
-
