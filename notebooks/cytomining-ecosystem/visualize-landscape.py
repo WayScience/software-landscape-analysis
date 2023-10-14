@@ -51,26 +51,13 @@ title_prefix = "Cytomining Ecosystem Software Landscape Analysis"
 export_dir = "../../docs/reports/cytomining-ecosystem/"
 # -
 
-# read in target project data
-projects = Box.from_yaml(filename="data/target-projects.yaml").projects
-df_ref_projects = pd.DataFrame(projects)
-# statically set a single category
-df_ref_projects["category"] = df_ref_projects["category"].str[0]
-df_ref_projects.head()
-
 # read in project metric data
 df_projects = pd.read_parquet("data/project-github-metrics.parquet")
+df_projects = df_projects.reset_index(drop=True)
 df_projects.info()
 
-# add target project categories
-df_projects = pd.merge(
-    left=df_projects,
-    right=df_ref_projects[["repo_url", "category"]],
-    how="left",
-    left_on="Project Repo URL",
-    right_on="repo_url",
-)
-df_projects
+df_projects["category"] = df_projects["Project Landscape Category"].str[0]
+df_projects.head(5)
 
 # +
 # create a duration for relative comparisons below
@@ -82,136 +69,146 @@ df_projects["Duration Created to Now in Years"] = (
 )
 
 
-# -
+# +
+# Function to find the top language for each row
+def find_top_language(languages):
+    if isinstance(languages, dict):
+        non_empty_languages = {
+            key: value for key, value in languages.items() if value is not None
+        }
+        if non_empty_languages:
+            return max(non_empty_languages, key=non_empty_languages.get)
+    return None
 
 
-def create_language_pie_chart(df_projects, category):
-    # Flatten the dictionaries into a list of key-value pairs
-    key_value_pairs = [
-        (key, value)
-        for language_dict in df_projects["GitHub Detected Languages"]
-        for key, value in language_dict.items()
-        if value is not None
-    ]
+# Apply the function to the "GitHub Detected Languages" column and create a new column "Primary programming language"
+df_projects["Primary language"] = df_projects["GitHub Detected Languages"].apply(
+    find_top_language
+)
+df_projects[["Project Name", "Primary language"]]
 
-    # Create a new DataFrame from the flattened data
-    # Then group by 'Language' and calculate the total numbers for each language
-    total_numbers = (
-        pd.DataFrame(key_value_pairs, columns=["Language", "Value"])
-        .head(10)
-        .groupby("Language")["Value"]
-        .sum()
-        .reset_index()
+# +
+# Create a pie chart using Plotly Express
+grouped_data = (
+    df_projects.groupby(["Primary language", "category"])
+    .size()
+    .reset_index(name="Count")
+)
+
+# Group by "Primary programming language" and calculate the sum of counts for each programming language
+programming_language_counts = (
+    grouped_data.groupby("Primary language")["Count"].sum().reset_index()
+)
+
+# Sort programming languages by the sum of counts in descending order
+programming_language_counts = programming_language_counts.sort_values(
+    by="Count", ascending=False
+)
+
+# Create a horizontal bar chart using Plotly Express
+fig_languages = px.bar(
+    grouped_data,
+    y="Primary language",
+    x="Count",
+    color="category",  # Color bars based on the "category" column
+    text="Count",  # Display the count as labels on the bars
+    title="Number of Projects by Primary Programming Language and Category",
+    orientation="h",  # Horizontal orientation for the bars
+    category_orders={
+        "Primary language": programming_language_counts["Primary language"].tolist()
+    },  # Sort bars by programming language counts
+    height=600,
+)
+
+# Customize layout to display count labels properly
+fig_languages.update_traces(
+    texttemplate="%{text}",
+    textposition="inside",
+)
+fig_languages.update_layout(
+    title=f"{title_prefix}: Top Languages",
+)
+
+# Show the plot
+fig_languages.show()
+
+# +
+# bubble scatter plot
+fig_user_base = px.scatter(
+    df_projects,
+    hover_name="Project Name",
+    x="Duration Created to Now in Years",
+    y="GitHub Stars",
+    width=1000,
+    height=800,
+    color="category",
+    color_discrete_sequence=random.sample(pc.qualitative.Prism, 3),
+)
+
+# set a minimum size for the plot points
+# fig_user_base.update_traces(marker=dict(sizemin=20))
+
+# customize the chart layout
+fig_user_base.update_layout(
+    title=f"{title_prefix}: User Base Size",
+    xaxis_title="Project Age (years)",
+    yaxis_title="GitHub Stars Count",
+)
+
+fig_user_base.show()
+
+# +
+# Create subplots with one row and two columns
+fig = make_subplots(
+    rows=2,
+    cols=2,
+    specs=[
+        [{"type": "scatter"}, None],
+        [{"type": "bar"}, None],
+    ],
+    row_heights=[0.3, 0.3],
+)
+
+legendgroup_incrementor = 0
+
+# Add scatter plot to the second column
+for trace in fig_languages.data:
+    # trace.legendgroup = legendgroup_incrementor
+    fig.add_trace(
+        trace,
+        row=2,
+        col=1,
     )
 
-    # Create a pie chart using Plotly Express
-    fig = px.pie(
-        total_numbers,
-        names="Language",
-        values="Value",
-        title="Pie Chart Example",
-        color_discrete_sequence=random.sample(pc.qualitative.Prism, 10),
-    )
+legendgroup_incrementor += 1
 
-    # Remove the legend
-    fig.update_layout(
-        title=f"{title_prefix}: {category} - Top Languages", showlegend=False
-    )
+# Add lang chart to the first column
+for trace in fig_user_base.data:
+    # trace.legendgroup = legendgroup_incrementor
+    fig.add_trace(trace, row=1, col=1)
 
-    # return the plot
-    return fig
+# Update the subplot with custom axis labels
+fig.update_xaxes(title_text="Project Age (years)", row=1, col=1)
+fig.update_yaxes(title_text="GitHub Stars Count", row=1, col=1)
 
+# Update layout
+fig.update_layout(
+    title_text=f"{title_prefix}",
+    # title_x=0.5,  # Center the title
+    # showlegend=False,
+    height=1200,
+    # legend=dict(x=0, y=1, traceorder="normal", orientation="h"),
+    # legend_tracegroupgap=800,
+)
 
-def create_user_base_chart(df_projects, category):
-    # bubble scatter plot
-    fig = px.scatter(
-        df_projects,
-        hover_name="Project Name",
-        x="Duration Created to Now in Years",
-        y="GitHub Stars",
-        size="GitHub Watchers",
-        width=1250,
-        height=800,
-        color="category",
-        color_discrete_sequence=random.sample(pc.qualitative.Prism, 2),
-    )
+"""plot(
+    fig,
+    filename=f"{export_dir}/landscape.html",
+    auto_open=False,
+)"""
 
-    # set a minimum size for the plot points
-    fig.update_traces(marker=dict(sizemin=4))
-
-    # customize the chart layout
-    fig.update_layout(
-        title=f"{title_prefix}: {category} - User Base Size",
-        xaxis_title="Project Age (years)",
-        yaxis_title="GitHub Stars Count",
-    )
-
-    # return the chart
-    return fig
-
-
-def create_plots_for_categories(df_projects, category):
-    # Create subplots with one row and two columns
-    fig = make_subplots(
-        rows=2,
-        cols=2,
-        specs=[
-            [{"type": "scatter", "colspan": 2}, None],
-            [{"type": "pie"}, None],
-        ],
-        row_heights=[0.8, 0.2],
-    )
-
-    legendgroup_incrementor = 0
-
-    # Add scatter plot to the second column
-    scatter = create_user_base_chart(df_projects, category)
-    for trace in scatter.data:
-        trace.legendgroup = legendgroup_incrementor
-        fig.add_trace(
-            trace,
-            row=1,
-            col=1,
-        )
-
-    legendgroup_incrementor += 1
-
-    # Add pie chart to the first column
-    pie = create_language_pie_chart(df_projects, category)
-    for trace in pie.data:
-        trace.legendgroup = legendgroup_incrementor
-        fig.add_trace(trace, row=2, col=1)
-
-    # Update the subplot with custom axis labels
-    fig.update_xaxes(title_text="Project Age (years)", row=1, col=1)
-    fig.update_yaxes(title_text="GitHub Stars Count", row=1, col=1)
-
-    # Update layout
-    fig.update_layout(
-        title_text=f"{title_prefix}: {category}",
-        # title_x=0.5,  # Center the title
-        # showlegend=False,
-        height=1200,
-        # legend=dict(x=0, y=1, traceorder="normal", orientation="h"),
-        legend_tracegroupgap=800,
-    )
-
-    plot(
-        fig,
-        filename=f"{export_dir}/{category.replace(' ','-').lower()}.html",
-        auto_open=False,
-    )
-
-    # Show the subplot
-    fig.show()
-
-
-for category in (
-    df_projects[df_projects["category"] != "loi-focus"]["category"].dropna().unique()
-):
-    target_df = df_projects[df_projects["category"].isin(["loi-focus", category])]
-    category_title = category.replace("-", " ").title()
-    create_plots_for_categories(target_df, category_title)
+# Show the subplot
+# fig.show()
 
 # +
 # bubble scatter plot
@@ -244,3 +241,5 @@ plot(fig, filename=f"{export_dir}/maturity.html", auto_open=False)
 # Show the chart
 fig.show()
 # -
+
+

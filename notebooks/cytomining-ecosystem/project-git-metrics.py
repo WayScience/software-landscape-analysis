@@ -131,6 +131,11 @@ df_projects["Duration Most Recent Commit to Now"] = (
     current_datetime - df_projects["Date Most Recent Commit"]
 )
 
+# create a years count for project time duration
+df_projects["Duration Created to Now in Years"] = (
+    df_projects["Duration Created to Now"].dt.days / 365
+)
+
 # show the result
 df_projects
 # -
