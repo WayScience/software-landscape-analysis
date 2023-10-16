@@ -23,10 +23,13 @@
 # - Maturity
 
 # +
+import asyncio
 import os
+import pathlib
 import random
 from datetime import datetime
 
+import nest_asyncio
 import pandas as pd
 import plotly.colors as pc
 import plotly.express as px
@@ -36,6 +39,7 @@ import pytz
 from box import Box
 from plotly.offline import plot
 from plotly.subplots import make_subplots
+from pyppeteer import launch
 
 # set plotly default theme
 pio.templates.default = "simple_white"
@@ -48,7 +52,7 @@ current_datetime = datetime.now(tz)
 title_prefix = "Cytomining Ecosystem Software Landscape Analysis"
 
 # export locations relative to this notebook
-export_dir = "../../docs/reports/cytomining-ecosystem/"
+export_dir = "../../docs/reports/cytomining-ecosystem"
 # -
 
 # read in project metric data
@@ -114,13 +118,14 @@ fig_languages = px.bar(
     grouped_data,
     y="Primary language",
     x="Count",
-    color="category",  # Color bars based on the "category" column
-    text="Count",  # Display the count as labels on the bars
+    color="category",
+    text="Count",
     title="Number of Projects by Primary Programming Language and Category",
-    orientation="h",  # Horizontal orientation for the bars
+    orientation="h",
+    # Sort bars by programming language counts
     category_orders={
         "Primary language": programming_language_counts["Primary language"].tolist()
-    },  # Sort bars by programming language counts
+    },
     width=1200,
     height=500,
 )
@@ -131,7 +136,7 @@ fig_languages.update_traces(
     textposition="inside",
 )
 fig_languages.update_layout(
-    title=f"{title_prefix}: Project Primary Language Count",
+    title=f"Project Primary Language Count",
 )
 
 fig_collection.append(fig_languages)
@@ -152,12 +157,10 @@ fig_usage_stars = px.scatter(
     color_discrete_sequence=random.sample(pc.qualitative.Prism, 5),
 )
 
-# set a minimum size for the plot points
-# fig_user_base.update_traces(marker=dict(sizemin=20))
 
 # customize the chart layout
 fig_usage_stars.update_layout(
-    title=f"{title_prefix}: Project Star Count and Age in Years",
+    title=f"Project Star Count and Age in Years",
     xaxis_title="Project Age (years)",
     yaxis_title="GitHub Stars Count",
 )
@@ -179,14 +182,10 @@ fig_contributors_and_issues = px.scatter(
     color_discrete_sequence=random.sample(pc.qualitative.Prism, 5),
 )
 
-# set a minimum size for the plot points
-# fig_user_base.update_traces(marker=dict(sizemin=20))
 
 # customize the chart layout
 fig_contributors_and_issues.update_layout(
-    title=f"{title_prefix}: Project Open Issues and Contributors",
-    # xaxis_title="Project Age (years)",
-    # yaxis_title="GitHub Stars Count",
+    title=f"Project Open Issues and Contributors",
 )
 
 fig_collection.append(fig_contributors_and_issues)
@@ -201,12 +200,18 @@ with open(f"{export_dir}/report.html", "w") as f:
 <html>
 
 <head>
-    <title>Way Lab: Software Landscape Analysis</title>
+    <title>Cytomining Ecosystem Software Landscape Analysis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
 </head>
-
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+}
+</style>
 <body>
+<h1>Cytomining Ecosystem Software Landscape Analysis</h1>
+<br>
     """
     )
     for fig in fig_collection:
@@ -215,38 +220,34 @@ with open(f"{export_dir}/report.html", "w") as f:
                 full_html=False, include_plotlyjs="cdn" if not cdn_included else False
             )
         )
+        f.write("<br><br>")
     f.write("</body></html>")
 
 # +
-# bubble scatter plot
-fig = px.scatter(
-    df_projects,
-    hover_name="Project Name",
-    x="Duration Created to Now in Years",
-    y="GitHub Forks",
-    size="GitHub Contributors",
-    color="category",
-    width=1250,
-    height=500,
+# capture the html page as a png export
+
+# allow for nested asyncio ops
+nest_asyncio.apply()
+
+
+# define function for pyppeteer to capture image
+# see: https://github.com/pyppeteer/pyppeteer#examples
+async def capture_screenshot(file_path, output_path):
+    browser = await launch(headless=True)
+    page = await browser.newPage()
+    # set the size of the capture
+    await page.setViewport({"width": 1400, "height": 1700})
+    await page.goto(f"file://{file_path}")
+
+    await page.screenshot({"path": output_path})
+    await browser.close()
+
+
+# Capture screenshot from html page
+asyncio.get_event_loop().run_until_complete(
+    capture_screenshot(
+        file_path=pathlib.Path(f"{export_dir}/report.html").resolve(),
+        output_path=f"{export_dir}/report.png",
+    )
 )
-
-# set a minimum size for the plot points
-fig.update_traces(marker=dict(sizemin=5))
-
-# customize the chart layout
-fig.update_layout(
-    title=f"{title_prefix}: User Base Size",
-    xaxis_title="Project Age (years)",
-    yaxis_title="GitHub Forks Count",
-    # set legend placement over chart for space conservation
-    legend=dict(x=0.005, y=1.0005, traceorder="normal", bgcolor="rgba(0,0,0,0)"),
-)
-
-# export to html
-plot(fig, filename=f"{export_dir}/maturity.html", auto_open=False)
-
-# Show the chart
-fig.show()
-# -
-
 
