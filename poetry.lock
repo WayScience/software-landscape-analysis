@@ -797,6 +797,25 @@ files = [
 ]
 
 [[package]]
+name = "dnspython"
+version = "2.4.2"
+description = "DNS toolkit"
+optional = false
+python-versions = ">=3.8,<4.0"
+files = [
+    {file = "dnspython-2.4.2-py3-none-any.whl", hash = "sha256:57c6fbaaeaaf39c891292012060beb141791735dbb4004798328fc2c467402d8"},
+    {file = "dnspython-2.4.2.tar.gz", hash = "sha256:8dcfae8c7460a2f84b4072e26f1c9f4101ca20c071649cb7c34e8b6a93d58984"},
+]
+
+[package.extras]
+dnssec = ["cryptography (>=2.6,<42.0)"]
+doh = ["h2 (>=4.1.0)", "httpcore (>=0.17.3)", "httpx (>=0.24.1)"]
+doq = ["aioquic (>=0.9.20)"]
+idna = ["idna (>=2.1,<4.0)"]
+trio = ["trio (>=0.14,<0.23)"]
+wmi = ["wmi (>=1.5.1,<2.0.0)"]
+
+[[package]]
 name = "duckdb"
 version = "0.9.0"
 description = "DuckDB embedded database"
@@ -1856,6 +1875,22 @@ files = [
     {file = "kiwisolver-1.4.5-pp39-pypy39_pp73-win_amd64.whl", hash = "sha256:11d011a7574eb3b82bcc9c1a1d35c1d7075677fdd15de527d91b46bd35e935ee"},
     {file = "kiwisolver-1.4.5.tar.gz", hash = "sha256:e57e563a57fb22a142da34f38acc2fc1a5c864bc29ca1517a88abc963e60d6ec"},
 ]
+
+[[package]]
+name = "linkchecker"
+version = "10.3.0"
+description = "check links in web documents or full websites"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "LinkChecker-10.3.0-py3-none-any.whl", hash = "sha256:624f63be599b1d91c3be60d6c5e38412ddbc0f4417c49f0d1936b33c1ce62b09"},
+    {file = "LinkChecker-10.3.0.tar.gz", hash = "sha256:1741b9506d3f2b5d1243cc2918f5e5813134fcb77a93dbd38b23e0d088940046"},
+]
+
+[package.dependencies]
+beautifulsoup4 = ">=4.8.1"
+dnspython = ">=2.0"
+requests = ">=2.20"
 
 [[package]]
 name = "llvmlite"
@@ -4795,4 +4830,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "4f30a0f62712571f6e199624f99e497f3cf15f348911bf6e69fe2e649dd1a084"
+content-hash = "946a56aeb066d5ee6c1ec5c6c483ca8205fa51940600dd30f5f86560e50f896d"
