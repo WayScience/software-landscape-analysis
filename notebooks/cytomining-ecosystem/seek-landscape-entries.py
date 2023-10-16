@@ -14,7 +14,7 @@
 
 # # Seek GitHub Projects for Landscape Analysis
 #
-# Seeking GitHub project entries for software landscape analysis related to Cytomining ecosystem.
+# Seeking GitHub project and other data entries for software landscape analysis related to Cytomining ecosystem.
 #
 # ## Setup
 #
@@ -24,6 +24,7 @@
 import os
 from datetime import datetime
 
+import numpy as np
 import pandas as pd
 from box import Box
 from github import Auth, Github
@@ -41,35 +42,66 @@ queries = Box.from_yaml(filename="data/queries.yaml").queries
 queries.to_list()
 # -
 
-# gather repo data based on the results
+# setup a reference for target project urls to ignore as additions to avoid duplication
+target_project_html_urls = [
+    project["repo_url"]
+    for project in Box.from_yaml(filename="data/target-projects.yaml").projects
+]
+target_project_html_urls
+
+# gather repo data from GitHub based on the results of search queries
 results = [
-    {"name": result.name, "homepage_url": result.homepage, "repo_url": result.html_url}
+    {
+        "name": result.name,
+        "homepage_url": result.homepage,
+        "repo_url": result.html_url,
+        "category": ["related-tools-github-query-result"],
+    }
     for query in queries
-    for result in github_client.search_repositories(query=query)
+    for result in github_client.search_repositories(
+        query=query, sort="stars", order="desc"
+    )
+    if result.html_url not in target_project_html_urls
 ]
 len(results)
 
-# append loi focus items to the results set
-results = [
-    {
-        "name": "pycytominer",
-        "tags": ["loi-focus"],
-        "homepage_url": "https://pycytominer.readthedocs.io/en/latest/",
-        "repo_url": "https://github.com/cytomining/pycytominer",
-    },
-    {
-        "name": "cyosnake",
-        "tags": ["loi-focus"],
-        "homepage_url": "https://cytosnake.readthedocs.io/en/latest/",
-        "repo_url": "https://github.com/WayScience/CytoSnake",
-    },
-    {
-        "name": "cytotable",
-        "tags": ["loi-focus"],
-        "homepage_url": "https://cytomining.github.io/CytoTable/",
-        "repo_url": "https://github.com/cytomining/CytoTable",
-    },
-] + results
+# +
+# read and display rough content of scRNA-Tools content
+df_scrna_tools = pd.read_csv("data/scRNA-Tools-tableExport-2023-10-12.csv")
+print(df_scrna_tools.shape)
+
+# replace none-like values for citations with 0's for the purpose of sorting
+df_scrna_tools["Citations"] = (
+    df_scrna_tools["Citations"].replace("-", "0").replace("'-", "0")
+).astype("int64")
+
+# drop rows where we don't have a repository
+df_scrna_tools = df_scrna_tools.dropna(subset=["Code"])
+
+df_scrna_tools["name"] = df_scrna_tools["Name"]
+df_scrna_tools["repo_url"] = df_scrna_tools["Code"]
+
+df_scrna_tools["category"] = np.tile(
+    ["cytomining-ecosystem-adjacent-tools"], (len(df_scrna_tools), 1)
+).tolist()
+
+# filter results to only those with a github link and sort values by number of citations
+df_scrna_tools = df_scrna_tools[
+    df_scrna_tools["Code"].str.contains("https://github.com")
+].sort_values(by=["Citations"], ascending=False)
+
+# show a previow of the results
+df_scrna_tools.head(5)[["name", "repo_url", "category"]]
+# -
+
+# convert top 100 results to projects-like dataset
+df_scrna_tools_records = df_scrna_tools.head(100)[
+    ["name", "repo_url", "category"]
+].to_dict(orient="records")
+df_scrna_tools_records[:5]
+
+# append results from both datasets together
+results = df_scrna_tools_records + results
 
 # filter the list of results to uniques
 seen_url = set()
@@ -82,6 +114,9 @@ results = [
     and not seen_url.add(result["repo_url"])
 ]
 len(results)
+
+# append target projects to the results
+results = Box.from_yaml(filename="data/target-projects.yaml").projects + results
 
 # export the results to a yaml file for later processing
 Box({"projects": results}).to_yaml("data/projects.yaml")

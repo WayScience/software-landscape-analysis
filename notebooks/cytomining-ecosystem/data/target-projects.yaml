@@ -1,0 +1,101 @@
+# targeted projects for inclusion in analysis
+projects:
+  - homepage_url: https://pycytominer.readthedocs.io/en/latest/
+    name: pycytominer
+    repo_url: https://github.com/cytomining/pycytominer
+    category:
+      - loi-focus
+      - cytomining-ecosystem
+  - homepage_url: https://cytosnake.readthedocs.io/en/latest/
+    name: cytosnake
+    repo_url: https://github.com/WayScience/CytoSnake
+    category:
+      - loi-focus
+      - cytomining-ecosystem
+  - homepage_url: https://cytomining.github.io/CytoTable/
+    name: cytotable
+    repo_url: https://github.com/cytomining/CytoTable
+    category:
+      - loi-focus
+      - cytomining-ecosystem
+  - homepage_url: https://github.com/WayScience/IDR_stream
+    name: IDR_Stream
+    repo_url: https://github.com/WayScience/IDR_stream
+    category:
+      - loi-focus
+      - cytomining-ecosystem
+  - name: Pandas
+    homepage_url: https://pandas.pydata.org/
+    repo_url: https://github.com/pandas-dev/pandas
+    category:
+      - cytomining-ecosystem-relevant-open-source
+  - name: Numpy
+    homepage_url: https://numpy.org/
+    repo_url: https://github.com/numpy/numpy
+    category:
+      - cytomining-ecosystem-relevant-open-source
+  - name: anndata
+    homepage_url: https://anndata.readthedocs.io/en/latest/
+    repo_url: https://github.com/scverse/anndata
+    category:
+      - cytomining-ecosystem-relevant-open-source
+  - name: CellProfiler
+    homepage_url: https://cellprofiler.org/
+    repo_url: https://github.com/CellProfiler/CellProfiler
+    category:
+      - microscopy-analysis-tools
+  - name: DeepProfiler
+    homepage_url: https://github.com/cytomining/DeepProfiler
+    repo_url: https://github.com/cytomining/DeepProfiler
+    category:
+      - microscopy-analysis-tools
+  - name: ImageJ
+    homepage_url: https://imagej.net/ij/index.html
+    repo_url: https://github.com/imagej/ImageJ
+    category:
+      - microscopy-analysis-tools
+  - name: QuPath
+    homepage_url: https://qupath.github.io/
+    repo_url: https://github.com/qupath/qupath
+    category:
+      - microscopy-analysis-tools
+  - name: Napari
+    homepage_url: https://napari.org/
+    repo_url: https://github.com/napari/napari
+    category:
+      - microscopy-analysis-tools
+  - name: bioprofiling.jl
+    homepage_url: https://github.com/menchelab/BioProfiling.jl
+    repo_url: https://github.com/menchelab/BioProfiling.jl
+    category:
+      - microscopy-analysis-tools
+  - name: Phenoripper
+    homepage_url: https://github.com/AltschulerWu-Lab/phenoripper
+    repo_url: https://github.com/AltschulerWu-Lab/phenoripper
+    category:
+      - microscopy-analysis-tools
+  - name: Apache Arrow
+    homepage_url: https://arrow.apache.org/
+    repo_url: https://github.com/apache/arrow
+    category:
+      - cytomining-ecosystem-relevant-open-source
+  - name: Apache Parquet
+    homepage_url: https://parquet.apache.org/
+    repo_url: https://github.com/apache/parquet-mr
+    category:
+      - cytomining-ecosystem-relevant-open-source
+  - name: DuckDB
+    homepage_url: https://duckdb.org/
+    repo_url: https://github.com/duckdb/duckdb
+    category:
+      - cytomining-ecosystem-relevant-open-source
+  - name: Snakemake
+    homepage_url: https://snakemake.readthedocs.io/
+    repo_url: https://github.com/snakemake/snakemake
+    category:
+      - cytomining-ecosystem-relevant-open-source
+  - name: Parsl
+    homepage_url: https://parsl-project.org/
+    repo_url: https://github.com/Parsl/parsl
+    category:
+      - cytomining-ecosystem-relevant-open-source

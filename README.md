@@ -34,3 +34,9 @@ For example, use the following to run the `cytomining_ecosystem` task:
 # run cytomining_ecosystem using poethepoet
 poetry run poe cytomining_ecosystem
 ```
+
+### Reports and GitHub Pages
+
+We use a [GitHub Pages](https://pages.github.com/) URL at [https://wayscience.github.io/software-landscape-analysis/](https://wayscience.github.io/software-landscape-analysis/) to help share data analysis reports with others.
+For example, [Plotly HTML exports](https://plotly.com/python/interactive-html-export/) can be added to the relevant location and shared via a link.
+Contents under the `/docs` directory is used as a reference for GitHub Actions-based deployments which occur automatically on merge with the `main` branch.

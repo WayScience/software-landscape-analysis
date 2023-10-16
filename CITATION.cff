@@ -1,0 +1,46 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+---
+cff-version: 1.2.0
+title: software-landscape-analysis
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: David
+    family-names: Bunten
+    orcid: 'https://orcid.org/0000-0001-6041-3665'
+  - given-names: Gregory
+    family-names: Way
+    orcid: 'https://orcid.org/0000-0002-0503-9348'
+repository-code: 'https://github.com/WayScience/software-landscape-analysis'
+url: 'https://github.com/WayScience/software-landscape-analysis'
+abstract: >-
+  Enabling software landscape analyses to better understand existing efforts or solutions.
+keywords:
+  - way-lab
+  - python
+  - jupyter
+  - software-landscape-analysis
+license: BSD-3-Clause
+references:
+  - authors:
+      - family: Zappia
+        given: Luke
+      - family: Phipson
+        given: Belinda
+      - family: Oshlack
+        given: Alicia
+    title: Exploring the single-cell RNA-seq analysis landscape with the scRNA-tools database
+    version: ""
+    doi: "10.1371/journal.pcbi.1006245"
+    url: "https://doi.org/10.1371/journal.pcbi.1006245"
+    year: 2018
+    journal: PLoS Computational Biology
+    volume: 14
+    number: 6
+    pages: e1006245
+    notes: >-
+      scRNA-tools database table extract is referenced as part of analysis found under notebooks/cytomining-ecosystem.
+      An export of the data is saved as: notebooks/cytomining-ecosystem/scRNA-Tools-tableExport-2023-10-12.csv
