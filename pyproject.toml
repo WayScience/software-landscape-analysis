@@ -33,6 +33,7 @@ black = "^23.9.1"
 jupyterlab-code-formatter = "^2.2.1"
 jupytext = "^1.15.2"
 jupyterlab = "^3.0.0"
+linkchecker = "^10.3.0"
 
 [build-system]
 requires = ["poetry-core"]
