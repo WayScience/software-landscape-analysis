@@ -67,6 +67,10 @@ df_projects["Duration Created to Now"] = current_datetime - df_projects["Date Cr
 df_projects["Duration Created to Now in Years"] = (
     df_projects["Duration Created to Now"].dt.days / 365
 )
+# -
+
+# create list to collect the figures for later display together
+fig_collection = []
 
 
 # +
@@ -117,7 +121,8 @@ fig_languages = px.bar(
     category_orders={
         "Primary language": programming_language_counts["Primary language"].tolist()
     },  # Sort bars by programming language counts
-    height=600,
+    width=1200,
+    height=500,
 )
 
 # Customize layout to display count labels properly
@@ -126,89 +131,91 @@ fig_languages.update_traces(
     textposition="inside",
 )
 fig_languages.update_layout(
-    title=f"{title_prefix}: Top Languages",
+    title=f"{title_prefix}: Project Primary Language Count",
 )
+
+fig_collection.append(fig_languages)
 
 # Show the plot
 fig_languages.show()
 
 # +
 # bubble scatter plot
-fig_user_base = px.scatter(
+fig_usage_stars = px.scatter(
     df_projects,
     hover_name="Project Name",
     x="Duration Created to Now in Years",
     y="GitHub Stars",
-    width=1000,
-    height=800,
+    width=1200,
+    height=500,
     color="category",
-    color_discrete_sequence=random.sample(pc.qualitative.Prism, 3),
+    color_discrete_sequence=random.sample(pc.qualitative.Prism, 5),
 )
 
 # set a minimum size for the plot points
 # fig_user_base.update_traces(marker=dict(sizemin=20))
 
 # customize the chart layout
-fig_user_base.update_layout(
-    title=f"{title_prefix}: User Base Size",
+fig_usage_stars.update_layout(
+    title=f"{title_prefix}: Project Star Count and Age in Years",
     xaxis_title="Project Age (years)",
     yaxis_title="GitHub Stars Count",
 )
 
-fig_user_base.show()
+fig_collection.append(fig_usage_stars)
+
+fig_usage_stars.show()
 
 # +
-# Create subplots with one row and two columns
-fig = make_subplots(
-    rows=2,
-    cols=2,
-    specs=[
-        [{"type": "scatter"}, None],
-        [{"type": "bar"}, None],
-    ],
-    row_heights=[0.3, 0.3],
+# bubble scatter plot
+fig_contributors_and_issues = px.scatter(
+    df_projects,
+    hover_name="Project Name",
+    x="GitHub Open Issues",
+    y="GitHub Contributors",
+    width=1200,
+    height=500,
+    color="category",
+    color_discrete_sequence=random.sample(pc.qualitative.Prism, 5),
 )
 
-legendgroup_incrementor = 0
+# set a minimum size for the plot points
+# fig_user_base.update_traces(marker=dict(sizemin=20))
 
-# Add scatter plot to the second column
-for trace in fig_languages.data:
-    # trace.legendgroup = legendgroup_incrementor
-    fig.add_trace(
-        trace,
-        row=2,
-        col=1,
+# customize the chart layout
+fig_contributors_and_issues.update_layout(
+    title=f"{title_prefix}: Project Open Issues and Contributors",
+    # xaxis_title="Project Age (years)",
+    # yaxis_title="GitHub Stars Count",
+)
+
+fig_collection.append(fig_contributors_and_issues)
+
+fig_contributors_and_issues.show()
+# -
+
+cdn_included = False
+with open(f"{export_dir}/report.html", "w") as f:
+    f.write(
+        """
+<html>
+
+<head>
+    <title>Way Lab: Software Landscape Analysis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    """
     )
-
-legendgroup_incrementor += 1
-
-# Add lang chart to the first column
-for trace in fig_user_base.data:
-    # trace.legendgroup = legendgroup_incrementor
-    fig.add_trace(trace, row=1, col=1)
-
-# Update the subplot with custom axis labels
-fig.update_xaxes(title_text="Project Age (years)", row=1, col=1)
-fig.update_yaxes(title_text="GitHub Stars Count", row=1, col=1)
-
-# Update layout
-fig.update_layout(
-    title_text=f"{title_prefix}",
-    # title_x=0.5,  # Center the title
-    # showlegend=False,
-    height=1200,
-    # legend=dict(x=0, y=1, traceorder="normal", orientation="h"),
-    # legend_tracegroupgap=800,
-)
-
-"""plot(
-    fig,
-    filename=f"{export_dir}/landscape.html",
-    auto_open=False,
-)"""
-
-# Show the subplot
-# fig.show()
+    for fig in fig_collection:
+        f.write(
+            fig.to_html(
+                full_html=False, include_plotlyjs="cdn" if not cdn_included else False
+            )
+        )
+    f.write("</body></html>")
 
 # +
 # bubble scatter plot
