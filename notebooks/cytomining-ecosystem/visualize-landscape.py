@@ -66,16 +66,6 @@ df_projects.info()
 df_projects["category"] = df_projects["Project Landscape Category"].str[0]
 df_projects.head(5)
 
-# +
-# create a duration for relative comparisons below
-df_projects["Duration Created to Now"] = current_datetime - df_projects["Date Created"]
-
-# create a years count for project time duration
-df_projects["Duration Created to Now in Years"] = (
-    df_projects["Duration Created to Now"].dt.days / 365
-)
-# -
-
 # create a ydata_profiling profile
 profile = ProfileReport(df_projects, title=f"{title_prefix}: Data Profile Report")
 profile.to_notebook_iframe()
@@ -86,12 +76,23 @@ profile.to_file(f"{export_dir}/data_profile.html")
 fig_collection = []
 
 # +
-# bubble scatter plot
+# Github stars and time scatter
+
+# add log of github stars to help visualize
+df_projects["GitHub Stars (Log Scale)"] = np.log(
+    df_projects["GitHub Stars"].apply(
+        # move 0's to None to avoid divide by 0
+        lambda x: x
+        if x > 0
+        else None
+    )
+)
+
 fig_usage_stars = px.scatter(
     df_projects,
     hover_name="Project Name",
     x="Duration Created to Now in Years",
-    y="GitHub Stars",
+    y="GitHub Stars (Log Scale)",
     width=1200,
     height=500,
     color="category",
@@ -103,7 +104,7 @@ fig_usage_stars = px.scatter(
 fig_usage_stars.update_layout(
     title=f"Project Star Count and Age in Years",
     xaxis_title="Project Age (years)",
-    yaxis_title="GitHub Stars Count",
+    yaxis_title="GitHub Stars (Log Scale)",
 )
 
 fig_collection.append(fig_usage_stars)
