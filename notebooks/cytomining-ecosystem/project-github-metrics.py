@@ -88,6 +88,7 @@ df_projects = pd.DataFrame(
     [
         {
             "Project Name": repo.name,
+            "GitHub Repository ID": repo.id,
             "Project Homepage": repo.homepage,
             "Project Repo URL": repo.html_url,
             "Project Landscape Category": project.category,
@@ -99,9 +100,12 @@ df_projects = pd.DataFrame(
             "GitHub License Type": try_to_detect_license(repo),
             "GitHub Description": repo.description,
             "GitHub Topics": repo.topics,
+            # gather org name if it exists
+            "GitHub Organization": repo.organization.login
+            if repo.organization
+            else None,
+            "GitHub Network Count": repo.network_count,
             "GitHub Detected Languages": repo.get_languages(),
-            "GitHub Weekly Views Traffic": repo.get_views_traffic(per="week"),
-            "GitHub Code Frequency Stats": repo.get_stats_code_frequency(),
             "Date Created": repo.created_at.replace(tzinfo=pytz.UTC),
             "Date Most Recent Commit": try_to_gather_most_recent_commit_date(repo),
             # placeholders for later datetime calculations
@@ -124,6 +128,10 @@ df_projects = pd.DataFrame(
     ]
 )
 
+# show the result
+df_projects
+
+# +
 # calculate time deltas
 df_projects["Duration Created to Most Recent Commit"] = (
     df_projects["Date Most Recent Commit"] - df_projects["Date Created"]
@@ -150,8 +158,12 @@ df_projects = df_projects[
     # filter projects which have been archived
     & ~df_projects["GitHub Repo Archived"]
 ][  # filter projects which have no detected programming languages
-    df_projects["GitHub Detected Languages"].str.len() > 0
-]
+    df_projects["GitHub Detected Languages"].str.len()
+    > 0
+    # Drop duplicates based on github repository id
+].drop_duplicates(
+    subset="GitHub Repository ID"
+)
 df_projects.tail()
 
 # negate this duration value for sorting descendingly,
@@ -162,7 +174,7 @@ df_projects["Negative Duration Most Recent Commit to Now"] = -df_projects[
 df_projects = df_projects.sort_values(
     by=[
         "GitHub Stars",
-        "GitHub Watchers",
+        "GitHub Subscribers",
         "GitHub Contributors",
         "GitHub Forks",
         "GitHub Open Issues",
