@@ -40,6 +40,7 @@ from box import Box
 from plotly.offline import plot
 from plotly.subplots import make_subplots
 from pyppeteer import launch
+from ydata_profiling import ProfileReport
 
 # set plotly default theme
 pio.templates.default = "simple_white"
@@ -72,6 +73,12 @@ df_projects["Duration Created to Now in Years"] = (
     df_projects["Duration Created to Now"].dt.days / 365
 )
 # -
+
+# create a ydata_profiling profile
+profile = ProfileReport(df_projects, title=f"{title_prefix}: Data Profile Report")
+profile.to_notebook_iframe()
+
+profile.to_file(f"{export_dir}/data_profile.html")
 
 # create list to collect the figures for later display together
 fig_collection = []

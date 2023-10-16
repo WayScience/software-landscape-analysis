@@ -7,10 +7,10 @@ license = "BSD-3-Clause"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.13"
-pandas = "^2.1.1"
-numpy = "^1.26.0"
-matplotlib = "^3.8.0"
+python = ">=3.9,<3.12"
+pandas = ">1.1,<1.4.0 || >1.4.0,<2.1"
+numpy = ">=1.16.0,<1.26"
+matplotlib = ">=3.2,<=3.7.3"
 plotly = "^5.17.0"
 duckdb = "^0.9.0"
 requests = "^2.31.0"
@@ -22,6 +22,9 @@ poethepoet = "^0.24.1"
 pyarrow = "^13.0.0"
 pyppeteer = "^1.0.2"
 nest-asyncio = "^1.5.8"
+htmlmin = "^0.1.12"
+ydata-profiling = "^4.6.0"
+ipywidgets = "^8.1.1"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.12.0"
@@ -41,7 +44,7 @@ cwd = "notebooks/cytomining-ecosystem"
 # defines workflow through sequence of python scripts converted from jupyter notebooks
 shell = """
   python seek-landscape-entries.py &&
-  python project-git-metrics.py &&
+  python project-github-metrics.py &&
   python visualize-landscape.py
 """
 
