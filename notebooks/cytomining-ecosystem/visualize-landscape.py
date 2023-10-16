@@ -55,7 +55,7 @@ current_datetime = datetime.now(tz)
 title_prefix = "Cytomining Ecosystem Software Landscape Analysis"
 
 # export locations relative to this notebook
-export_dir = "../../docs/reports/cytomining-ecosystem"
+export_dir = "../../docs/cytomining-ecosystem"
 # -
 
 # read in project metric data
@@ -352,3 +352,5 @@ asyncio.get_event_loop().run_until_complete(
     )
 )
 # -
+
+
