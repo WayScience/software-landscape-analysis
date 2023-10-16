@@ -283,7 +283,7 @@ with open(f"{export_dir}/report.html", "w") as f:
     <title>Cytomining Ecosystem | Way Lab: Software Landscape Analysis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -351,6 +351,3 @@ asyncio.get_event_loop().run_until_complete(
         output_path=f"{export_dir}/report.png",
     )
 )
-# -
-
-
