@@ -1275,6 +1275,25 @@ plugins = ["setuptools"]
 requirements-deprecated-finder = ["pip-api", "pipreqs"]
 
 [[package]]
+name = "itables"
+version = "1.6.2"
+description = "Interactive Tables in Jupyter"
+optional = false
+python-versions = "*"
+files = [
+    {file = "itables-1.6.2-py3-none-any.whl", hash = "sha256:30c694e247e8ddb30d301e0cb35a5c28716e7d993e95fe1d02f2e59fcd01959b"},
+    {file = "itables-1.6.2.tar.gz", hash = "sha256:0f03783b00ad01a321c2860cce13cb0cf96397e41fa22f47fdaa78712f72ebd0"},
+]
+
+[package.dependencies]
+IPython = "*"
+numpy = "*"
+pandas = "*"
+
+[package.extras]
+polars = ["polars", "pyarrow"]
+
+[[package]]
 name = "jaraco-classes"
 version = "3.3.0"
 description = "Utility functions for Python class constructs"
@@ -4776,4 +4795,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "b018d9842eeb7ae02486c44493ee839aed8d187e78d8f25a17a919e4f2491657"
+content-hash = "4f30a0f62712571f6e199624f99e497f3cf15f348911bf6e69fe2e649dd1a084"

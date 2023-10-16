@@ -30,6 +30,7 @@ import random
 from datetime import datetime
 
 import nest_asyncio
+import numpy as np
 import pandas as pd
 import plotly.colors as pc
 import plotly.express as px
@@ -37,6 +38,7 @@ import plotly.graph_objects as go
 import plotly.io as pio
 import pytz
 from box import Box
+from itables import to_html_datatable
 from plotly.offline import plot
 from plotly.subplots import make_subplots
 from pyppeteer import launch
@@ -83,6 +85,101 @@ profile.to_file(f"{export_dir}/data_profile.html")
 # create list to collect the figures for later display together
 fig_collection = []
 
+# +
+# bubble scatter plot
+fig_usage_stars = px.scatter(
+    df_projects,
+    hover_name="Project Name",
+    x="Duration Created to Now in Years",
+    y="GitHub Stars",
+    width=1200,
+    height=500,
+    color="category",
+    color_discrete_sequence=random.sample(pc.qualitative.Prism, 5),
+)
+
+
+# customize the chart layout
+fig_usage_stars.update_layout(
+    title=f"Project Star Count and Age in Years",
+    xaxis_title="Project Age (years)",
+    yaxis_title="GitHub Stars Count",
+)
+
+fig_collection.append(fig_usage_stars)
+
+fig_usage_stars.show()
+
+# +
+# Create an icicle chart using Plotly Express
+df_treemap = df_projects.copy()
+df_treemap["GitHub Stars"] = np.where(
+    df_treemap["GitHub Stars"] == 0, np.nan, df_treemap["GitHub Stars"]
+)
+fig_usage_stars_treemap = px.treemap(
+    df_treemap,
+    title="GitHub Stars Project Tree Map (click to zoom)",
+    path=["category", "Project Name"],
+    values="GitHub Stars",
+    color="GitHub Stars",
+    color_continuous_scale="Viridis",
+    width=1200,
+    height=600,
+)
+
+fig_collection.append(fig_usage_stars_treemap)
+
+# Show the icicle chart
+fig_usage_stars_treemap.show()
+
+# +
+# bubble scatter plot
+fig_network_and_subscribers = px.scatter(
+    df_projects,
+    hover_name="Project Name",
+    x="GitHub Network Count",
+    y="GitHub Subscribers",
+    width=1200,
+    height=500,
+    color="category",
+    color_discrete_sequence=random.sample(pc.qualitative.Prism, 5),
+)
+
+
+# customize the chart layout
+fig_network_and_subscribers.update_layout(
+    title=f"Project Subscriber and GitHub Network Count",
+    xaxis_title="GitHub Network Count",
+    yaxis_title="GitHub Subscribers",
+)
+
+fig_collection.append(fig_network_and_subscribers)
+
+fig_network_and_subscribers.show()
+
+# +
+# bubble scatter plot
+fig_contributors_and_issues = px.scatter(
+    df_projects,
+    hover_name="Project Name",
+    x="GitHub Open Issues",
+    y="GitHub Contributors",
+    width=1200,
+    height=500,
+    color="category",
+    color_discrete_sequence=random.sample(pc.qualitative.Prism, 5),
+)
+
+
+# customize the chart layout
+fig_contributors_and_issues.update_layout(
+    title=f"Project Open Issues and Contributors",
+)
+
+fig_collection.append(fig_contributors_and_issues)
+
+fig_contributors_and_issues.show()
+
 
 # +
 # Function to find the top language for each row
@@ -103,7 +200,7 @@ df_projects["Primary language"] = df_projects["GitHub Detected Languages"].apply
 df_projects[["Project Name", "Primary language"]]
 
 # +
-# Create a pie chart using Plotly Express
+# Create a hbar chart for primary languages
 grouped_data = (
     df_projects.groupby(["Primary language", "category"])
     .size()
@@ -134,7 +231,7 @@ fig_languages = px.bar(
         "Primary language": programming_language_counts["Primary language"].tolist()
     },
     width=1200,
-    height=500,
+    height=700,
 )
 
 # Customize layout to display count labels properly
@@ -152,52 +249,27 @@ fig_collection.append(fig_languages)
 fig_languages.show()
 
 # +
-# bubble scatter plot
-fig_usage_stars = px.scatter(
-    df_projects,
-    hover_name="Project Name",
-    x="Duration Created to Now in Years",
-    y="GitHub Stars",
+# gather project org data
+df_project_orgs = df_projects["GitHub Organization"].value_counts()
+
+# Create a horizontal bar chart using Plotly Express
+fig_orgs = px.bar(
+    df_project_orgs[df_project_orgs > 1].sort_values(ascending=True),
+    title="GitHub Organization Project Count",
+    orientation="h",
     width=1200,
-    height=500,
-    color="category",
-    color_discrete_sequence=random.sample(pc.qualitative.Prism, 5),
+    height=700,
 )
 
-
-# customize the chart layout
-fig_usage_stars.update_layout(
-    title=f"Project Star Count and Age in Years",
-    xaxis_title="Project Age (years)",
-    yaxis_title="GitHub Stars Count",
+fig_orgs.update_layout(
+    xaxis_title="Projects Count",
+    showlegend=False,
 )
 
-fig_collection.append(fig_usage_stars)
+fig_collection.append(fig_orgs)
 
-fig_usage_stars.show()
-
-# +
-# bubble scatter plot
-fig_contributors_and_issues = px.scatter(
-    df_projects,
-    hover_name="Project Name",
-    x="GitHub Open Issues",
-    y="GitHub Contributors",
-    width=1200,
-    height=500,
-    color="category",
-    color_discrete_sequence=random.sample(pc.qualitative.Prism, 5),
-)
-
-
-# customize the chart layout
-fig_contributors_and_issues.update_layout(
-    title=f"Project Open Issues and Contributors",
-)
-
-fig_collection.append(fig_contributors_and_issues)
-
-fig_contributors_and_issues.show()
+# Show the plot
+fig_orgs.show()
 # -
 
 cdn_included = False
@@ -205,22 +277,44 @@ with open(f"{export_dir}/report.html", "w") as f:
     f.write(
         """
 <html>
+<!-- referenced with modifications from example work on: https://github.com/KrauseFx/markdown-to-html-github-style -->
 
 <head>
-    <title>Cytomining Ecosystem Software Landscape Analysis</title>
+    <title>Cytomining Ecosystem | Way Lab: Software Landscape Analysis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
-<style>
-body {
-    font-family: 'Arial', sans-serif;
-}
-</style>
+
 <body>
-<h1>Cytomining Ecosystem Software Landscape Analysis</h1>
-<br>
+    <div id='content'>
+        <h1>Cytomining Ecosystem Software Landscape Analysis Report</h1>
     """
     )
+    f.write("<strong>Selected dataset table columns</strong><br><br>")
+    # write an itable to the page
+    f.write(
+        to_html_datatable(
+            df_projects[
+                [
+                    "Project Name",
+                    "Project Repo URL",
+                    "GitHub Stars",
+                    "GitHub Forks",
+                    "GitHub Subscribers",
+                    "GitHub Open Issues",
+                    "GitHub Contributors",
+                    "Date Created",
+                    "category",
+                    "Primary language",
+                ]
+            ],
+            style="height:600px;float:left;",
+            classes="display",
+            maxBytes=0,
+        )
+    )
+    f.write("<br><br>")
     for fig in fig_collection:
         f.write(
             fig.to_html(
@@ -243,7 +337,7 @@ async def capture_screenshot(file_path, output_path):
     browser = await launch(headless=True)
     page = await browser.newPage()
     # set the size of the capture
-    await page.setViewport({"width": 1400, "height": 1700})
+    await page.setViewport({"width": 1400, "height": 5200})
     await page.goto(f"file://{file_path}")
 
     await page.screenshot({"path": output_path})
@@ -257,4 +351,6 @@ asyncio.get_event_loop().run_until_complete(
         output_path=f"{export_dir}/report.png",
     )
 )
+# -
+
 
