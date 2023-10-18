@@ -24,6 +24,7 @@
 
 # +
 import asyncio
+import itertools
 import os
 import pathlib
 import random
@@ -56,6 +57,9 @@ title_prefix = "Cytomining Ecosystem Software Landscape Analysis"
 
 # export locations relative to this notebook
 export_dir = "../../docs/cytomining-ecosystem"
+
+# set the color sequence for category-based charts
+category_color_sequence = pc.qualitative.Vivid[:5]
 # -
 
 # read in project metric data
@@ -63,11 +67,18 @@ df_projects = pd.read_parquet("data/project-github-metrics.parquet")
 df_projects = df_projects.reset_index(drop=True)
 df_projects.info()
 
+# set a category column to the first category from a potential list of categories
 df_projects["category"] = df_projects["Project Landscape Category"].str[0]
+# remove prefix from certain categories for brevity
+df_projects["category"] = (
+    df_projects["category"]
+    .str.replace("cytomining-ecosystem-", "")
+    .str.replace("related-tools-", "")
+)
 df_projects.head(5)
 
 # create a ydata_profiling profile
-profile = ProfileReport(df_projects, title=f"{title_prefix}: Data Profile Report")
+profile = ProfileReport(df_projects, title=f"{title_prefix}: Data Profile")
 profile.to_notebook_iframe()
 
 profile.to_file(f"{export_dir}/data_profile.html")
@@ -96,18 +107,20 @@ fig_usage_stars = px.scatter(
     width=1200,
     height=500,
     color="category",
-    color_discrete_sequence=random.sample(pc.qualitative.Prism, 5),
+    color_discrete_sequence=category_color_sequence,
 )
 
 
 # customize the chart layout
 fig_usage_stars.update_layout(
-    title=f"Project Star Count and Age in Years",
+    title=f"Project Star Count and Age in Years (click categories for further focus)",
     xaxis_title="Project Age (years)",
     yaxis_title="GitHub Stars (Log Scale)",
 )
 
-fig_collection.append(fig_usage_stars)
+fig_collection.append(
+    {"plot": fig_usage_stars, "description": "", "findings": "", "section": "User base"}
+)
 
 fig_usage_stars.show()
 
@@ -128,56 +141,193 @@ fig_usage_stars_treemap = px.treemap(
     height=600,
 )
 
-fig_collection.append(fig_usage_stars_treemap)
+fig_collection.append(
+    {
+        "plot": fig_usage_stars_treemap,
+        "description": "",
+        "findings": "",
+        "section": "User base",
+    }
+)
 
 # Show the icicle chart
 fig_usage_stars_treemap.show()
 
 # +
-# bubble scatter plot
+# scatter plot for maturity based on project
+
+# gather the number of lines of code
+df_projects["total lines of GitHub detected code"] = (
+    df_projects["GitHub Detected Languages"]
+    .dropna()
+    .apply(lambda x: sum(value if value is not None else 0 for value in x.values()))
+)
+
+# add log of github stars to help visualize
+df_projects["total lines of GitHub detected code (Log Scale)"] = np.log(
+    df_projects["total lines of GitHub detected code"].apply(
+        # move 0's to None to avoid divide by 0
+        lambda x: x
+        if x > 0
+        else None
+    )
+)
+
+
+fig_maturity_loc_and_age = px.scatter(
+    df_projects,
+    hover_name="Project Name",
+    x="Duration Created to Now in Years",
+    y="total lines of GitHub detected code (Log Scale)",
+    width=1200,
+    height=500,
+    color="category",
+    color_discrete_sequence=category_color_sequence,
+)
+
+
+# customize the chart layout
+fig_maturity_loc_and_age.update_layout(
+    title=f"Project Lines of Code and Age in Years (click categories for further focus)",
+    yaxis_title="Total Lines of Code (Log Scale)",
+    xaxis_title="Project Age (years)",
+)
+
+fig_collection.append(
+    {
+        "plot": fig_maturity_loc_and_age,
+        "description": "",
+        "findings": "",
+        "section": "Maturity",
+    }
+)
+
+fig_maturity_loc_and_age.show()
+
+# +
+# scatter plot for maturity based on project
+
+# add log of github stars to help visualize
+"""df_projects["GitHub Open Issues (Log Scale)"] = np.log(
+    df_projects["GitHub Open Issues"].apply(
+        # move 0's to None to avoid divide by 0
+        lambda x: x
+        if x > 0
+        else None
+    )
+)
+"""
+
+fig_maturity_latest_commit = px.scatter(
+    df_projects,
+    hover_name="Project Name",
+    x="Date Most Recent Commit",
+    y="GitHub Stars (Log Scale)",
+    width=1200,
+    height=500,
+    color="category",
+    color_discrete_sequence=category_color_sequence,
+)
+
+
+# customize the chart layout
+fig_maturity_latest_commit.update_layout(
+    title=f"Project Stars and Most Recent Commit Datetime (click categories for further focus)",
+)
+
+fig_collection.append(
+    {
+        "plot": fig_maturity_latest_commit,
+        "description": "",
+        "findings": "",
+        "section": "Maturity",
+    }
+)
+
+fig_maturity_latest_commit.show()
+
+# +
+# scatter plot for network and subscribers
+
+# add log of github stars to help visualize
+df_projects["GitHub Network Count (Log Scale)"] = np.log(
+    df_projects["GitHub Network Count"].apply(
+        # move 0's to None to avoid divide by 0
+        lambda x: x
+        if x > 0
+        else None
+    )
+)
+
 fig_network_and_subscribers = px.scatter(
     df_projects,
     hover_name="Project Name",
-    x="GitHub Network Count",
+    x="GitHub Network Count (Log Scale)",
     y="GitHub Subscribers",
     width=1200,
     height=500,
     color="category",
-    color_discrete_sequence=random.sample(pc.qualitative.Prism, 5),
+    color_discrete_sequence=category_color_sequence,
 )
 
 
 # customize the chart layout
 fig_network_and_subscribers.update_layout(
-    title=f"Project Subscriber and GitHub Network Count",
-    xaxis_title="GitHub Network Count",
+    title=f"Project Subscriber and GitHub Network Count (click categories for further focus)",
+    xaxis_title="GitHub Network Count (Log Scale)",
     yaxis_title="GitHub Subscribers",
 )
 
-fig_collection.append(fig_network_and_subscribers)
+fig_collection.append(
+    {
+        "plot": fig_network_and_subscribers,
+        "description": "",
+        "findings": "",
+        "section": "Usage",
+    }
+)
 
 fig_network_and_subscribers.show()
 
 # +
-# bubble scatter plot
+# scatter plot for contributors and issues
+
+# add log of github stars to help visualize
+df_projects["GitHub Open Issues (Log Scale)"] = np.log(
+    df_projects["GitHub Open Issues"].apply(
+        # move 0's to None to avoid divide by 0
+        lambda x: x
+        if x > 0
+        else None
+    )
+)
+
+
 fig_contributors_and_issues = px.scatter(
     df_projects,
     hover_name="Project Name",
-    x="GitHub Open Issues",
+    x="GitHub Open Issues (Log Scale)",
     y="GitHub Contributors",
     width=1200,
     height=500,
     color="category",
-    color_discrete_sequence=random.sample(pc.qualitative.Prism, 5),
+    color_discrete_sequence=category_color_sequence,
 )
 
 
 # customize the chart layout
 fig_contributors_and_issues.update_layout(
-    title=f"Project Open Issues and Contributors",
+    title=f"Project Open Issues and Contributors (click categories for further focus)",
 )
 
-fig_collection.append(fig_contributors_and_issues)
+fig_collection.append(
+    {
+        "plot": fig_contributors_and_issues,
+        "description": "",
+        "findings": "",
+        "section": "Usage",
+    }
+)
 
 fig_contributors_and_issues.show()
 
@@ -224,8 +374,8 @@ fig_languages = px.bar(
     y="Primary language",
     x="Count",
     color="category",
+    color_discrete_sequence=category_color_sequence,
     text="Count",
-    title="Number of Projects by Primary Programming Language and Category",
     orientation="h",
     # Sort bars by programming language counts
     category_orders={
@@ -241,10 +391,23 @@ fig_languages.update_traces(
     textposition="inside",
 )
 fig_languages.update_layout(
-    title=f"Project Primary Language Count",
+    title=f"Project Primary Language Count (click categories for further focus)",
+    # ensure all y axis labels appear
+    yaxis=dict(
+        tickmode="array",
+        tickvals=programming_language_counts["Primary language"].tolist(),
+        ticktext=programming_language_counts["Primary language"].tolist(),
+    ),
 )
 
-fig_collection.append(fig_languages)
+fig_collection.append(
+    {
+        "plot": fig_languages,
+        "description": "",
+        "findings": "",
+        "section": "General landscape",
+    }
+)
 
 # Show the plot
 fig_languages.show()
@@ -256,22 +419,48 @@ df_project_orgs = df_projects["GitHub Organization"].value_counts()
 # Create a horizontal bar chart using Plotly Express
 fig_orgs = px.bar(
     df_project_orgs[df_project_orgs > 1].sort_values(ascending=True),
-    title="GitHub Organization Project Count",
     orientation="h",
     width=1200,
-    height=700,
+    height=1000,
 )
 
 fig_orgs.update_layout(
+    title="GitHub Organization Project Count (filtered to project count >= 2)",
     xaxis_title="Projects Count",
     showlegend=False,
+    yaxis=dict(
+        tickmode="array",
+        tickvals=df_project_orgs.index.tolist(),
+        ticktext=df_project_orgs.index.tolist(),
+    ),
 )
 
-fig_collection.append(fig_orgs)
+fig_collection.append(
+    {
+        "plot": fig_orgs,
+        "description": "",
+        "findings": "",
+        "section": "General landscape",
+    }
+)
 
 # Show the plot
 fig_orgs.show()
 # -
+
+# organize figures by their sections and the order in which they appeared in this notebook
+fig_collection_grouped = {
+    key: [
+        {
+            "plot": entry["plot"],
+            "description": entry["description"],
+            "findings": entry["findings"],
+        }
+        for entry in group
+    ]
+    for key, group in itertools.groupby(fig_collection, key=lambda x: x["section"])
+}
+fig_collection_grouped.keys()
 
 cdn_included = False
 with open(f"{export_dir}/report.html", "w") as f:
@@ -289,10 +478,35 @@ with open(f"{export_dir}/report.html", "w") as f:
 
 <body>
     <div id='content'>
-        <h1>Cytomining Ecosystem Software Landscape Analysis Report</h1>
+        <h1>Cytomining Ecosystem Software Landscape Analysis - Focused Report</h1>
+        
+        <p>This is a focused report to help describe landscape elements related to project user base size, usage,
+            and maturity for the Cytomining Ecosystem.</p>
     """
     )
-    f.write("<strong>Selected dataset table columns</strong><br><br>")
+
+    for section, figures in fig_collection_grouped.items():
+        f.write(f"<h2>{section}</h2>")
+        for figure in figures:
+            f.write(figure["description"])
+            f.write("<br><br>")
+            f.write(
+                figure["plot"].to_html(
+                    full_html=False,
+                    include_plotlyjs="cdn" if not cdn_included else False,
+                )
+            )
+            f.write("<br><br>")
+            f.write(figure["findings"])
+            cdn_included = True
+
+    f.write(
+        """
+    <h2>Table with selected dataset columns</h2>
+    <p>The table below may be used to search and view a selected number of columns from the dataset.</p>
+    """
+    )
+
     # write an itable to the page
     f.write(
         to_html_datatable(
@@ -315,18 +529,10 @@ with open(f"{export_dir}/report.html", "w") as f:
             maxBytes=0,
         )
     )
-    f.write("<br><br>")
-    for fig in fig_collection:
-        f.write(
-            fig.to_html(
-                full_html=False, include_plotlyjs="cdn" if not cdn_included else False
-            )
-        )
-        f.write("<br><br>")
     f.write("</body></html>")
 
 # +
-# capture the html page as a png export
+# capture the html page as a png export as a backup
 
 # allow for nested asyncio ops
 nest_asyncio.apply()
@@ -338,7 +544,7 @@ async def capture_screenshot(file_path, output_path):
     browser = await launch(headless=True)
     page = await browser.newPage()
     # set the size of the capture
-    await page.setViewport({"width": 1400, "height": 5200})
+    await page.setViewport({"width": 1400, "height": 5800})
     await page.goto(f"file://{file_path}")
 
     await page.screenshot({"path": output_path})
