@@ -67,14 +67,14 @@ section_descriptions = {
     This section helps visualize the relative user base size and age of projects.
     """,
     "Maturity": """
-    This section seeks to demonstrate relative project maturity by leveraging age, 
+    This section seeks to demonstrate relative project maturity by leveraging age,
     relative activity, GitHub stars, and total lines of code.
     """,
     "Usage": """
     This section portrays relative project usage through GitHub watchers, forks, contributor and issue counts.
     """,
     "General landscape": """
-    This section visualizes broader aspects of the software landscape such as primary language preference and 
+    This section visualizes broader aspects of the software landscape such as primary language preference and
     GitHub organization metrics.
     """,
 }
@@ -141,8 +141,8 @@ fig_collection.append(
         """,
         "findings": """
         We observe that projects of greater age are not always those with the most stars.
-        Projects of <code>loi-focus</code> category are generally 
-        in an early state of their user base (both in age and stars), 
+        Projects of <code>loi-focus</code> category are generally
+        in an early state of their user base (both in age and stars),
         relative to other projects.
         """,
         "section": "User base",
@@ -285,7 +285,7 @@ fig_collection.append(
         potential decay for projects which may have been popular at one point but are no longer maintained.
         """,
         "findings": """
-        We find that relevant open source, microscopy analysis tools, and tools of <code>loi-focus</code> are 
+        We find that relevant open source, microscopy analysis tools, and tools of <code>loi-focus</code> are
         all recently updated. Adjacent tools demonstrate historical usage but are somewhat less frequently maintained.
         Many tools from GitHub queries show a lack of updates for greater than 2 years.
         """,
@@ -331,7 +331,7 @@ fig_collection.append(
     {
         "plot": fig_network_and_subscribers,
         "description": """
-        This plot shows project GitHub watcher and GitHub fork count 
+        This plot shows project GitHub watcher and GitHub fork count
         as a way to demonstrate relative usage.
         """,
         "findings": """
@@ -507,7 +507,7 @@ fig_collection.append(
     {
         "plot": fig_orgs,
         "description": """
-        This plot shows the count of projects per GitHub organization (a collection of repositories) 
+        This plot shows the count of projects per GitHub organization (a collection of repositories)
         for those organizations with more than 2 projects.
         """,
         "findings": """
@@ -601,8 +601,8 @@ with open(f"{export_dir}/report.html", "w") as f:
 <body>
     <div id='content'>
         <h1>Cytomining Ecosystem Software Landscape Analysis - Focused Report</h1>
-        
-        <p>This is a focused report to help describe landscape elements related to project user base size, usage, 
+
+        <p>This is a focused report to help describe landscape elements related to project user base size, usage,
         maturity, and general landscape for the Cytomining Ecosystem.</p>
     """
     )

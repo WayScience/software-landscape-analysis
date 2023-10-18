@@ -61,3 +61,6 @@ verbose = true
 
 [tool.isort]
 profile = "black"
+
+[tool.codespell]
+ignore-words=".codespell-ignore"
