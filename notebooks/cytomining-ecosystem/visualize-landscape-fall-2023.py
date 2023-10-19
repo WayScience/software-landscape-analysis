@@ -512,11 +512,11 @@ fig_collection.append(
         This plot shows the count of projects per GitHub organization (a collection of repositories)
         for those organizations with more than 2 projects.
         """,
-        "findings": """
-        Here we find that the Theis Lab, UC Davis Bioinformatics Training, and Teich Lab are at the top of this listing.
-        Cytomining is also near the top of the list, which is a code base that supports essential functionality that does not exist in 
-        any other open source organization that is actively maintained.
-        """,
+        "findings": (
+            "Here we find that the Theis Lab, UC Davis Bioinformatics Training, and Teich Lab are at the top of this listing. "  # codespell-ignore
+            "Cytomining is also near the top of the list, which is a code base that supports essential functionality that does not exist in "
+            "any other open source organization that is actively maintained."
+        ),
         "section": "General landscape",
     }
 )
@@ -557,10 +557,10 @@ fig_collection.append(
         "description": """
         This plot shows the sum of GitHub stars per GitHub organization for those with a sum total of stars greater than 100.
         """,
-        "findings": """
-        Here we can observe that scverse, Theis Lab, and Satija Lab organizations hold the top count of GitHub stars.
-        The Cytomining organization is found near the middle of this visualization, indicating similar popularity and early success in audience outreach amidst those within the related landscape.
-        """,
+        "findings": (
+            "Here we can observe that scverse, Theis Lab, and Satija Lab organizations hold the top count of GitHub stars. "  # codespell-ignore
+            "The Cytomining organization is found near the middle of this visualization, indicating similar popularity and early success in audience outreach amidst those within the related landscape."
+        ),
         "section": "General landscape",
     }
 )
@@ -681,7 +681,7 @@ async def capture_screenshot(file_path, output_path):
     browser = await launch(headless=True)
     page = await browser.newPage()
     # set the size of the capture
-    await page.setViewport({"width": 1400, "height": 8500})
+    await page.setViewport({"width": 1400, "height": 8700})
     await page.goto(f"file://{file_path}")
 
     await page.screenshot({"path": output_path})
@@ -695,3 +695,6 @@ asyncio.get_event_loop().run_until_complete(
         output_path=f"{export_dir}/report.png",
     )
 )
+# -
+
+
