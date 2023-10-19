@@ -178,8 +178,8 @@ fig_collection.append(
         """,
         "findings": """
         Here we can see the <code>relevant open source</code> category far outsize other categories.
-        Within the microscopy analysis tools category we can observe that Napari has many more stars than others.
-        Projects of <code>loi-focus</code> are nearly invisible in comparison to other projects with
+        Within the <code>microscopy analysis tools</code> category we observe that Napari has many more stars than others.
+        Projects of the <code>loi-focus</code> category are emerging with a growing community base, but not are not as established as other tools with
         much greater age.
         """,
         "section": "User base",
@@ -234,12 +234,11 @@ fig_collection.append(
         "plot": fig_maturity_loc_and_age,
         "description": """
         This plot shows the lines of code (LoC) and age in years to help indicate relative project maturity.
-        Lines of code in this case are the sum total of GitHub detected programming language dialects.
+        Lines of code in this case are the sum total of all detected programming languages in the latest version of the GitHub repository.
         """,
         "findings": """
-        We can observe that many tools within the Cytomining Ecosystem landscape reside within a certain range
-        of total LoC and that projects of greater age do not necessarily have more code.
-        Tools of <code>loi-focus</code> are nearby the LoC of other tools with greater age.
+        We observe that many tools within the Cytomining Ecosystem landscape reside within a tight range
+        of total lines of code (relative to others), and that projects of greater age do not necessarily have more code.
         """,
         "section": "Maturity",
     }
@@ -289,6 +288,8 @@ fig_collection.append(
         We find that relevant open source, microscopy analysis tools, and tools of <code>loi-focus</code> are
         all recently updated. Adjacent tools demonstrate historical usage but are somewhat less frequently maintained.
         Many tools from GitHub queries show a lack of updates for greater than 2 years.
+        We hypothesize that many GitHub projects re-invent functionality related to the Cytomining Ecosystem.
+        These projects are sometimes abandoned after authors perform bespoke or one-time analyses.
         """,
         "section": "Maturity",
     }
@@ -336,8 +337,8 @@ fig_collection.append(
         as a way to demonstrate relative usage.
         """,
         "findings": """
-        We can see a wide variety of project watcher and fork count depending on the category involved.
-        Generally, projects of <code>loi-focus</code> are at an earlier stage and thus have fewer forks and watchers.
+        We see a wide variety of project watcher and fork count depending on the category.
+        Generally, projects of <code>loi-focus</code> are emerging tools that are at an earlier stage and thus have fewer forks and watchers.
         """,
         "section": "Usage",
     }
@@ -384,8 +385,8 @@ fig_collection.append(
         """,
         "findings": """
         We find that many projects have a high contributor and issue count.
-        A few Cytomining Ecosystem adjacent and microscopy analysis tools appear to be on a trend towards
-        relevant open source tools.
+        A few examples in the <code>adjacent tools<code> and <code>microscopy analysis tools<code> categories are trending toward tools
+        in the <code>relevant open source<code> category.
         Projects of <code>loi-focus</code> are nearby many landscape neighbors in the middle of this plot.
         """,
         "section": "Usage",
@@ -513,6 +514,8 @@ fig_collection.append(
         """,
         "findings": """
         Here we find that the Theis Lab, UC Davis Bioinformatics Training, and Teich Lab are at the top of this listing.
+        Cytomining is also near the top of the list, which is a code base that supports essential functionality that does not exist in 
+        any other open source organization that is actively maintained.
         """,
         "section": "General landscape",
     }
@@ -556,6 +559,7 @@ fig_collection.append(
         """,
         "findings": """
         Here we can observe that scverse, Theis Lab, and Satija Lab organizations hold the top count of GitHub stars.
+        The Cytomining organization is found near the middle of this visualization, indicating similar popularity and early success in audience outreach amidst those within the related landscape.
         """,
         "section": "General landscape",
     }
