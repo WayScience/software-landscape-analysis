@@ -538,8 +538,8 @@ fig_collection.append(
         """,
         "findings": """
         We find that many projects have a high contributor and issue count.
-        A few examples in the <code>adjacent tools<code> and <code>microscopy analysis tools<code> categories are trending toward tools
-        in the <code>relevant open source<code> category.
+        A few examples in the <code>adjacent tools</code> and <code>microscopy analysis tools</code> categories are trending toward tools
+        in the <code>relevant open source</code> category.
         Projects of <code>loi-focus</code> are nearby many landscape neighbors in the middle of this plot.
         """,
         "section": "Usage",
@@ -818,9 +818,10 @@ with open(f"{export_dir}/report.html", "w") as f:
             style="height:600px;float:left;",
             classes="display",
             maxBytes=0,
-        )
+            # fix a malformed attributes error built into the html content
+        ).replace('class="display"style="', 'class="display" style="')
     )
-    f.write("</body></html>")
+    f.write("</div></body></html>")
 
 # +
 # capture the html page as a png export as a backup
