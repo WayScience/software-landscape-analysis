@@ -40,6 +40,7 @@ import plotly.io as pio
 import pytz
 from box import Box
 from itables import to_html_datatable
+from pandas.api.types import CategoricalDtype
 from plotly.offline import plot
 from plotly.subplots import make_subplots
 from pyppeteer import launch
@@ -60,7 +61,16 @@ export_dir = "../../docs/cytomining-ecosystem"
 
 # set the color sequence for category-based charts
 category_color_sequence = pc.qualitative.Dark2[1:6]
-category_color_sequence = pc.qualitative.Dark2[1:6]
+
+# set a custom order for the category col
+custom_order = [
+    "relevant-open-source",
+    "adjacent-tools",
+    "microscopy-analysis-tools",
+    "github-query-result",
+    "loi-focus",
+]
+report_category_dtype = CategoricalDtype(categories=custom_order, ordered=True)
 
 # set section descriptions
 section_descriptions = {
@@ -81,13 +91,12 @@ section_descriptions = {
 }
 # -
 
-pc.qualitative.T10[5:10]
-
 # read in project metric data
 df_projects = pd.read_parquet("data/project-github-metrics.parquet")
 df_projects = df_projects.reset_index(drop=True)
 df_projects.info()
 
+# +
 # set a category column to the first category from a potential list of categories
 df_projects["category"] = df_projects["Project Landscape Category"].str[0]
 # remove prefix from certain categories for brevity
@@ -96,7 +105,10 @@ df_projects["category"] = (
     .str.replace("cytomining-ecosystem-", "")
     .str.replace("related-tools-", "")
 )
+df_projects["category"] = df_projects["category"].astype(report_category_dtype)
+
 df_projects.head(5)
+# -
 
 # create list to collect the figures for later display together
 fig_collection = []
@@ -247,7 +259,7 @@ df_projects["total lines of GitHub detected code (Log Scale)"] = np.log(
 )
 
 fig_maturity_loc_and_age = px.scatter(
-    df_projects[df_projects["category"] != "loi-focus"],
+    df_projects[df_projects["category"] != "loi-focus"].sort_values(by="category"),
     hover_name="Project Name",
     x="Duration Created to Now in Years",
     y="total lines of GitHub detected code (Log Scale)",
@@ -323,7 +335,7 @@ fig_maturity_loc_and_age.show()
 """
 
 fig_maturity_latest_commit = px.scatter(
-    df_projects[df_projects["category"] != "loi-focus"],
+    df_projects[df_projects["category"] != "loi-focus"].sort_values(by="category"),
     hover_name="Project Name",
     x="Date Most Recent Commit",
     y="GitHub Stars (Log Scale)",
@@ -400,7 +412,7 @@ df_projects["GitHub Forks (Log Scale)"] = np.log(
 
 
 fig_network_and_subscribers = px.scatter(
-    df_projects[df_projects["category"] != "loi-focus"],
+    df_projects[df_projects["category"] != "loi-focus"].sort_values(by="category"),
     hover_name="Project Name",
     x="GitHub Forks (Log Scale)",
     y="GitHub Subscribers",
@@ -476,7 +488,7 @@ df_projects["GitHub Open Issues (Log Scale)"] = np.log(
 
 
 fig_contributors_and_issues = px.scatter(
-    df_projects[df_projects["category"] != "loi-focus"],
+    df_projects[df_projects["category"] != "loi-focus"].sort_values(by="category"),
     hover_name="Project Name",
     x="GitHub Open Issues (Log Scale)",
     y="GitHub Contributors",
@@ -573,7 +585,8 @@ programming_language_counts = programming_language_counts.sort_values(
     by="Count", ascending=False
 )
 
-# Create a horizontal bar chart using Plotly Express
+
+# Create a horizontal bar chart
 fig_languages = px.bar(
     grouped_data.sort_values(by="category"),
     y="Primary language",
