@@ -141,7 +141,7 @@ fig_collection.append(
         """,
         "findings": """
         We observe that projects of greater age are not always those with the most stars.
-        Projects of <code>loi-focus</code> category are generally
+        Projects of the <code>loi-focus</code> category  (e.g., pycytominer) are generally
         in an early state of their user base (both in age and stars),
         relative to other projects.
         """,
