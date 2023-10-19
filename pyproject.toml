@@ -63,4 +63,6 @@ verbose = true
 profile = "black"
 
 [tool.codespell]
-ignore-words=".codespell-ignore"
+# add capabilities for inline ignore for codespell linting
+# referenced from: https://github.com/codespell-project/codespell/issues/1212
+ignore-regex=".{1024}|.*codespell-ignore.*"
