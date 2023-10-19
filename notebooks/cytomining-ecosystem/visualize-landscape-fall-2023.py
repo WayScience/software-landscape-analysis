@@ -59,7 +59,8 @@ title_prefix = "Cytomining Ecosystem Software Landscape Analysis"
 export_dir = "../../docs/cytomining-ecosystem"
 
 # set the color sequence for category-based charts
-category_color_sequence = pc.qualitative.T10[:5]
+category_color_sequence = pc.qualitative.Dark2[1:6]
+category_color_sequence = pc.qualitative.Dark2[1:6]
 
 # set section descriptions
 section_descriptions = {
@@ -79,6 +80,8 @@ section_descriptions = {
     """,
 }
 # -
+
+pc.qualitative.T10[5:10]
 
 # read in project metric data
 df_projects = pd.read_parquet("data/project-github-metrics.parquet")
@@ -112,16 +115,50 @@ df_projects["GitHub Stars (Log Scale)"] = np.log(
 )
 
 fig_usage_stars = px.scatter(
-    df_projects.sort_values(by="category"),
+    df_projects[df_projects["category"] != "loi-focus"],
     hover_name="Project Name",
     x="Duration Created to Now in Years",
     y="GitHub Stars (Log Scale)",
+    color="category",
     width=1200,
     height=500,
-    color="category",
     color_discrete_sequence=category_color_sequence,
+    symbol="category",
+    symbol_sequence=["circle", "circle", "circle", "circle"],
+    render_mode="webgl",
 )
 
+# add loi-focus trace
+fig_usage_stars.add_traces(
+    px.scatter(
+        df_projects[df_projects["category"] == "loi-focus"],
+        hover_name="Project Name",
+        x="Duration Created to Now in Years",
+        y="GitHub Stars (Log Scale)",
+        width=1200,
+        height=500,
+        color="category",
+        color_discrete_sequence=[category_color_sequence[4]],
+        symbol_sequence=["star-diamond"],
+        render_mode="webgl",
+    )
+    .update_traces(
+        marker=dict(
+            size=12,
+            line=dict(color="black", width=2),
+        )
+    )
+    .data
+)
+
+
+# fig_usage_stars.for_each_trace(lambda t: t.update(name='loi-focus') if t.name == 'scatter' else ())
+
+# Get the data from the created trace
+# Set the size of the markers
+
+# Add the custom trace to the existing figure
+# fig_usage_stars.add_traces(custom_trace.data)
 
 # customize the chart layout
 fig_usage_stars.update_layout(
@@ -209,9 +246,8 @@ df_projects["total lines of GitHub detected code (Log Scale)"] = np.log(
     )
 )
 
-
 fig_maturity_loc_and_age = px.scatter(
-    df_projects.sort_values(by="category"),
+    df_projects[df_projects["category"] != "loi-focus"],
     hover_name="Project Name",
     x="Duration Created to Now in Years",
     y="total lines of GitHub detected code (Log Scale)",
@@ -219,6 +255,32 @@ fig_maturity_loc_and_age = px.scatter(
     height=500,
     color="category",
     color_discrete_sequence=category_color_sequence,
+    symbol="category",
+    symbol_sequence=["circle", "circle", "circle", "circle"],
+    render_mode="webgl",
+)
+
+# add loi-focus trace
+fig_maturity_loc_and_age.add_traces(
+    px.scatter(
+        df_projects[df_projects["category"] == "loi-focus"],
+        hover_name="Project Name",
+        x="Duration Created to Now in Years",
+        y="total lines of GitHub detected code (Log Scale)",
+        width=1200,
+        height=500,
+        color="category",
+        color_discrete_sequence=[category_color_sequence[4]],
+        symbol_sequence=["star-diamond"],
+        render_mode="webgl",
+    )
+    .update_traces(
+        marker=dict(
+            size=12,
+            line=dict(color="black", width=2),
+        )
+    )
+    .data
 )
 
 
@@ -261,7 +323,7 @@ fig_maturity_loc_and_age.show()
 """
 
 fig_maturity_latest_commit = px.scatter(
-    df_projects.sort_values(by="category"),
+    df_projects[df_projects["category"] != "loi-focus"],
     hover_name="Project Name",
     x="Date Most Recent Commit",
     y="GitHub Stars (Log Scale)",
@@ -269,6 +331,32 @@ fig_maturity_latest_commit = px.scatter(
     height=500,
     color="category",
     color_discrete_sequence=category_color_sequence,
+    symbol="category",
+    symbol_sequence=["circle", "circle", "circle", "circle"],
+    render_mode="webgl",
+)
+
+# add loi-focus trace
+fig_maturity_latest_commit.add_traces(
+    px.scatter(
+        df_projects[df_projects["category"] == "loi-focus"],
+        hover_name="Project Name",
+        x="Date Most Recent Commit",
+        y="GitHub Stars (Log Scale)",
+        width=1200,
+        height=500,
+        color="category",
+        color_discrete_sequence=[category_color_sequence[4]],
+        symbol_sequence=["star-diamond"],
+        render_mode="webgl",
+    )
+    .update_traces(
+        marker=dict(
+            size=12,
+            line=dict(color="black", width=2),
+        )
+    )
+    .data
 )
 
 
@@ -310,8 +398,9 @@ df_projects["GitHub Forks (Log Scale)"] = np.log(
     )
 )
 
+
 fig_network_and_subscribers = px.scatter(
-    df_projects.sort_values(by="category"),
+    df_projects[df_projects["category"] != "loi-focus"],
     hover_name="Project Name",
     x="GitHub Forks (Log Scale)",
     y="GitHub Subscribers",
@@ -319,6 +408,32 @@ fig_network_and_subscribers = px.scatter(
     height=500,
     color="category",
     color_discrete_sequence=category_color_sequence,
+    symbol="category",
+    symbol_sequence=["circle", "circle", "circle", "circle"],
+    render_mode="webgl",
+)
+
+# add loi-focus trace
+fig_network_and_subscribers.add_traces(
+    px.scatter(
+        df_projects[df_projects["category"] == "loi-focus"],
+        hover_name="Project Name",
+        x="GitHub Forks (Log Scale)",
+        y="GitHub Subscribers",
+        width=1200,
+        height=500,
+        color="category",
+        color_discrete_sequence=[category_color_sequence[4]],
+        symbol_sequence=["star-diamond"],
+        render_mode="webgl",
+    )
+    .update_traces(
+        marker=dict(
+            size=12,
+            line=dict(color="black", width=2),
+        )
+    )
+    .data
 )
 
 
@@ -361,7 +476,7 @@ df_projects["GitHub Open Issues (Log Scale)"] = np.log(
 
 
 fig_contributors_and_issues = px.scatter(
-    df_projects.sort_values(by="category"),
+    df_projects[df_projects["category"] != "loi-focus"],
     hover_name="Project Name",
     x="GitHub Open Issues (Log Scale)",
     y="GitHub Contributors",
@@ -369,6 +484,32 @@ fig_contributors_and_issues = px.scatter(
     height=500,
     color="category",
     color_discrete_sequence=category_color_sequence,
+    symbol="category",
+    symbol_sequence=["circle", "circle", "circle", "circle"],
+    render_mode="webgl",
+)
+
+# add loi-focus trace
+fig_contributors_and_issues.add_traces(
+    px.scatter(
+        df_projects[df_projects["category"] == "loi-focus"],
+        hover_name="Project Name",
+        x="GitHub Open Issues (Log Scale)",
+        y="GitHub Contributors",
+        width=1200,
+        height=500,
+        color="category",
+        color_discrete_sequence=[category_color_sequence[4]],
+        symbol_sequence=["star-diamond"],
+        render_mode="webgl",
+    )
+    .update_traces(
+        marker=dict(
+            size=12,
+            line=dict(color="black", width=2),
+        )
+    )
+    .data
 )
 
 
@@ -696,3 +837,5 @@ asyncio.get_event_loop().run_until_complete(
     )
 )
 # -
+
+
