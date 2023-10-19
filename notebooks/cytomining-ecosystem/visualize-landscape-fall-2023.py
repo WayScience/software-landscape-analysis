@@ -604,7 +604,7 @@ with open(f"{export_dir}/report.html", "w") as f:
 
         <p>This is a focused report to help describe landscape elements related to project user base size, usage,
         maturity, and general landscape for the Cytomining Ecosystem.</p>
-        
+
         <p>Code related to this effort may be found at: <a
                 href="https://github.com/WayScience/software-landscape-analysis">https://github.com/WayScience/software-landscape-analysis</a>.
         </p>
