@@ -143,7 +143,8 @@ fig_collection.append(
         We observe that projects of greater age are not always those with the most stars.
         Projects of the <code>loi-focus</code> category  (e.g., pycytominer) are generally
         in an early state of their user base (both in age and stars),
-        relative to other projects.
+        relative to other projects (e.g., Napari). We note the limitations of using stars
+        to gauge community engagement given many projects do not focus efforts on developers.
         """,
         "section": "User base",
     }
