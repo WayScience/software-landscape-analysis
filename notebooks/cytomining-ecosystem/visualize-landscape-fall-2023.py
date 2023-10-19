@@ -177,7 +177,7 @@ fig_collection.append(
         Click the category boxes to zoom into focus on only those projects.
         """,
         "findings": """
-        Here we can see relevant open source far outsize other categories.
+        Here we can see the <code>relevant open source</code> category far outsize other categories.
         Within the microscopy analysis tools category we can observe that Napari has many more stars than others.
         Projects of <code>loi-focus</code> are nearly invisible in comparison to other projects with
         much greater age.
