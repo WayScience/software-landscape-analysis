@@ -40,14 +40,14 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 # defines a workflow for cytomining ecosystem software landscape analysis
-[tool.poe.tasks.cytomining_ecosystem]
+[tool.poe.tasks.cytomining_ecosystem_fall_2023]
 # sets a cwd relative for the shell script below
 cwd = "notebooks/cytomining-ecosystem"
 # defines workflow through sequence of python scripts converted from jupyter notebooks
 shell = """
   python seek-landscape-entries.py &&
   python project-github-metrics.py &&
-  python visualize-landscape.py
+  python visualize-landscape-fall-2023.py
 """
 
 [tool.jupytext]
@@ -61,3 +61,8 @@ verbose = true
 
 [tool.isort]
 profile = "black"
+
+[tool.codespell]
+# add capabilities for inline ignore for codespell linting
+# referenced from: https://github.com/codespell-project/codespell/issues/1212
+ignore-regex=".{1024}|.*codespell-ignore.*"
