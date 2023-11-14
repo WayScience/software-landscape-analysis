@@ -52,6 +52,7 @@ cwd = "notebooks/cytomining-ecosystem"
 shell = """
   python seek-landscape-entries.py &&
   python project-github-metrics.py &&
+  python gather-targeted-publication-mentions.py &&
   python visualize-landscape-fall-2023.py
 """
 
