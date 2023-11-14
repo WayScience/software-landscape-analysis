@@ -65,3 +65,10 @@ references:
     identifiers: 
       - type: doi
         value: 10.5281/ZENODO.5764801
+  - title: BiorxivRetriever
+    authors:
+      - family-names: Schuster
+        given-names: Tal
+    type: software
+    license: MIT
+    url: https://github.com/TalSchuster/BiorxivRetriever/

@@ -27,6 +27,8 @@ ydata-profiling = "^4.6.0"
 ipywidgets = "^8.1.1"
 itables = "^1.6.2"
 scholarly = "^1.7.11"
+biorxiv-retriever = "^0.20.1"
+awkward = "^2.4.10"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.12.0"
