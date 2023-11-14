@@ -26,6 +26,7 @@ htmlmin = "^0.1.12"
 ydata-profiling = "^4.6.0"
 ipywidgets = "^8.1.1"
 itables = "^1.6.2"
+pypinfo = "^21.0.0"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.12.0"
