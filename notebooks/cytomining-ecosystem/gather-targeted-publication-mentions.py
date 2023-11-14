@@ -75,7 +75,7 @@ pub_metrics = loi_target_project_years.to_dict(orient="records")
 pub_metrics
 
 # +
-# expand the records with Google Scholar results from Scholarly pkg
+# expand the records with Google Scholar results from BiorxivRetriever pkg
 pub_metrics = [
     dict(
         project,
@@ -103,18 +103,18 @@ pub_metrics = [
 }
 
 # +
-# expand the records with Bioarxiv results from Scholarly pkg
-bioarxiv_retriever = BiorxivRetriever()
+# expand the records with biorxiv results from Scholarly pkg
+biorxiv_retriever = BiorxivRetriever()
 
 pub_metrics = [
     dict(
         project,
         **{
-            "bioarxiv_search_results": [
+            "biorxiv_search_results": [
                 # exclude full_text from the data we store (only use for filtering)
                 {key: val for key, val in paper.items() if key != "full_text"}
-                # gather results from bioarxiv search query
-                for paper in bioarxiv_retriever.query(
+                # gather results from biorxiv search query
+                for paper in biorxiv_retriever.query(
                     f'"{project["Project Name"]}"', metadata=True, full_text=True
                 )
                 # only include the paper result if the project name is found within the full text
@@ -127,7 +127,7 @@ pub_metrics = [
 
 # show the len of the results for each project
 {
-    project["Project Name"]: len(project["bioarxiv_search_results"])
+    project["Project Name"]: len(project["biorxiv_search_results"])
     for project in pub_metrics
 }
 # -
@@ -154,7 +154,7 @@ pub_metrics = [
                             ]
                             + [
                                 article["title"]
-                                for article in project["bioarxiv_search_results"]
+                                for article in project["biorxiv_search_results"]
                             ]
                         )
                     ]
@@ -213,7 +213,7 @@ pub_metrics = [
         project,
         **{
             "google_scholar_count": len(project["google_scholar_search_results"]),
-            "bioarxiv_count": len(project["bioarxiv_search_results"]),
+            "biorxiv_count": len(project["biorxiv_search_results"]),
             "total_pub_count": len(project["all_article_titles"]),
             "total_pub_count_non_record_linked": len(
                 project["all_article_titles_record_linked_removed"]
@@ -234,7 +234,7 @@ with duckdb.connect() as ddb:
         pubstats."Project Name",
         pubstats."Date Created Year",
         pubstats."google_scholar_count",
-        pubstats."bioarxiv_count",
+        pubstats."biorxiv_count",
         pubstats."total_pub_count",
         pubstats."total_pub_count_non_record_linked"
     FROM read_parquet('data/loi-target-project-publication-metrics.parquet') as pubstats
