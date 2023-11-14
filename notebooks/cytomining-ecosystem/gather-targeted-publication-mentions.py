@@ -233,7 +233,6 @@ with duckdb.connect() as ddb:
     SELECT
         pubstats."Project Name",
         pubstats."Date Created Year",
-        pubstats."Date Created Year",
         pubstats."google_scholar_count",
         pubstats."bioarxiv_count",
         pubstats."total_pub_count",
