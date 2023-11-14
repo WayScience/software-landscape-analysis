@@ -44,3 +44,24 @@ references:
     notes: >-
       scRNA-tools database table extract is referenced as part of analysis found under notebooks/cytomining-ecosystem.
       An export of the data is saved as: notebooks/cytomining-ecosystem/scRNA-Tools-tableExport-2023-10-12.csv
+  - title: scholarly
+    abstract: Retrieve author and publication information from Google Scholar in a friendly, Pythonic way without having to worry about CAPTCHAs!
+    type: software
+    license: The Unlicense, Open Access
+    version: 1.5.0
+    url: https://zenodo.org/record/5764801
+    keywords: 
+      - citations publication-data scholarly-communications citation-network citation-index scholarly-articles citation-analysis scholar googlescholar
+    authors: 
+      - family-names: Cholewiak
+        given-names: Steven
+      - family-names: Ipeirotis
+        given-names: Panos
+      - family-names: Silva
+        given-names: Victor
+      - family-names: Kannawadi
+        given-names: Arun
+    date-released: 2023-01-16
+    identifiers: 
+      - type: doi
+        value: 10.5281/ZENODO.5764801
