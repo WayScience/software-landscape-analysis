@@ -50,7 +50,7 @@ project_sql_str = ", ".join(["'" + project + "'" for project in loi_target_proje
 with duckdb.connect() as ddb:
     loi_target_project_years = ddb.query(
         f"""
-    SELECT 
+    SELECT
         ghstats."Project Name",
         ghstats."Date Created"
     FROM read_parquet('data/project-github-metrics.parquet') as ghstats
@@ -160,7 +160,7 @@ pub_metrics = [
                     ]
                 )
             ),
-        }
+        },
     )
     for project in pub_metrics
 ]
@@ -200,7 +200,7 @@ pub_metrics = [
             "all_article_titles_record_linked_removed": return_distinct_values_by_threshold(
                 project["all_article_titles"], threshold=90
             ),
-        }
+        },
     )
     for project in pub_metrics
 ]
@@ -230,7 +230,7 @@ ak.to_parquet(
 with duckdb.connect() as ddb:
     pub_totals = ddb.query(
         f"""
-    SELECT 
+    SELECT
         pubstats."Project Name",
         pubstats."Date Created Year",
         pubstats."Date Created Year",

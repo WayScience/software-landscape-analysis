@@ -50,9 +50,9 @@ references:
     license: The Unlicense, Open Access
     version: 1.5.0
     url: https://zenodo.org/record/5764801
-    keywords: 
+    keywords:
       - citations publication-data scholarly-communications citation-network citation-index scholarly-articles citation-analysis scholar googlescholar
-    authors: 
+    authors:
       - family-names: Cholewiak
         given-names: Steven
       - family-names: Ipeirotis
@@ -62,7 +62,7 @@ references:
       - family-names: Kannawadi
         given-names: Arun
     date-released: 2023-01-16
-    identifiers: 
+    identifiers:
       - type: doi
         value: 10.5281/ZENODO.5764801
   - title: BiorxivRetriever
