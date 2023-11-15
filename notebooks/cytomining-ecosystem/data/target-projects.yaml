@@ -18,12 +18,6 @@ projects:
     category:
       - loi-focus
       - cytomining-ecosystem
-  - homepage_url: https://github.com/WayScience/IDR_stream
-    name: IDR_Stream
-    repo_url: https://github.com/WayScience/IDR_stream
-    category:
-      - loi-focus
-      - cytomining-ecosystem
   - name: Pandas
     homepage_url: https://pandas.pydata.org/
     repo_url: https://github.com/pandas-dev/pandas

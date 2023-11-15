@@ -26,6 +26,11 @@ htmlmin = "^0.1.12"
 ydata-profiling = "^4.6.0"
 ipywidgets = "^8.1.1"
 itables = "^1.6.2"
+scholarly = "^1.7.11"
+biorxiv-retriever = "^0.20.1"
+awkward = "^2.4.10"
+thefuzz = "^0.20.0"
+fsspec = "^2023.10.0"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.12.0"
@@ -47,6 +52,7 @@ cwd = "notebooks/cytomining-ecosystem"
 shell = """
   python seek-landscape-entries.py &&
   python project-github-metrics.py &&
+  python gather-targeted-publication-mentions.py &&
   python visualize-landscape-fall-2023.py
 """
 
