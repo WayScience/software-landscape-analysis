@@ -134,7 +134,7 @@ pkg_metrics = [
                     check=True,
                 ).stdout
             )["rows"],
-        }
+        },
     )
     for project in pkg_metrics
 ]
@@ -210,7 +210,7 @@ pkg_metrics = [
                 ),
                 package_name=project["Project Name"].lower(),
             ),
-        }
+        },
     )
     for project in pkg_metrics
 ]
@@ -261,7 +261,7 @@ pkg_metrics = [
             )
             if project["conda_downloads_by_month"]
             else None,
-        }
+        },
     )
     for project in pkg_metrics
 ]
