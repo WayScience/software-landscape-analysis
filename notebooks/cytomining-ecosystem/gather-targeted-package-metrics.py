@@ -65,7 +65,7 @@ pkg_metrics = [
                     capture_output=True,
                     check=True,
                 ).stdout
-            )["rows"]["download_count"],
+            )["rows"],
             # gather downloads by python version
             "pypi_downloads_by_pyversion": json.loads(
                 subprocess.run(
@@ -86,6 +86,13 @@ pkg_metrics = [
             "pypi_downloads_by_system_and_distro": json.loads(
                 subprocess.run(
                     ["pypinfo", "--json", project["Project Name"], "system", "distro"],
+                    capture_output=True,
+                    check=True,
+                ).stdout
+            )["rows"],
+            "pypi_downloads_by_year_and_month": json.loads(
+                subprocess.run(
+                    ["pypinfo", "--json", project["Project Name"], "year", "month"],
                     capture_output=True,
                     check=True,
                 ).stdout
