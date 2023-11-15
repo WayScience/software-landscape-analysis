@@ -25,6 +25,7 @@ import json
 import os
 import subprocess
 from datetime import datetime
+from typing import Any, Dict
 
 import awkward as ak
 import condastats.cli as condastats_cli
@@ -138,41 +139,84 @@ pkg_metrics = [
 ]
 ak.Array(pkg_metrics)
 
+
+# +
 # gather various conda metrics through condastats (seeks conda-forge and bioconda data)
+def condastats_handler(
+    condastats_result: Dict[Any, Any], package_name: str
+) -> Dict[str, Any]:
+    """
+    Handle the results of condastats in a way that allows for data
+    gathering without interruption on exception cases (such as no results).
+    """
+
+    # if we have more than one result
+    if len(condastats_result) > 0:
+        # organize the result into a single dimension using the package
+        single_dim_result = condastats_result.xs(package_name)
+        # if we have a series, cast to a dictionary and return
+        if isinstance(single_dim_result, pd.core.series.Series):
+            return single_dim_result.to_dict()
+        # otherwise return just the single dimension result (usually a number)
+        return single_dim_result
+
+    # otherwise return none where we didn't find results
+    return None
+
+
 pkg_metrics = [
     dict(
         project,
         **{
             # gather total downloads
-            "conda_downloads_total": condastats_cli.overall(
-                package=project["Project Name"],
-                start_month=project["Date Created YYYY-MM"],
-            ).to_dict(),
+            "conda_downloads_total": condastats_handler(
+                condastats_result=condastats_cli.overall(
+                    package=project["Project Name"].lower(),
+                    start_month=project["Date Created YYYY-MM"],
+                ),
+                package_name=project["Project Name"].lower(),
+            ),
             # gather downloads by month
-            "conda_downloads_by_month": condastats_cli.overall(
-                package=project["Project Name"],
-                start_month=project["Date Created YYYY-MM"],
-                monthly=True,
-            ).to_dict(),
+            "conda_downloads_by_month": condastats_handler(
+                condastats_result=condastats_cli.overall(
+                    package=project["Project Name"].lower(),
+                    start_month=project["Date Created YYYY-MM"],
+                    monthly=True,
+                ),
+                package_name=project["Project Name"].lower(),
+            ),
             # gather downloads by python version
-            "conda_downloads_by_pyversion": condastats_cli.pkg_python(
-                package=project["Project Name"],
-                start_month=project["Date Created YYYY-MM"],
-            ).to_dict(),
+            "conda_downloads_by_pyversion": condastats_handler(
+                condastats_result=condastats_cli.pkg_python(
+                    package=project["Project Name"].lower(),
+                    start_month=project["Date Created YYYY-MM"],
+                ),
+                package_name=project["Project Name"].lower(),
+            ),
             # gather downloads by version
-            "conda_downloads_by_version": condastats_cli.pkg_version(
-                package=project["Project Name"],
-                start_month=project["Date Created YYYY-MM"],
-            ).to_dict(),
+            "conda_downloads_by_version": condastats_handler(
+                condastats_result=condastats_cli.pkg_version(
+                    package=project["Project Name"].lower(),
+                    start_month=project["Date Created YYYY-MM"],
+                ),
+                package_name=project["Project Name"].lower(),
+            ),
             # gather downloads by system and distro type
-            "conda_downloads_by_platform": condastats_cli.pkg_platform(
-                package=project["Project Name"],
-                start_month=project["Date Created YYYY-MM"],
-            ).to_dict(),
+            "conda_downloads_by_platform": condastats_handler(
+                condastats_result=condastats_cli.pkg_platform(
+                    package=project["Project Name"].lower(),
+                    start_month=project["Date Created YYYY-MM"],
+                ),
+                package_name=project["Project Name"].lower(),
+            ),
         }
     )
     for project in pkg_metrics
 ]
 ak.Array(pkg_metrics)
+# -
+
+# export to parquet file
+ak.to_parquet(array=ak.Array(pkg_metrics), destination="data/loi-target-project-package-metrics.parquet")
 
 
