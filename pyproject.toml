@@ -32,6 +32,7 @@ awkward = "^2.4.10"
 thefuzz = "^0.20.0"
 fsspec = "^2023.10.0"
 pypinfo = "^21.0.0"
+condastats = "^0.2.1"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.12.0"
