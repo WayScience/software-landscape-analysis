@@ -27,6 +27,8 @@ import subprocess
 from datetime import datetime
 
 import awkward as ak
+import condastats.cli as condastats_cli
+import duckdb
 import numpy as np
 import pandas as pd
 import pytz
@@ -43,10 +45,33 @@ loi_target_projects = [
     if "loi-focus" in project["category"]
 ]
 loi_target_projects
+
+# +
+# create a str for targeting the specific projects
+project_sql_str = ", ".join(["'" + project + "'" for project in loi_target_projects])
+
+# filter results of github stats to find the project creation date for use in filtering below
+with duckdb.connect() as ddb:
+    loi_target_project_years = ddb.query(
+        f"""
+    SELECT
+        ghstats."Project Name",
+        ghstats."Date Created"
+    FROM read_parquet('data/project-github-metrics.parquet') as ghstats
+    WHERE LOWER(ghstats."Project Name") in ({project_sql_str})
+    """,
+    ).df()
+
+loi_target_project_years
 # -
 
-# form a data structure for gathering package data
-pkg_metrics = [{"Project Name": project} for project in loi_target_projects]
+# add a year created
+loi_target_project_years["Date Created YYYY-MM"] = loi_target_project_years[
+    "Date Created"
+].dt.strftime("%Y-%m")
+pkg_metrics = loi_target_project_years[
+    ["Project Name", "Date Created YYYY-MM"]
+].to_dict(orient="records")
 pkg_metrics
 
 # gather various PyPI metrics through pypinfo
@@ -90,9 +115,19 @@ pkg_metrics = [
                     check=True,
                 ).stdout
             )["rows"],
-            "pypi_downloads_by_year_and_month": json.loads(
+            # gather downloads by year and month, ordered by month
+            "pypi_downloads_by_month": json.loads(
                 subprocess.run(
-                    ["pypinfo", "--json", project["Project Name"], "year", "month"],
+                    [
+                        "pypinfo",
+                        "--json",
+                        "--start-date",
+                        project["Date Created YYYY-MM"],
+                        "--order",
+                        "download_month",
+                        project["Project Name"],
+                        "month",
+                    ],
                     capture_output=True,
                     check=True,
                 ).stdout
@@ -103,6 +138,6 @@ pkg_metrics = [
 ]
 ak.Array(pkg_metrics)
 
-
+condastats_cli.overall(package="pycytominer")
 
 
