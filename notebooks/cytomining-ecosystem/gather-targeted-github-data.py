@@ -26,9 +26,12 @@
 # Set an environment variable named `LANDSCAPE_ANALYSIS_GH_TOKEN` to a [GitHub access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens). E.g.: `export LANDSCAPE_ANALYSIS_GH_TOKEN=token_here`
 
 # +
+import json
 import os
+import subprocess
 from datetime import datetime
 
+import awkward as ak
 import pandas as pd
 import pytz
 from box import Box
@@ -57,18 +60,63 @@ loi_target_projects
 tgt_github_metrics = [
     {
         "Project Name": repo.name,
+        # gather repo data from github API
         "GitHub Repository ID": repo.id,
         "GitHub Stars": repo.stargazers_count,
         "GitHub Network Count": repo.network_count,
-        "GitHub Detected Languages": repo.get_languages(),
-        "Date Created": repo.created_at.replace(tzinfo=pytz.UTC),
+        "Github Top Referrers": [
+            {
+                "uniques": referrer.uniques,
+                "referrer": referrer.referrer,
+                "count": referrer.count,
+            }
+            for referrer in repo.get_top_referrers()
+        ],
+        # gather github dependent data scraped from github-dependents-info
+        # (github api information otherwise appears to be private or undocumented)
+        "GitHub Dependents": json.loads(
+            subprocess.run(
+                [
+                    "github-dependents-info",
+                    "--repo",
+                    "cytomining/pycytominer",
+                    "--json",
+                ],
+                capture_output=True,
+                check=True,
+            ).stdout
+        ),
     }
     # make a request for github repo data with pygithub
     for project, repo in [
         (
             project,
-            github_client.get_repo(project.repo_url.replace("https://github.com/", "")),
+            github_client.get_repo(
+                project["repo_url"].replace("https://github.com/", "")
+            ),
         )
-        for project in projects
+        for project in loi_target_projects
     ]
 ]
+ak.Array(tgt_github_metrics)
+
+# +
+listing = [
+    {
+        "name": contributor.name,
+        "login": contributor.login,
+        "contributions_push_nonfork_limited": list(
+            set(
+                [
+                    event.repo.name
+                    for event in contributor.get_events()
+                    if event.type == "PushEvent" and event.repo and not event.repo.fork
+                ]
+            )
+        ),
+    }
+    for contributor in github_client.get_repo("cytomining/cytotable").get_contributors()
+]
+
+
+listing
