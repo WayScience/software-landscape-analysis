@@ -91,6 +91,23 @@ pkg_metrics = [
                     check=True,
                 ).stdout
             )["rows"],
+            # gather downloads by year and month, ordered by month
+            "pypi_downloads_by_month": json.loads(
+                subprocess.run(
+                    [
+                        "pypinfo",
+                        "--json",
+                        "--start-date",
+                        project["Date Created YYYY-MM"],
+                        "--order",
+                        "download_month",
+                        project["Project Name"],
+                        "month",
+                    ],
+                    capture_output=True,
+                    check=True,
+                ).stdout
+            )["rows"],
             # gather downloads by python version
             "pypi_downloads_by_pyversion": json.loads(
                 subprocess.run(
@@ -115,29 +132,47 @@ pkg_metrics = [
                     check=True,
                 ).stdout
             )["rows"],
-            # gather downloads by year and month, ordered by month
-            "pypi_downloads_by_month": json.loads(
-                subprocess.run(
-                    [
-                        "pypinfo",
-                        "--json",
-                        "--start-date",
-                        project["Date Created YYYY-MM"],
-                        "--order",
-                        "download_month",
-                        project["Project Name"],
-                        "month",
-                    ],
-                    capture_output=True,
-                    check=True,
-                ).stdout
-            )["rows"],
         }
     )
     for project in pkg_metrics
 ]
 ak.Array(pkg_metrics)
 
-condastats_cli.overall(package="pycytominer")
+# gather various conda metrics through condastats (seeks conda-forge and bioconda data)
+pkg_metrics = [
+    dict(
+        project,
+        **{
+            # gather total downloads
+            "conda_downloads_total": condastats_cli.overall(
+                package=project["Project Name"],
+                start_month=project["Date Created YYYY-MM"],
+            ).to_dict(),
+            # gather downloads by month
+            "conda_downloads_by_month": condastats_cli.overall(
+                package=project["Project Name"],
+                start_month=project["Date Created YYYY-MM"],
+                monthly=True,
+            ).to_dict(),
+            # gather downloads by python version
+            "conda_downloads_by_pyversion": condastats_cli.pkg_python(
+                package=project["Project Name"],
+                start_month=project["Date Created YYYY-MM"],
+            ).to_dict(),
+            # gather downloads by version
+            "conda_downloads_by_version": condastats_cli.pkg_version(
+                package=project["Project Name"],
+                start_month=project["Date Created YYYY-MM"],
+            ).to_dict(),
+            # gather downloads by system and distro type
+            "conda_downloads_by_platform": condastats_cli.pkg_platform(
+                package=project["Project Name"],
+                start_month=project["Date Created YYYY-MM"],
+            ).to_dict(),
+        }
+    )
+    for project in pkg_metrics
+]
+ak.Array(pkg_metrics)
 
 
