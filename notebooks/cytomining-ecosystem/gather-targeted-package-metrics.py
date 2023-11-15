@@ -23,6 +23,7 @@
 # +
 import json
 import os
+import statistics
 import subprocess
 from datetime import datetime
 from typing import Any, Dict
@@ -214,9 +215,79 @@ pkg_metrics = [
     for project in pkg_metrics
 ]
 ak.Array(pkg_metrics)
+
+# +
+# build functions for average and median calculations
+find_average = lambda nums: sum(nums) / len(nums) if len(nums) > 0 else None
+find_median = lambda nums: statistics.median(nums) if len(nums) > 0 else None
+
+pkg_metrics = [
+    dict(
+        project,
+        **{
+            # unnest the download count data so it may be more easily observed
+            "pypi_downloads_total_unnested": project["pypi_downloads_total"][0][
+                "download_count"
+            ],
+            # gather pypi average from the download counts per month
+            "pypi_downloads_monthly_average": find_average(
+                [
+                    downloads["download_count"]
+                    for downloads in project["pypi_downloads_by_month"]
+                ]
+            ),
+            # gather pypi median from the download counts per month
+            "pypi_downloads_monthly_median": find_median(
+                [
+                    downloads["download_count"]
+                    for downloads in project["pypi_downloads_by_month"]
+                ]
+            ),
+            # gather conda average from the download counts per month
+            "conda_downloads_monthly_average": find_average(
+                [
+                    downloads
+                    for downloads in project["conda_downloads_by_month"].values()
+                ]
+            )
+            if project["conda_downloads_by_month"]
+            else None,
+            # gather conda median from the download counts per month
+            "conda_downloads_monthly_median": find_median(
+                [
+                    downloads
+                    for downloads in project["conda_downloads_by_month"].values()
+                ]
+            )
+            if project["conda_downloads_by_month"]
+            else None,
+        }
+    )
+    for project in pkg_metrics
+]
+ak.Array(pkg_metrics)
 # -
 
 # export to parquet file
-ak.to_parquet(array=ak.Array(pkg_metrics), destination="data/loi-target-project-package-metrics.parquet")
+ak.to_parquet(
+    array=ak.Array(pkg_metrics),
+    destination="data/loi-target-project-package-metrics.parquet",
+)
 
+# depict results from the file
+with duckdb.connect() as ddb:
+    pkg_totals = ddb.query(
+        f"""
+    SELECT
+        pkgstats."Project Name",
+        pkgstats.pypi_downloads_total_unnested AS pypi_downloads_total,
+        pkgstats.pypi_downloads_monthly_average,
+        pkgstats.pypi_downloads_monthly_median,
+        pkgstats.conda_downloads_total,
+        pkgstats.conda_downloads_monthly_average,
+        pkgstats.conda_downloads_monthly_median
 
+    FROM read_parquet('data/loi-target-project-package-metrics.parquet') as pkgstats
+    """,
+    ).df()
+pkg_totals
