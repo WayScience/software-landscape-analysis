@@ -54,11 +54,14 @@ build-backend = "poetry.core.masonry.api"
 [tool.poe.tasks.cytomining_ecosystem_fall_2023]
 # sets a cwd relative for the shell script below
 cwd = "notebooks/cytomining-ecosystem"
-# defines workflow through sequence of python scripts converted from jupyter notebooks
+# Defines workflow through sequence of python scripts converted from jupyter notebooks.
+# Please ensure GOOGLE_APPLICATION_CREDENTIALS and LANDSCAPE_ANALYSIS_GH_TOKEN env variables
+# are set within environment before running.
 shell = """
   python seek-landscape-entries.py &&
   python project-github-metrics.py &&
   python gather-targeted-publication-mentions.py &&
+  python gather-targeted-package-metrics.py &&
   python visualize-landscape-fall-2023.py
 """
 
