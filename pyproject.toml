@@ -42,6 +42,7 @@ aiohttp = "^3.8.6"
 s3fs = "^2023.10.0"
 condastats = "^0.2.1"
 github-dependents-info = "^1.2.0"
+google-cloud-bigquery = "^3.13.0"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.12.0"
