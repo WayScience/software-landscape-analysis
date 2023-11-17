@@ -31,6 +31,7 @@
 import json
 import os
 import pathlib
+import duckdb
 import statistics
 import subprocess
 from datetime import datetime, timedelta
@@ -283,6 +284,7 @@ def add_missing_years(
 ) -> Dict[str, int]:
     """
     Adds and updates missing years data for GitHub stargazer data
+    (which only has records for non-zero counts)
     """
 
     start_date = int(datetime.strptime(date_minimum, "%Y-%m").year)
@@ -315,13 +317,16 @@ tgt_github_metrics = [
                 {
                     date_object.strftime("%Y-%m"): sum(
                         1
-                        for d in date_objects
+                        for d in (
+                            datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S %Z")
+                            for timestamp in project["GitHub Stars by Date"]
+                        )
                         if d.strftime("%Y-%m") == date_object.strftime("%Y-%m")
                     )
-                    for date_object in [
+                    for date_object in (
                         datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S %Z")
                         for timestamp in project["GitHub Stars by Date"]
-                    ]
+                    )
                 },
                 project["GitHub Repo Created Month"],
                 current_year_month,
@@ -332,13 +337,16 @@ tgt_github_metrics = [
                 {
                     date_object.strftime("%Y"): sum(
                         1
-                        for d in date_objects
+                        for d in (
+                            datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S %Z")
+                            for timestamp in project["GitHub Stars by Date"]
+                        )
                         if d.strftime("%Y") == date_object.strftime("%Y")
                     )
-                    for date_object in [
+                    for date_object in (
                         datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S %Z")
                         for timestamp in project["GitHub Stars by Date"]
-                    ]
+                    )
                 },
                 project["GitHub Repo Created Month"],
                 current_year_month,
@@ -351,6 +359,7 @@ tgt_github_metrics = [
     dict(
         project,
         **{
+            "GitHub Contributor Total Count": len(project["GitHub Contributors"]),
             "GitHub Dependency Graph Dependents Count": project["GitHub Dependents"][
                 "total_dependents_number"
             ],
@@ -399,18 +408,27 @@ ak.Array(tgt_github_metrics)
 
 # export to parquet file
 ak.to_parquet(
-    array=ak.Array(pkg_metrics),
+    array=ak.Array(tgt_github_metrics),
     destination="data/loi-target-project-github-metrics.parquet",
 )
 
 # depict results from the file
 with duckdb.connect() as ddb:
-    pkg_totals = ddb.query(
+    ghstats_totals = ddb.query(
         f"""
     SELECT
-        ghstats."Project Name"
-
+        ghstats."Project Name",
+        ghstats."GitHub Stars",
+        ghstats."GitHub Contributor Total Count",
+        ghstats."GitHub Network Count",
+        ghstats."GitHub Dependency Graph Dependents Count",
+        ghstats."GitHub Code Search Dependents Count",
+        ghstats."GitHub Total Dependents Count",
+        ghstats."GitHub Stargazers Count by Month Average",
+        ghstats."GitHub Stargazers Count by Month Median",
+        ghstats."GitHub Stargazers Count by Year Average",
+        ghstats."GitHub Stargazers Count by Year Median"
     FROM read_parquet('data/loi-target-project-github-metrics.parquet') as ghstats
     """,
     ).df()
-pkg_totals
+ghstats_totals
