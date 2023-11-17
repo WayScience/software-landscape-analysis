@@ -7,9 +7,9 @@ projects:
       - loi-focus
       - cytomining-ecosystem
     target-key-personnel-gh-login:
-        - gwaybio
-        - kenibrewer
-        - d33bs
+      - gwaybio
+      - kenibrewer
+      - d33bs
   - homepage_url: https://cytosnake.readthedocs.io/en/latest/
     name: cytosnake
     repo_url: https://github.com/WayScience/CytoSnake
@@ -17,10 +17,10 @@ projects:
       - loi-focus
       - cytomining-ecosystem
     target-key-personnel-gh-login:
-        - gwaybio
-        - axiomcura
-        - jenna-tomkinson
-        - d33bs
+      - gwaybio
+      - axiomcura
+      - jenna-tomkinson
+      - d33bs
   - homepage_url: https://cytomining.github.io/CytoTable/
     name: cytotable
     repo_url: https://github.com/cytomining/CytoTable
@@ -28,9 +28,9 @@ projects:
       - loi-focus
       - cytomining-ecosystem
     target-key-personnel-gh-login:
-        - gwaybio
-        - jenna-tomkinson
-        - d33bs
+      - gwaybio
+      - jenna-tomkinson
+      - d33bs
   - name: Pandas
     homepage_url: https://pandas.pydata.org/
     repo_url: https://github.com/pandas-dev/pandas

@@ -14,7 +14,7 @@
 
 # # Gather Targeted Project GitHub Metrics
 #
-# Project GitHub dependant, visitor, and contributor network metrics for software landscape analysis related to Cytomining ecosystem.
+# Project GitHub dependent, visitor, and contributor network metrics for software landscape analysis related to Cytomining ecosystem.
 #
 # Namely, we're seeking data which backs up the following:
 # - Software projects that depend on the project
@@ -31,13 +31,13 @@
 import json
 import os
 import pathlib
-import duckdb
 import statistics
 import subprocess
 from datetime import datetime, timedelta
 from typing import Dict, Optional
 
 import awkward as ak
+import duckdb
 import pandas as pd
 import pytz
 from box import Box
@@ -191,13 +191,13 @@ tgt_github_metrics = [
                             /* wildcard monthly references to seek last two years
                             using the where clause below */
                             FROM `githubarchive.month.20*`
-                            WHERE 
+                            WHERE
                                 /* only look at users which are in target key personnel id's */
                                 actor.id IN ({', '.join([str(user['id']) for user in project['GitHub Target Key Personnel']])})
                                 /* only look at push and pull request events */
                                 AND type IN ('PushEvent', 'PullRequestEvent')
                                 /* only look at the last two years of data */
-                                AND (_TABLE_SUFFIX BETWEEN '{previous_year_last_two_digits}01' 
+                                AND (_TABLE_SUFFIX BETWEEN '{previous_year_last_two_digits}01'
                                     AND '{current_year_last_two_digits}12')
                                 /* filter out repos which match the target project full name */
                                 AND repo.name NOT IN ('{project['GitHub Repo Full Name']}')
@@ -238,7 +238,7 @@ tgt_github_metrics = [
                     check=True,
                 ).stdout
             ),
-        }
+        },
     )
     for project in tgt_github_metrics
 ]
