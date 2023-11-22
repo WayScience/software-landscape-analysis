@@ -120,130 +120,74 @@ tgt_software_df.head()
 # create list to collect the figures for later display together
 fig_collection = []
 
+tgt_software_df[["google_scholar_count", "biorxiv_count"]].T[0]
+
 # +
-# Github stars and time scatter
+# Publications for target projects
 
-# add log of github stars to help visualize
-df_projects["GitHub Stars (Log Scale)"] = np.log(
-    df_projects["GitHub Stars"].apply(
-        # move 0's to None to avoid divide by 0
-        lambda x: x
-        if x > 0
-        else None
-    )
-)
-
-fig_usage_stars = px.scatter(
-    df_projects[df_projects["category"] != "loi-focus"],
-    hover_name="Project Name",
-    x="Duration Created to Now in Years",
-    y="GitHub Stars (Log Scale)",
-    color="category",
-    width=1200,
-    height=500,
-    color_discrete_sequence=category_color_sequence,
-    symbol="category",
-    symbol_sequence=["circle", "circle", "circle", "circle"],
-    render_mode="webgl",
-)
-
-# add loi-focus trace
-fig_usage_stars.add_traces(
-    px.scatter(
-        df_projects[df_projects["category"] == "loi-focus"],
-        hover_name="Project Name",
-        x="Duration Created to Now in Years",
-        y="GitHub Stars (Log Scale)",
-        width=1200,
-        height=500,
-        color="category",
-        color_discrete_sequence=[category_color_sequence[4]],
-        symbol_sequence=["star-diamond"],
-        render_mode="webgl",
-    )
-    .update_traces(
-        marker=dict(
-            size=12,
-            line=dict(color="black", width=2),
-        )
-    )
-    .data
-)
-
-
-# fig_usage_stars.for_each_trace(lambda t: t.update(name='loi-focus') if t.name == 'scatter' else ())
-
-# Get the data from the created trace
-# Set the size of the markers
-
-# Add the custom trace to the existing figure
-# fig_usage_stars.add_traces(custom_trace.data)
-
-# customize the chart layout
-fig_usage_stars.update_layout(
-    title=f"Project Star Count and Age in Years (click categories for further focus)",
-    xaxis_title="Project Age (years)",
-    yaxis_title="GitHub Stars (Log Scale)",
+fig_publications = px.pie(
+    title="Pycytominer Publication Mentions or Citations",
+    data_frame=tgt_software_df[["google_scholar_count", "biorxiv_count"]].T,
+    values=0,
+    names=["Google Scholar Results", "BioRxiv Preprints"],
+    hover_name=["Google Scholar Results", "BioRxiv Preprints"],
+    width=500,
 )
 
 fig_collection.append(
     {
-        "plot": fig_usage_stars,
+        "plot": fig_publications,
         "description": """
-        This plot explores the user bases of relevant projects
-        through relative GitHub stars and the age of the project in years.
-        GitHub stars is an indication of unique users whom are interested
-        in and likely use the project somehow.
+        This plot shows how many publications mention or cite Pycytominer
+        as a reference. We used Google Scholar and BioRxiv as search resources
+        for this work.
         """,
         "findings": """
-        We observe that projects of greater age are not always those with the most stars.
-        Projects of the <code>loi-focus</code> category  (e.g., pycytominer) are generally
-        in an early state of their user base (both in age and stars),
-        relative to other projects (e.g., Napari). We note the limitations of using stars
-        to gauge community engagement given many projects do not focus efforts on developers.
+        We observe that Pycytominer appears in 20 Google Scholar results and 13 BioRxiv 
+        preprints. This demonstrates how Pycytominer is already being used in both
+        previous and ongoing research efforts.
         """,
-        "section": "User base",
+        "section": "Scholarly Papers",
     }
 )
 
-fig_usage_stars.show()
+fig_publications.show()
 
 # +
-# Create an icicle chart using Plotly Express
-df_treemap = df_projects.copy()
-df_treemap["GitHub Stars"] = np.where(
-    df_treemap["GitHub Stars"] == 0, np.nan, df_treemap["GitHub Stars"]
+# vizualize package data
+
+# Create a horizontal bar chart using Plotly Express
+fig_packages = px.bar(
+    data_frame=tgt_software_df.sort_values("Project Name"),
+    x=["pypi_downloads_total", "conda_downloads_total"],
+    y="Project Name",
+    orientation="h",
+    width=800,
+    color_discrete_sequence=[category_color_sequence[1],category_color_sequence[3]],
 )
-fig_usage_stars_treemap = px.treemap(
-    df_treemap.sort_values(by="category"),
-    title="GitHub Stars Project Tree Map (click to zoom)",
-    path=["category", "Project Name"],
-    values="GitHub Stars",
-    color="GitHub Stars",
-    color_continuous_scale="Viridis",
-    width=1200,
-    height=700,
+
+fig_packages.update_layout(
+    title="PyPI and Conda Package Downloads by Project",
+    xaxis_title="Package Downloads",
+    showlegend=False,
 )
 
 fig_collection.append(
     {
-        "plot": fig_usage_stars_treemap,
+        "plot": fig_packages,
         "description": """
-        This plot demonstrates the magnitude of total GitHub stars by project and category.
-        Click the category boxes to zoom into focus on only those projects.
+        
         """,
-        "findings": """
-        Here we can see the <code>relevant open source</code> category far outsize other categories.
-        Within the <code>microscopy analysis tools</code> category we observe that Napari has many more stars than others.
-        Projects of the <code>loi-focus</code> category are emerging with a growing community base, but not are not as established as other tools with
-        much greater age.
-        """,
-        "section": "User base",
+        "findings": (
+            """
+            """
+        ),
+        "section": "Package Usage",
     }
 )
 
-# Show the icicle chart
-fig_usage_stars_treemap.show()
+# Show the plot
+fig_packages.show()
 
 # +
 # scatter plot for maturity based on project
