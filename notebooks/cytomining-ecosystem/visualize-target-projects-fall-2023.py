@@ -91,9 +91,11 @@ with duckdb.connect() as ddb:
         pubstats."total_pub_count",
         pubstats."total_pub_count_non_record_linked",
         pkgstats.pypi_downloads_total_unnested AS pypi_downloads_total,
+        pkgstats.pypi_downloads_by_month,
         pkgstats.pypi_downloads_monthly_average,
         pkgstats.pypi_downloads_monthly_median,
         pkgstats.conda_downloads_total,
+        pkgstats.conda_downloads_by_month,
         pkgstats.conda_downloads_monthly_average,
         pkgstats.conda_downloads_monthly_median,
         ghstats."GitHub Stars",
@@ -133,6 +135,7 @@ fig_publications = px.pie(
     hover_name=["Google Scholar Results", "BioRxiv Preprints"],
     width=500,
 )
+fig_publications.update_traces(textinfo="value")
 
 fig_collection.append(
     {
@@ -163,7 +166,7 @@ fig_packages = px.bar(
     y="Project Name",
     orientation="h",
     width=800,
-    color_discrete_sequence=[category_color_sequence[1],category_color_sequence[3]],
+    color_discrete_sequence=[category_color_sequence[1], category_color_sequence[3]],
 )
 
 fig_packages.update_layout(
@@ -188,88 +191,43 @@ fig_collection.append(
 
 # Show the plot
 fig_packages.show()
+# -
 
-# +
-# scatter plot for maturity based on project
-
-# gather the number of lines of code
-df_projects["total lines of GitHub detected code"] = (
-    df_projects["GitHub Detected Languages"]
-    .dropna()
-    .apply(lambda x: sum(value if value is not None else 0 for value in x.values()))
-)
-
-# add log of github stars to help visualize
-df_projects["total lines of GitHub detected code (Log Scale)"] = np.log(
-    df_projects["total lines of GitHub detected code"].apply(
-        # move 0's to None to avoid divide by 0
-        lambda x: x
-        if x > 0
-        else None
+pypi_monthly_data = pd.concat(
+    pd.DataFrame(
+        [
+            dict(month_entry, **{"Project Name": project_name})
+            for month_entry in monthly_data
+        ]
+    )
+    for project_name, monthly_data in zip(
+        tgt_software_df["Project Name"], tgt_software_df["pypi_downloads_by_month"]
     )
 )
-
-fig_maturity_loc_and_age = px.scatter(
-    df_projects[df_projects["category"] != "loi-focus"].sort_values(by="category"),
-    hover_name="Project Name",
-    x="Duration Created to Now in Years",
-    y="total lines of GitHub detected code (Log Scale)",
-    width=1200,
-    height=500,
-    color="category",
-    color_discrete_sequence=category_color_sequence,
-    symbol="category",
-    symbol_sequence=["circle", "circle", "circle", "circle"],
-    render_mode="webgl",
+fig_pypi_monthly = px.line(
+    pypi_monthly_data, x="download_month", y="download_count", color="Project Name"
 )
+fig_pypi_monthly.show()
 
-# add loi-focus trace
-fig_maturity_loc_and_age.add_traces(
-    px.scatter(
-        df_projects[df_projects["category"] == "loi-focus"],
-        hover_name="Project Name",
-        x="Duration Created to Now in Years",
-        y="total lines of GitHub detected code (Log Scale)",
-        width=1200,
-        height=500,
-        color="category",
-        color_discrete_sequence=[category_color_sequence[4]],
-        symbol_sequence=["star-diamond"],
-        render_mode="webgl",
+conda_monthly_data = pd.concat(
+    pd.DataFrame(
+        [
+            dict(month_entry, **{"Project Name": project_name})
+            for month_entry in [
+                {"download_month": key, "download_count": val}
+                for key, val in monthly_data.items()
+            ]
+        ]
     )
-    .update_traces(
-        marker=dict(
-            size=12,
-            line=dict(color="black", width=2),
-        )
+    for project_name, monthly_data in zip(
+        tgt_software_df["Project Name"], tgt_software_df["conda_downloads_by_month"]
     )
-    .data
+    if isinstance(monthly_data, dict)
 )
-
-
-# customize the chart layout
-fig_maturity_loc_and_age.update_layout(
-    title=f"Project Lines of Code and Age in Years (click categories for further focus)",
-    yaxis_title="Total Lines of Code (Log Scale)",
-    xaxis_title="Project Age (years)",
+fig_conda_monthly = px.line(
+    conda_monthly_data, x="download_month", y="download_count", color="Project Name"
 )
-
-fig_collection.append(
-    {
-        "plot": fig_maturity_loc_and_age,
-        "description": """
-        This plot shows the lines of code (LoC) and age in years to help indicate relative project maturity.
-        Lines of code in this case are the sum total of all detected programming languages in the latest version of the GitHub repository.
-        """,
-        "findings": """
-        We observe that many tools within the Cytomining Ecosystem landscape reside within a tight range
-        of total lines of code (relative to others), and that projects of greater age do not necessarily have more code.
-        """,
-        "section": "Maturity",
-    }
-)
-
-fig_maturity_loc_and_age.show()
+fig_conda_monthly.show()
 
 # +
 # scatter plot for maturity based on project
