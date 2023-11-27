@@ -55,8 +55,15 @@ title_prefix = "Cytomining Ecosystem Target Software Analysis"
 # export locations relative to this notebook
 export_dir = "../../docs/cytomining-ecosystem"
 
-# set the color sequence for category-based charts
+# set a color sequence for general use
 category_color_sequence = pc.qualitative.Dark2[1:6]
+
+# set a color sequence for project-specific colors
+project_color_sequence = [
+    pc.qualitative.Dark2[3],
+    pc.qualitative.Dark2[0],
+    pc.qualitative.Dark2[1],
+]
 
 # set section descriptions
 section_descriptions = {
@@ -205,7 +212,11 @@ pypi_monthly_data = pd.concat(
     )
 )
 fig_pypi_monthly = px.line(
-    pypi_monthly_data, x="download_month", y="download_count", color="Project Name"
+    pypi_monthly_data,
+    x="download_month",
+    y="download_count",
+    color="Project Name",
+    color_discrete_sequence=[project_color_sequence[0], project_color_sequence[2]],
 )
 fig_pypi_monthly.show()
 
@@ -225,7 +236,11 @@ conda_monthly_data = pd.concat(
     if isinstance(monthly_data, dict)
 )
 fig_conda_monthly = px.line(
-    conda_monthly_data, x="download_month", y="download_count", color="Project Name"
+    conda_monthly_data,
+    x="download_month",
+    y="download_count",
+    color="Project Name",
+    color_discrete_sequence=[project_color_sequence[0], project_color_sequence[1]],
 )
 fig_conda_monthly.show()
 
