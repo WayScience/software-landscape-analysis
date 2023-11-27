@@ -158,7 +158,8 @@ fig_collection.append(
         "description": """
         This plot shows how many publications mention or cite Pycytominer
         as a reference. We used Google Scholar and BioRxiv as search resources
-        for this work.
+        for this work. Google Scholar is a scholarly article aggregator and search service.
+        BioRxiv is a pre-print server with biological focus.
         """,
         "findings": """
         We observe that Pycytominer appears in 20 Google Scholar results and 13 BioRxiv 
@@ -194,13 +195,15 @@ fig_packages.update_layout(
 fig_collection.append(
     {
         "plot": fig_packages,
-        "description": """
-        
+        "description": """This plot shows the total number of PyPI and Conda downloads by project.
+        PyPI (Python Package Index) is a platform which is commonly used to download Python packages.
+        Conda is an environment and package management service which is commonly used for data science
+        projects.
         """,
-        "findings": (
-            """
-            """
-        ),
+        "findings": """This plot demonstrates how pycytominer has many downloads through both PyPI and Conda
+        (with slightly more Conda downloads). CytoTable and CytoSnake are shown with strong early download counts
+        at a much lower level (perhaps in alignment with their project age, which is less than pycytominer).
+        """,
         "section": "Package Usage",
     }
 )
@@ -240,13 +243,12 @@ fig_pypi_monthly.update_layout(
 fig_collection.append(
     {
         "plot": fig_pypi_monthly,
-        "description": """
-        
+        "description": """This plot shows how many PyPI package downloads per month by project.
+        CytoSnake is excluded from this plot as it is not available on PyPI.
         """,
-        "findings": (
-            """
-            """
-        ),
+        "findings": """Pycytominer has a consistent and trending upward number of monthly PyPI package downloads.
+        CytoTable shows activity in this area, possibly trending upwards.
+        """,
         "section": "Package Usage",
     }
 )
@@ -290,13 +292,13 @@ fig_conda_monthly.update_layout(
 fig_collection.append(
     {
         "plot": fig_conda_monthly,
-        "description": """
-        
+        "description": """This plot shows how many Conda package downloads per month by project.
+        CytoTable is excluded from this plot as it is not available on Conda.
         """,
-        "findings": (
-            """
-            """
-        ),
+        "findings": """We can observe from this plot that pycytominer is actively downloaded on monthly basis.
+        There is a large spike in download count for pycytominer in 2022 with lower counts in 2023.
+        CytoSnake shows strong signs of good adoption for a relatively young project (in comparison with pycytominer).
+        """,
         "section": "Package Usage",
     }
 )
@@ -328,22 +330,19 @@ fig_dependents_count.update_layout(
 fig_collection.append(
     {
         "plot": fig_dependents_count,
-        "description": """
-        
+        "description": """This plot shows dependants counts of the projects by leveraging the Dependency Graph and
+        code search features of GitHub. Overlaps by organization and project name are removed to help count unique
+        dependants.
         """,
-        "findings": (
-            """
-            """
-        ),
+        "findings": """We observe that Pycytominer has many existing dependants on GitHub.
+        CytoTable has a smaller number of dependants which may be relative to the project age.
+        """,
         "section": "Software Dependants",
     }
 )
 
 # Show the plot
 fig_dependents_count.show()
-# -
-
-plotly.graph_objs._figure.Figure
 
 # +
 # create a dependant graph to visualize project connections
@@ -406,7 +405,9 @@ fig_collection.append(
         dependencies of existing projects on GitHub (from Dependency Graph and code search by name).
         Pycytominer is included as a pink node with edges in the same color. CytoTable is shown similarly in orange.
         """,
-        "findings": """We observe pycytominer as being connected to many existing projects. 
+        "findings": """We observe pycytominer as being connected to many existing projects.
+        CytoTable is also connected to many Pycytominer projects. This interconnection in part shows
+        how these components are used together in related landscape projects.
             """,
         "section": "Software Dependants",
     }
@@ -474,6 +475,7 @@ nx.set_node_attributes(
 )"""
 
 # +
+# form monthly github star visual
 star_monthly_data = pd.concat(
     pd.DataFrame(
         [
@@ -510,13 +512,14 @@ fig_stars_monthly.update_layout(
 fig_collection.append(
     {
         "plot": fig_stars_monthly,
-        "description": """
-        
+        "description": """This plot shows GitHub stars as a way to understand visitor activity on a
+        monthly basis for the target projects.
+        GitHub stars are an indication of unique users whom are interested in and likely use the project somehow.
         """,
-        "findings": (
-            """
-            """
-        ),
+        "findings": """We can observe pycytominer has having a relatively consistent number of added GitHub stars
+        since mid-2019. We also show that CytoSnake and CytoTable somewhat mimic the earlier growth in this area
+        which pycytominer demonstrated.
+        """,
         "section": "Project Visitors",
     }
 )
@@ -549,13 +552,15 @@ fig_stars_monthly_cumulative_sum.update_layout(
 fig_collection.append(
     {
         "plot": fig_stars_monthly_cumulative_sum,
-        "description": """
-        
+        "description": """This plot shows GitHub stars as a way to understand visitor activity on a
+        monthly basis for the target projects.
+        This plot differs from the one above in that the star counts are shown as cumulative.
+        GitHub stars are an indication of unique users whom are interested in and likely use the project somehow.
         """,
-        "findings": (
-            """
-            """
-        ),
+        "findings": """We can observe pycytominer has having a relatively consistent number of added GitHub stars
+        since mid-2019. We also show that CytoSnake and CytoTable somewhat mimic the earlier growth in this area
+        which pycytominer demonstrated.
+        """,
         "section": "Project Visitors",
     }
 )
