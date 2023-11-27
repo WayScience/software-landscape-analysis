@@ -185,7 +185,7 @@ fig_collection.append(
         "description": """
         This plot explores the user bases of relevant projects
         through relative GitHub stars and the age of the project in years.
-        GitHub stars is an indication of unique users whom are interested
+        GitHub stars are an indication of unique users whom are interested
         in and likely use the project somehow.
         """,
         "findings": """
@@ -744,7 +744,7 @@ fig_collection_grouped = {
 fig_collection_grouped.keys()
 
 cdn_included = False
-with open(f"{export_dir}/landscape-report.html", "w") as f:
+with open(f"{export_dir}/report.html", "w") as f:
     f.write(
         """
 <html>
