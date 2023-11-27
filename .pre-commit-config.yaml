@@ -18,7 +18,7 @@ repos:
       - id: codespell
         exclude: |
           (?x)^(
-              .*\.lock|.*\.csv|.*\.ipynb|.*/data/.*\.yaml|docs/.*/report.html|docs/.*/data_profile.html
+              .*\.lock|.*\.csv|.*\.ipynb|.*/data/.*\.yaml|docs/.*/report.html|docs/.*/data_profile.html|docs/.*/target-project-dependents.html
           )$
         additional_dependencies:
           - tomli

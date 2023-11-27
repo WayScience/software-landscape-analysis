@@ -23,6 +23,7 @@ import itertools
 import os
 import pathlib
 import random
+import re
 import shutil
 from datetime import datetime
 
@@ -592,7 +593,7 @@ with open(f"{export_dir}/target-project-report.html", "w") as f:
 <!-- referenced with modifications from example work on: https://github.com/KrauseFx/markdown-to-html-github-style -->
 
 <head>
-    <title>Cytomining Ecosystem | Way Lab: Software Landscape Analysis - Target Project Report</title>
+    <title>Cytomining Ecosystem | Way Lab: Software Landscape Analysis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/style.css">
@@ -630,7 +631,12 @@ with open(f"{export_dir}/target-project-report.html", "w") as f:
                 figure["plot"].show(f"{export_dir}/{figure['plot'].html_export_loc}")
 
                 # copy the dependencies of the work to docs dir
-                shutil.copytree(src="./lib", dst=f"{export_dir}/lib")
+                try:
+                    shutil.copytree(
+                        src="./lib", dst=f"{export_dir}/lib", dirs_exist_ok=True
+                    )
+                except:
+                    continue
 
                 # use an iframe to display the result within the same page as other figures
                 f.write(
@@ -638,10 +644,39 @@ with open(f"{export_dir}/target-project-report.html", "w") as f:
                     <br><br>
                     <span style='font-size:1.17em'>{figure['plot'].html_plot_title} (click and scroll with mouse to interact)</span>
                     <iframe src="{figure['plot'].html_export_loc}"
-                    width="1195" height="510" frameBorder="0" scrolling="no">Browser not compatible.</iframe>
+                     style="overflow:hidden;width:100%;height:500px;border:0px;">Browser not compatible.</iframe>
                     <br><br>
                     """
                 )
+
+                # correct the file for invalid html
+                def fix_html(
+                    file_path,
+                    strs_to_replace=[
+                        "<h1></h1>",
+                        "<center>",
+                        "</center>",
+                    ],
+                ):
+                    with open(file_path, "r") as file:
+                        lines = [
+                            re.sub(
+                                "|".join(map(re.escape, strs_to_replace)),
+                                "",
+                                line.replace(
+                                    "<head>",
+                                    "<head><title>Cytomining Ecosystem Target Project Dependents Graph</title>",
+                                ),
+                            )
+                            for replace_str in strs_to_replace
+                            for line in file
+                        ]
+
+                    with open(file_path, "w") as file:
+                        file.writelines(lines)
+
+                fix_html(f"{export_dir}/{figure['plot'].html_export_loc}")
+
             else:
                 raise Exception("Unknown plot type used.")
 
