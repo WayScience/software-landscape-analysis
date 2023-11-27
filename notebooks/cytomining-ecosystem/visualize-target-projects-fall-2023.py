@@ -23,6 +23,7 @@ import itertools
 import os
 import pathlib
 import random
+import shutil
 from datetime import datetime
 
 import duckdb
@@ -78,11 +79,11 @@ section_descriptions = {
     scholarly papers mention or cite the target software.
     """,
     "Package Usage": """
-    This section helps depict usage of the target software 
+    This section helps depict usage of the target software
     by leveraging package data from PyPI and Conda.
     """,
-    "Software Dependants": """
-    This section helps show community dependants of the 
+    "Software dependents": """
+    This section helps show community dependents of the
     targeted software.
     """,
     "Project Visitors": """
@@ -162,7 +163,7 @@ fig_collection.append(
         BioRxiv is a pre-print server with biological focus.
         """,
         "findings": """
-        We observe that Pycytominer appears in 20 Google Scholar results and 13 BioRxiv 
+        We observe that Pycytominer appears in 20 Google Scholar results and 13 BioRxiv
         preprints. This demonstrates how Pycytominer is already being used in both
         previous and ongoing research efforts.
         """,
@@ -173,7 +174,7 @@ fig_collection.append(
 fig_publications.show()
 
 # +
-# vizualize package data
+# visualize package data
 
 # Create a horizontal bar chart using Plotly Express
 fig_packages = px.bar(
@@ -306,7 +307,7 @@ fig_collection.append(
 fig_conda_monthly.show()
 
 # +
-# vizualize dependents data
+# visualize dependents data
 
 # Create a horizontal bar chart using Plotly Express
 fig_dependents_count = px.bar(
@@ -330,14 +331,14 @@ fig_dependents_count.update_layout(
 fig_collection.append(
     {
         "plot": fig_dependents_count,
-        "description": """This plot shows dependants counts of the projects by leveraging the Dependency Graph and
+        "description": """This plot shows dependents counts of the projects by leveraging the Dependency Graph and
         code search features of GitHub. Overlaps by organization and project name are removed to help count unique
-        dependants.
+        dependents.
         """,
-        "findings": """We observe that Pycytominer has many existing dependants on GitHub.
-        CytoTable has a smaller number of dependants which may be relative to the project age.
+        "findings": """We observe that Pycytominer has many existing dependents on GitHub.
+        CytoTable has a smaller number of dependents which may be relative to the project age.
         """,
-        "section": "Software Dependants",
+        "section": "Software dependents",
     }
 )
 
@@ -345,20 +346,20 @@ fig_collection.append(
 fig_dependents_count.show()
 
 # +
-# create a dependant graph to visualize project connections
-dependant_data = pd.concat(
+# create a dependent graph to visualize project connections
+dependent_data = pd.concat(
     pd.DataFrame(
         [
             {
                 "Project Name": project_name,
-                "Dependant": dependant.replace("cytomining/CytoTable", "CytoTable"),
+                "dependent": dependent.replace("cytomining/CytoTable", "CytoTable"),
                 "color": "#E7358A"
                 if project_name == "pycytominer"
                 else "#D9651D"
                 if project_name == "CytoTable"
                 else "#698DC7",
             }
-            for dependant in list(
+            for dependent in list(
                 set(
                     code_search
                     + [
@@ -376,31 +377,32 @@ dependant_data = pd.concat(
     )
 )
 
-dependant_data
+dependent_data
 
-nx_dependant_data = nx.from_pandas_edgelist(
-    df=dependant_data, source="Dependant", target="Project Name", edge_attr=["color"]
+nx_dependent_data = nx.from_pandas_edgelist(
+    df=dependent_data, source="dependent", target="Project Name", edge_attr=["color"]
 )
 
-nt_dependants = Network(height="500px", width="1200px")
+nt_dependents = Network(height="500px", width="1200px")
 # populates the nodes and edges data structures
-nt_dependants.from_nx(nx_dependant_data)
-nt_dependants.nodes = [
+nt_dependents.from_nx(nx_dependent_data)
+nt_dependents.nodes = [
     dict(node, **{"color": "#E7358A"})
     if node["id"] == "pycytominer"
     else dict(node, **{"color": "#D9651D"})
     if node["id"] == "CytoTable"
     else node
-    for node in nt_dependants.nodes
+    for node in nt_dependents.nodes
 ]
-nt_dependants.toggle_physics(True)
-nt_dependants.html_export_loc = "target-project-dependants.html"
-nt_dependants.html_plot_title = "Project Dependants Graph"
-nt_dependants.show(nt_dependants.html_export_loc)
+nt_dependents.toggle_physics(True)
+nt_dependents.html_export_loc = "target-project-dependents.html"
+nt_dependents.html_plot_title = "Project dependents Graph"
+nt_dependents.show(nt_dependents.html_export_loc)
+
 
 fig_collection.append(
     {
-        "plot": nt_dependants,
+        "plot": nt_dependents,
         "description": """This graph shows how pycytominer and CytoTable are used as
         dependencies of existing projects on GitHub (from Dependency Graph and code search by name).
         Pycytominer is included as a pink node with edges in the same color. CytoTable is shown similarly in orange.
@@ -409,28 +411,28 @@ fig_collection.append(
         CytoTable is also connected to many Pycytominer projects. This interconnection in part shows
         how these components are used together in related landscape projects.
             """,
-        "section": "Software Dependants",
+        "section": "Software dependents",
     }
 )
 
 
-IFrame(src=nt_dependants.html_export_loc, height=520, width=1110)
+IFrame(src=nt_dependents.html_export_loc, height=520, width=1110)
 
 # +
-# alternative network graph for dependants
-dependant_data = pd.concat(
+# alternative network graph for dependents
+dependent_data = pd.concat(
     pd.DataFrame(
         [
             {
                 "Project Name": project_name,
-                "Dependant": dependant.replace("cytomining/CytoTable", "CytoTable"),
+                "dependent": dependent.replace("cytomining/CytoTable", "CytoTable"),
                 "color": "#E7358A"
                 if project_name == "pycytominer"
                 else "#D9651D"
                 if project_name == "CytoTable"
                 else "#698DC7",
             }
-            for dependant in list(
+            for dependent in list(
                 set(
                     code_search
                     + [
@@ -448,27 +450,27 @@ dependant_data = pd.concat(
     )
 )
 
-dependant_data
+dependent_data
 
-nx_dependant_data = nx.from_pandas_edgelist(
-    df=dependant_data, source="Dependant", target="Project Name", edge_attr=["color"]
+nx_dependent_data = nx.from_pandas_edgelist(
+    df=dependent_data, source="dependent", target="Project Name", edge_attr=["color"]
 )
 
 nx.set_node_attributes(
-    nx_dependant_data,
+    nx_dependent_data,
     values={
         node: "#E7358A"
         if node == "pycytominer"
         else "#D9651D"
         if node == "CytoTable"
         else "#698DC7"
-        for node in nx_dependant_data.nodes
+        for node in nx_dependent_data.nodes
     },
     name="group",
 )
 
 """stylized_network, config = nw.visualize(
-    network=nx_dependant_data,
+    network=nx_dependent_data,
     config={"zoom": 2},
     is_test=True,
     plot_in_cell_below=False,
@@ -601,7 +603,7 @@ with open(f"{export_dir}/target-project-report.html", "w") as f:
         <h1>Cytomining Ecosystem Software Landscape Analysis - Target Project Report</h1>
 
         <p>This is a targeted report to help describe three Cytomining Ecosystem software projects
-        in terms of scholarly paper mentions, package usage, software dependants, and project visitors.</p>
+        in terms of scholarly paper mentions, package usage, software dependents, and project visitors.</p>
 
         <p>Code related to this effort may be found at: <a
                 href="https://github.com/WayScience/software-landscape-analysis">https://github.com/WayScience/software-landscape-analysis</a>.
@@ -626,12 +628,16 @@ with open(f"{export_dir}/target-project-report.html", "w") as f:
             elif isinstance(figure["plot"], pyvis.network.Network):
                 # write the network plot to docs dir
                 figure["plot"].show(f"{export_dir}/{figure['plot'].html_export_loc}")
+
+                # copy the dependencies of the work to docs dir
+                shutil.copytree(src="./lib", dst=f"{export_dir}/lib")
+
                 # use an iframe to display the result within the same page as other figures
                 f.write(
                     f"""
                     <br><br>
                     <span style='font-size:1.17em'>{figure['plot'].html_plot_title} (click and scroll with mouse to interact)</span>
-                    <iframe src="{figure['plot'].html_export_loc}" 
+                    <iframe src="{figure['plot'].html_export_loc}"
                     width="1195" height="510" frameBorder="0" scrolling="no">Browser not compatible.</iframe>
                     <br><br>
                     """
