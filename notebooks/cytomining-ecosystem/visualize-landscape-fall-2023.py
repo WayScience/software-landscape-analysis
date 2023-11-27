@@ -744,14 +744,14 @@ fig_collection_grouped = {
 fig_collection_grouped.keys()
 
 cdn_included = False
-with open(f"{export_dir}/report.html", "w") as f:
+with open(f"{export_dir}/landscape-report.html", "w") as f:
     f.write(
         """
 <html>
 <!-- referenced with modifications from example work on: https://github.com/KrauseFx/markdown-to-html-github-style -->
 
 <head>
-    <title>Cytomining Ecosystem | Way Lab: Software Landscape Analysis</title>
+    <title>Cytomining Ecosystem | Way Lab: Software Landscape Analysis - Landscape Report</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/style.css">
@@ -759,7 +759,7 @@ with open(f"{export_dir}/report.html", "w") as f:
 
 <body>
     <div id='content'>
-        <h1>Cytomining Ecosystem Software Landscape Analysis - Focused Report</h1>
+        <h1>Cytomining Ecosystem Software Landscape Analysis - Landscape Report</h1>
 
         <p>This is a focused report to help describe landscape elements related to project user base size, usage,
         maturity, and general landscape for the Cytomining Ecosystem.</p>
@@ -850,4 +850,3 @@ asyncio.get_event_loop().run_until_complete(
         output_path=f"{export_dir}/report.png",
     )
 )
-# -
