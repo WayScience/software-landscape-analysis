@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 1200px;
+                 height: 500px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "WayScience/mitocheck_data", "label": "WayScience/mitocheck_data", "shape": "dot", "size": 10}, {"color": "#E7358A", "id": "pycytominer", "label": "pycytominer", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "cytomining/profiling-recipe", "label": "cytomining/profiling-recipe", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "alonshpigler/AnomalyDetectionScreening", "label": "alonshpigler/AnomalyDetectionScreening", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "WayScience/CFReT_data", "label": "WayScience/CFReT_data", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "broadinstitute/position-effect-correction", "label": "broadinstitute/position-effect-correction", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "broadinstitute/grit-benchmark", "label": "broadinstitute/grit-benchmark", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "broadinstitute/cell-health", "label": "broadinstitute/cell-health", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "EchteRobert/singleCell-featureAggregation", "label": "EchteRobert/singleCell-featureAggregation", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "CU-DBMI/set-effort-analysis", "label": "CU-DBMI/set-effort-analysis", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "shumshersubashgautam/CellPainting-NF1-SchwanCells", "label": "shumshersubashgautam/CellPainting-NF1-SchwanCells", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "ciminilab/2023_Garcia-Fossa_Cruz_CurrentProtocols", "label": "ciminilab/2023_Garcia-Fossa_Cruz_CurrentProtocols", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "broadinstitute/neural-profiling", "label": "broadinstitute/neural-profiling", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "WayScience/CytoSnake", "label": "WayScience/CytoSnake", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "broadinstitute/neural-profiling-archive", "label": "broadinstitute/neural-profiling-archive", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "DistributedScience/Distributed-Collate", "label": "DistributedScience/Distributed-Collate", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "aktgpt/BF-MoA", "label": "aktgpt/BF-MoA", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "broadinstitute/profiling-resistance-mechanisms", "label": "broadinstitute/profiling-resistance-mechanisms", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "CU-DBMI/pycytominer-performance", "label": "CU-DBMI/pycytominer-performance", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "broadinstitute/2022_PERISCOPE", "label": "broadinstitute/2022_PERISCOPE", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "CytoTable-benchmarks", "label": "CytoTable-benchmarks", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "shntnu/sphering", "label": "shntnu/sphering", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "cytomining/pipeline-examples", "label": "cytomining/pipeline-examples", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "broadinstitute/pooled-cell-painting-profiling-recipe", "label": "broadinstitute/pooled-cell-painting-profiling-recipe", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "niranjchandrasekaran/profiling-workflow-demo", "label": "niranjchandrasekaran/profiling-workflow-demo", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "WayScience/pyroptosis_signature", "label": "WayScience/pyroptosis_signature", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "broadinstitute/2022_09_07_New_phenotypic_dye_testing_CDoT_Broad", "label": "broadinstitute/2022_09_07_New_phenotypic_dye_testing_CDoT_Broad", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "shumshersubashgautam/VAE-CellPainting", "label": "shumshersubashgautam/VAE-CellPainting", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "broadinstitute/2020-06-01-Evidence-of-state-switching-in-single-cell-drug-response-Broad", "label": "broadinstitute/2020-06-01-Evidence-of-state-switching-in-single-cell-drug-response-Broad", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "broadinstitute/cell-painting-vae", "label": "broadinstitute/cell-painting-vae", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "CarragherLab/phenonaut", "label": "CarragherLab/phenonaut", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "broadinstitute/cell-painting-batch-effects", "label": "broadinstitute/cell-painting-batch-effects", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "carpenter-singh-lab/2023_Arevalo_BatchCorrection", "label": "carpenter-singh-lab/2023_Arevalo_BatchCorrection", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "marx-alex/Morphelia", "label": "marx-alex/Morphelia", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Naorko/CellProfiling-research", "label": "Naorko/CellProfiling-research", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "shumshersubashgautam/Cellpainting-cardiac-fibroblasts", "label": "shumshersubashgautam/Cellpainting-cardiac-fibroblasts", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "WayScience/Benchmarking_NF1_data", "label": "WayScience/Benchmarking_NF1_data", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Petbys/cellanalysis", "label": "Petbys/cellanalysis", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "WayScience/IDR_stream", "label": "WayScience/IDR_stream", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "angayunpa/EMProject", "label": "angayunpa/EMProject", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "cytodata/single-cell-classifier", "label": "cytodata/single-cell-classifier", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "WayScience/JUMP-single-cell", "label": "WayScience/JUMP-single-cell", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "broadinstitute/FeatureAggregation", "label": "broadinstitute/FeatureAggregation", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "broadinstitute/2023_cytominer_sphering_benchmark", "label": "broadinstitute/2023_cytominer_sphering_benchmark", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "shumshersubashgautam/NF1-CELLPAINTING", "label": "shumshersubashgautam/NF1-CELLPAINTING", "shape": "dot", "size": 10}, {"color": "#D9651D", "id": "CytoTable", "label": "CytoTable", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "niranjchandrasekaran/explore-aggregate", "label": "niranjchandrasekaran/explore-aggregate", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "Mas515/Image_analysis", "label": "Mas515/Image_analysis", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "jump-cellpainting/jump-scope-analysis", "label": "jump-cellpainting/jump-scope-analysis", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "WayScience/cell-health-data", "label": "WayScience/cell-health-data", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "broadinstitute/lincs-profiling-complementarity", "label": "broadinstitute/lincs-profiling-complementarity", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "broadinstitute/scripts_notebooks_fossa", "label": "broadinstitute/scripts_notebooks_fossa", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "gwaybio/gancy", "label": "gwaybio/gancy", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "WayScience/nf1_cellpainting_data", "label": "WayScience/nf1_cellpainting_data", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "WayScience/pyroptosis_signature_data_analysis", "label": "WayScience/pyroptosis_signature_data_analysis", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "broadinstitute/BBBC021_Morpheus_Exercise", "label": "broadinstitute/BBBC021_Morpheus_Exercise", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "broadinstitute/lincs-cell-painting", "label": "broadinstitute/lincs-cell-painting", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "carpenter-singh-lab/2023_vanDijk_CytoSummaryNet", "label": "carpenter-singh-lab/2023_vanDijk_CytoSummaryNet", "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "carpenter-singh-lab/2023_Cimini_NatureProtocols", "label": "carpenter-singh-lab/2023_Cimini_NatureProtocols", "shape": "dot", "size": 10}]);
+                  edges = new vis.DataSet([{"color": "#E7358A", "from": "WayScience/mitocheck_data", "to": "pycytominer", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "cytomining/profiling-recipe", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "alonshpigler/AnomalyDetectionScreening", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "WayScience/CFReT_data", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "broadinstitute/position-effect-correction", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "broadinstitute/grit-benchmark", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "broadinstitute/cell-health", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "EchteRobert/singleCell-featureAggregation", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "CU-DBMI/set-effort-analysis", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "shumshersubashgautam/CellPainting-NF1-SchwanCells", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "ciminilab/2023_Garcia-Fossa_Cruz_CurrentProtocols", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "broadinstitute/neural-profiling", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "WayScience/CytoSnake", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "broadinstitute/neural-profiling-archive", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "DistributedScience/Distributed-Collate", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "aktgpt/BF-MoA", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "broadinstitute/profiling-resistance-mechanisms", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "CU-DBMI/pycytominer-performance", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "broadinstitute/2022_PERISCOPE", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "CytoTable-benchmarks", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "shntnu/sphering", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "cytomining/pipeline-examples", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "broadinstitute/pooled-cell-painting-profiling-recipe", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "niranjchandrasekaran/profiling-workflow-demo", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "WayScience/pyroptosis_signature", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "broadinstitute/2022_09_07_New_phenotypic_dye_testing_CDoT_Broad", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "shumshersubashgautam/VAE-CellPainting", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "broadinstitute/2020-06-01-Evidence-of-state-switching-in-single-cell-drug-response-Broad", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "broadinstitute/cell-painting-vae", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "CarragherLab/phenonaut", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "broadinstitute/cell-painting-batch-effects", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "carpenter-singh-lab/2023_Arevalo_BatchCorrection", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "marx-alex/Morphelia", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "Naorko/CellProfiling-research", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "shumshersubashgautam/Cellpainting-cardiac-fibroblasts", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "WayScience/Benchmarking_NF1_data", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "Petbys/cellanalysis", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "WayScience/IDR_stream", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "angayunpa/EMProject", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "cytodata/single-cell-classifier", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "WayScience/JUMP-single-cell", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "broadinstitute/FeatureAggregation", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "broadinstitute/2023_cytominer_sphering_benchmark", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "shumshersubashgautam/NF1-CELLPAINTING", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "CytoTable", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "niranjchandrasekaran/explore-aggregate", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "Mas515/Image_analysis", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "jump-cellpainting/jump-scope-analysis", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "WayScience/cell-health-data", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "broadinstitute/lincs-profiling-complementarity", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "broadinstitute/scripts_notebooks_fossa", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "gwaybio/gancy", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "WayScience/nf1_cellpainting_data", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "WayScience/pyroptosis_signature_data_analysis", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "broadinstitute/BBBC021_Morpheus_Exercise", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "broadinstitute/lincs-cell-painting", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "carpenter-singh-lab/2023_vanDijk_CytoSummaryNet", "width": 1}, {"color": "#E7358A", "from": "pycytominer", "to": "carpenter-singh-lab/2023_Cimini_NatureProtocols", "width": 1}, {"color": "#D9651D", "from": "WayScience/CFReT_data", "to": "CytoTable", "width": 1}, {"color": "#D9651D", "from": "CU-DBMI/set-effort-analysis", "to": "CytoTable", "width": 1}, {"color": "#D9651D", "from": "WayScience/CytoSnake", "to": "CytoTable", "width": 1}, {"color": "#D9651D", "from": "CytoTable-benchmarks", "to": "CytoTable", "width": 1}, {"color": "#D9651D", "from": "WayScience/pyroptosis_signature", "to": "CytoTable", "width": 1}, {"color": "#D9651D", "from": "shumshersubashgautam/NF1-CELLPAINTING", "to": "CytoTable", "width": 1}, {"color": "#D9651D", "from": "CytoTable", "to": "WayScience/nf1_cellpainting_data", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
