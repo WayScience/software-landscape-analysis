@@ -2,6 +2,7 @@
 # See https://pre-commit.com/hooks.html for more hooks
 default_language_version:
   python: python3.10
+exclude: docs/cytomining-ecosystem/lib
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
@@ -17,7 +18,7 @@ repos:
       - id: codespell
         exclude: |
           (?x)^(
-              .*\.lock|.*\.csv|.*\.ipynb|.*/data/.*\.yaml|docs/.*/report.html|docs/.*/data_profile.html
+              .*\.lock|.*\.csv|.*\.ipynb|.*/data/.*\.yaml|docs/.*/report.html|docs/.*/data_profile.html|docs/.*/target-project-dependents.html
           )$
         additional_dependencies:
           - tomli
@@ -26,12 +27,12 @@ repos:
     hooks:
       - id: mdformat
   - repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.7.0
+    rev: 1.7.1
     hooks:
       - id: nbqa-black
       - id: nbqa-isort
   - repo: https://github.com/psf/black
-    rev: 23.10.0
+    rev: 23.11.0
     hooks:
       - id: black
   - repo: https://github.com/asottile/blacken-docs

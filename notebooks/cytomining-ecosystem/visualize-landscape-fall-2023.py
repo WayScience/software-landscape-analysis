@@ -185,7 +185,7 @@ fig_collection.append(
         "description": """
         This plot explores the user bases of relevant projects
         through relative GitHub stars and the age of the project in years.
-        GitHub stars is an indication of unique users whom are interested
+        GitHub stars are an indication of unique users whom are interested
         in and likely use the project somehow.
         """,
         "findings": """
@@ -751,7 +751,7 @@ with open(f"{export_dir}/report.html", "w") as f:
 <!-- referenced with modifications from example work on: https://github.com/KrauseFx/markdown-to-html-github-style -->
 
 <head>
-    <title>Cytomining Ecosystem | Way Lab: Software Landscape Analysis</title>
+    <title>Cytomining Ecosystem | Way Lab: Software Landscape Analysis - Landscape Report</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/style.css">
@@ -759,7 +759,7 @@ with open(f"{export_dir}/report.html", "w") as f:
 
 <body>
     <div id='content'>
-        <h1>Cytomining Ecosystem Software Landscape Analysis - Focused Report</h1>
+        <h1>Cytomining Ecosystem Software Landscape Analysis - Landscape Report</h1>
 
         <p>This is a focused report to help describe landscape elements related to project user base size, usage,
         maturity, and general landscape for the Cytomining Ecosystem.</p>
@@ -850,4 +850,3 @@ asyncio.get_event_loop().run_until_complete(
         output_path=f"{export_dir}/report.png",
     )
 )
-# -
