@@ -8,10 +8,13 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.12"
-# pandas dependency notes
+# pandas dependency notes:
 # >=2.0.0,<3.0.0 required by github-dependents-info
 # >1.1,<1.4.0 required by condastats
-# ydata-profiling may also have dependencies which don't align
+# ">1.1,<1.4.0 || >1.4.0,<2.1" required by  ydata-profiling
+# these requirements are configured where needed in the poethepoet
+# workflow below but may need manual handling for proper
+# development within jupyter
 pandas = ">=2.0.0,<3.0.0"
 numpy = ">=1.16.0,<1.26"
 matplotlib = ">=3.2,<=3.7.3"
@@ -69,7 +72,14 @@ shell = """
   python seek-landscape-entries.py &&
   python project-github-metrics.py &&
   python gather-targeted-publication-mentions.py &&
+  # install specialized version of pandas for condastats
+  pip install -q "pandas>1.1,<1.4.0" || true
+  # install specialized version of pandas for github-dependents-info
+  pip install -q "pandas>=2.0.0,<3.0.0" || true
   python gather-targeted-package-metrics.py &&
+  # install specialized version of pandas for ydata_profiling
+  pip install -q "pandas>1.4.0,<2.1" || true
+  python visualize-target-projects-fall-2023.py &&
   python visualize-landscape-fall-2023.py
 """
 
