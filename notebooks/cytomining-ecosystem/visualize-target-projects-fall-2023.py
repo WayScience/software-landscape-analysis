@@ -644,7 +644,7 @@ with open(f"{export_dir}/target-project-report.html", "w") as f:
                     <br><br>
                     <span style='font-size:1.17em'>{figure['plot'].html_plot_title} (click and scroll with mouse to interact)</span>
                     <iframe src="{figure['plot'].html_export_loc}"
-                     style="overflow:hidden;width:100%;height:500px;border:0px;">Browser not compatible.</iframe>
+                     style="overflow:hidden;width:1201px;height:520px;border:0px;">Browser not compatible with iframe rendering.</iframe>
                     <br><br>
                     """
                 )
