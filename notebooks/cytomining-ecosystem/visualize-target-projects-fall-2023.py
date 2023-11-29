@@ -164,7 +164,7 @@ fig_collection.append(
         BioRxiv is a pre-print server with biological focus.
         """,
         "findings": """
-        We observe that Pycytominer appears in 20 Google Scholar results and 13 BioRxiv
+        We observe that Pycytominer appears in 22 Google Scholar results and 14 BioRxiv
         preprints. This demonstrates how Pycytominer is already being used in both
         previous and ongoing research efforts.
         """,

@@ -32,7 +32,7 @@ For example, use the following to run the `cytomining_ecosystem` task:
 
 ```bash
 # run cytomining_ecosystem using poethepoet
-poetry run poe cytomining_ecosystem
+poetry run poe cytomining_ecosystem_fall_2023
 ```
 
 ### Reports and GitHub Pages

@@ -5,24 +5,31 @@ projects:
     homepage_url: https://pycytominer.readthedocs.io/en/latest/
     name: pycytominer
     repo_url: https://github.com/cytomining/pycytominer
+    target-key-personnel-gh-login:
+      - gwaybio
+      - kenibrewer
+      - d33bs
   - category:
       - loi-focus
       - cytomining-ecosystem
     homepage_url: https://cytosnake.readthedocs.io/en/latest/
     name: cytosnake
     repo_url: https://github.com/WayScience/CytoSnake
+    target-key-personnel-gh-login:
+      - gwaybio
+      - axiomcura
+      - jenna-tomkinson
+      - d33bs
   - category:
       - loi-focus
       - cytomining-ecosystem
     homepage_url: https://cytomining.github.io/CytoTable/
     name: cytotable
     repo_url: https://github.com/cytomining/CytoTable
-  - category:
-      - loi-focus
-      - cytomining-ecosystem
-    homepage_url: https://github.com/WayScience/IDR_stream
-    name: IDR_Stream
-    repo_url: https://github.com/WayScience/IDR_stream
+    target-key-personnel-gh-login:
+      - gwaybio
+      - jenna-tomkinson
+      - d33bs
   - category:
       - cytomining-ecosystem-relevant-open-source
     homepage_url: https://pandas.pydata.org/
@@ -560,9 +567,19 @@ projects:
     repo_url: https://github.com/frknrnn/DeepCAN
   - category:
       - related-tools-github-query-result
+    homepage_url: null
+    name: Detection-Of-Brain-Tumor
+    repo_url: https://github.com/Beel234/Detection-Of-Brain-Tumor
+  - category:
+      - related-tools-github-query-result
     homepage_url: ''
     name: pheno-ml
     repo_url: https://github.com/dmitrav/pheno-ml
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: Cell-segmentation-and-feature-extraction
+    repo_url: https://github.com/mikweeh/Cell-segmentation-and-feature-extraction
   - category:
       - related-tools-github-query-result
     homepage_url: https://vampire.readthedocs.io/en/latest/
@@ -575,9 +592,9 @@ projects:
     repo_url: https://github.com/rishipython/Acute-Lymphocytic-Leukemia-ALL-Cell-Classification
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: Detection-Of-Brain-Tumor
-    repo_url: https://github.com/Beel234/Detection-Of-Brain-Tumor
+    homepage_url: ''
+    name: CNN-Segmentation
+    repo_url: https://github.com/mcgoughlin/CNN-Segmentation
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -605,9 +622,9 @@ projects:
     repo_url: https://github.com/herrschmidt0/Table-recognition
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: Cell-segmentation-and-feature-extraction
-    repo_url: https://github.com/mikweeh/Cell-segmentation-and-feature-extraction
+    homepage_url: null
+    name: BreastCancerCellsDetection
+    repo_url: https://github.com/drcihanyilmaz/BreastCancerCellsDetection
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -620,24 +637,19 @@ projects:
     repo_url: https://github.com/Xqua/SpotAnalizer
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: CNN-Segmentation
-    repo_url: https://github.com/mcgoughlin/CNN-Segmentation
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: Multi-Object-Portion-Tracking-in-4D-Fluorescence-Microscopy-Imagery-with-Deep-Feature-Maps
     repo_url: https://github.com/YJDIFF/Multi-Object-Portion-Tracking-in-4D-Fluorescence-Microscopy-Imagery-with-Deep-Feature-Maps
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: CellQuant
-    repo_url: https://github.com/jfelectron/CellQuant
-  - category:
-      - related-tools-github-query-result
     homepage_url: ''
     name: CellMorphology
     repo_url: https://github.com/KnightofDawn/CellMorphology
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: CellQuant
+    repo_url: https://github.com/jfelectron/CellQuant
   - category:
       - related-tools-github-query-result
     homepage_url: https://danhealey.github.io/analyzing-leaf-morphology/README.pdf
@@ -711,8 +723,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: Segmentation-of-Fluorescent-Neuronal-Cells-in-Mice-Brain-Slices-Using-Modified-UNet-Autoencoder
-    repo_url: https://github.com/Hassanshah531/Segmentation-of-Fluorescent-Neuronal-Cells-in-Mice-Brain-Slices-Using-Modified-UNet-Autoencoder
+    name: Segmentation-of-Fluorescent-Neuronal-Cells-in-Mice-Brain-Slices-Using-Modified-UNet
+    repo_url: https://github.com/Hassanshah531/Segmentation-of-Fluorescent-Neuronal-Cells-in-Mice-Brain-Slices-Using-Modified-UNet
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -766,18 +778,23 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: 2018_Rohban_NatComm
-    repo_url: https://github.com/carpenterlab/2018_Rohban_NatComm
+    name: pooled-cell-painting-profiling-recipe
+    repo_url: https://github.com/broadinstitute/pooled-cell-painting-profiling-recipe
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: pooled-cell-painting-profiling-recipe
-    repo_url: https://github.com/broadinstitute/pooled-cell-painting-profiling-recipe
+    name: 2018_Rohban_NatComm
+    repo_url: https://github.com/carpenterlab/2018_Rohban_NatComm
   - category:
       - related-tools-github-query-result
     homepage_url: null
     name: cellxpedite
     repo_url: https://github.com/brunoboivin/cellxpedite
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: 2023_Arevalo_BatchCorrection
+    repo_url: https://github.com/carpenter-singh-lab/2023_Arevalo_BatchCorrection
   - category:
       - related-tools-github-query-result
     homepage_url: https://github.com/broadinstitute/imaging_metric_comparison/blob/master/Duc_Marie_thesis.pdf
@@ -795,11 +812,6 @@ projects:
     repo_url: https://github.com/nitinsai20/Image-based-single-cell-profiling-of-autophagy-related-phenotypes.
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: 2023_Arevalo_BatchCorrection
-    repo_url: https://github.com/carpenter-singh-lab/2023_Arevalo_BatchCorrection
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: BioMorph
     repo_url: https://github.com/srijitseal/BioMorph
@@ -808,11 +820,6 @@ projects:
     homepage_url: null
     name: Blood-Cell-Characterization
     repo_url: https://github.com/Jeevan-J/Blood-Cell-Characterization
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: cytominer
-    repo_url: https://github.com/cran/cytominer
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -825,14 +832,14 @@ projects:
     repo_url: https://github.com/hallvaaw/awesome-biological-image-analysis
   - category:
       - related-tools-github-query-result
-    homepage_url: http://www.orbit.bio
-    name: orbit-image-analysis
-    repo_url: https://github.com/mstritt/orbit-image-analysis
-  - category:
-      - related-tools-github-query-result
     homepage_url: https://natverse.github.io/nat/
     name: nat
     repo_url: https://github.com/natverse/nat
+  - category:
+      - related-tools-github-query-result
+    homepage_url: http://www.orbit.bio
+    name: orbit-image-analysis
+    repo_url: https://github.com/mstritt/orbit-image-analysis
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -950,6 +957,11 @@ projects:
     repo_url: https://github.com/Haifafh/AG-img2net
   - category:
       - related-tools-github-query-result
+    homepage_url: ''
+    name: confocal_z-stack_analysis
+    repo_url: https://github.com/lauraluebbert/confocal_z-stack_analysis
+  - category:
+      - related-tools-github-query-result
     homepage_url: https://faculty.washington.edu/kutz/KutzBook/KutzBook.html
     name: AMATH_482-Data_Analysis
     repo_url: https://github.com/zackmcnulty/AMATH_482-Data_Analysis
@@ -1016,13 +1028,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: PPX_V1_V2
-    repo_url: https://github.com/CrisJotaro/PPX_V1_V2
+    name: DABDI
+    repo_url: https://github.com/jmpfreire/DABDI
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: DABDI
-    repo_url: https://github.com/jmpfreire/DABDI
+    name: PPX_V1_V2
+    repo_url: https://github.com/CrisJotaro/PPX_V1_V2
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -1048,16 +1060,6 @@ projects:
     homepage_url: null
     name: Andy-s-Algorithm
     repo_url: https://github.com/Andlaw627/Andy-s-Algorithm
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: Bioi
-    repo_url: https://github.com/cran/Bioi
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: confocal_z-stack_analysis
-    repo_url: https://github.com/lauraluebbert/confocal_z-stack_analysis
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -1110,14 +1112,14 @@ projects:
     repo_url: https://github.com/GaudiLabs/3DFiberSpectrometer
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: KairoSight
-    repo_url: https://github.com/kairosight/KairoSight
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: AutomAl-6000
     repo_url: https://github.com/Haawk666/AutomAl-6000
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: KairoSight
+    repo_url: https://github.com/kairosight/KairoSight
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -1141,8 +1143,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: domainAdaptability1
-    repo_url: https://github.com/lennartp03/domainAdaptability1
+    name: domainAdaptability
+    repo_url: https://github.com/lennartp03/domainAdaptability
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -1200,14 +1202,14 @@ projects:
     repo_url: https://github.com/scRNA-tools/scRNA-tools
   - category:
       - related-tools-github-query-result
-    homepage_url: https://stuartlab.org/signac/
-    name: signac
-    repo_url: https://github.com/stuart-lab/signac
-  - category:
-      - related-tools-github-query-result
     homepage_url: https://pydance.readthedocs.io
     name: dance
     repo_url: https://github.com/OmicsML/dance
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://stuartlab.org/signac/
+    name: signac
+    repo_url: https://github.com/stuart-lab/signac
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -1240,14 +1242,19 @@ projects:
     repo_url: https://github.com/facebookresearch/PoincareMaps
   - category:
       - related-tools-github-query-result
+    homepage_url: https://samuel-marsh.github.io/scCustomize/
+    name: scCustomize
+    repo_url: https://github.com/samuel-marsh/scCustomize
+  - category:
+      - related-tools-github-query-result
     homepage_url: null
     name: scell_lung_adenocarcinoma
     repo_url: https://github.com/czbiohub-sf/scell_lung_adenocarcinoma
   - category:
       - related-tools-github-query-result
-    homepage_url: https://samuel-marsh.github.io/scCustomize/
-    name: scCustomize
-    repo_url: https://github.com/samuel-marsh/scCustomize
+    homepage_url: https://kharchenkolab.github.io/numbat/
+    name: numbat
+    repo_url: https://github.com/kharchenkolab/numbat
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -1255,24 +1262,24 @@ projects:
     repo_url: https://github.com/colomemaria/epiScanpy
   - category:
       - related-tools-github-query-result
-    homepage_url: https://kanaverse.org/kana/
-    name: kana
-    repo_url: https://github.com/kanaverse/kana
-  - category:
-      - related-tools-github-query-result
     homepage_url: https://yoseflab.github.io/VISION/
     name: VISION
     repo_url: https://github.com/YosefLab/VISION
   - category:
       - related-tools-github-query-result
+    homepage_url: https://omicverse.readthedocs.io/
+    name: omicverse
+    repo_url: https://github.com/Starlitnightly/omicverse
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://kanaverse.org/kana/
+    name: kana
+    repo_url: https://github.com/kanaverse/kana
+  - category:
+      - related-tools-github-query-result
     homepage_url: ''
     name: scCODA
     repo_url: https://github.com/theislab/scCODA
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://kharchenkolab.github.io/numbat/
-    name: numbat
-    repo_url: https://github.com/kharchenkolab/numbat
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -1285,14 +1292,14 @@ projects:
     repo_url: https://github.com/kaizhang/SnapATAC2
   - category:
       - related-tools-github-query-result
+    homepage_url: https://bnprks.github.io/BPCells
+    name: BPCells
+    repo_url: https://github.com/bnprks/BPCells
+  - category:
+      - related-tools-github-query-result
     homepage_url: https://bvieth.github.io/powsimR/
     name: powsimR
     repo_url: https://github.com/bvieth/powsimR
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://omicverse.readthedocs.io/
-    name: omicverse
-    repo_url: https://github.com/Starlitnightly/omicverse
   - category:
       - related-tools-github-query-result
     homepage_url: https://tanaylab.github.io/metacell
@@ -1305,6 +1312,11 @@ projects:
     repo_url: https://github.com/caleblareau/mgatk
   - category:
       - related-tools-github-query-result
+    homepage_url: null
+    name: escape
+    repo_url: https://github.com/ncborcherding/escape
+  - category:
+      - related-tools-github-query-result
     homepage_url: ''
     name: single-cell-rna-seq
     repo_url: https://github.com/snakemake-workflows/single-cell-rna-seq
@@ -1313,16 +1325,6 @@ projects:
     homepage_url: ''
     name: SCALE
     repo_url: https://github.com/jsxlei/SCALE
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: escape
-    repo_url: https://github.com/ncborcherding/escape
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://bnprks.github.io/BPCells
-    name: BPCells
-    repo_url: https://github.com/bnprks/BPCells
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -1350,14 +1352,14 @@ projects:
     repo_url: https://github.com/parashardhapola/scarf
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: BrCa_cell_atlas
-    repo_url: https://github.com/Swarbricklab-code/BrCa_cell_atlas
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: Parkinson-Disease-Prediction
     repo_url: https://github.com/Aastha2104/Parkinson-Disease-Prediction
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: BrCa_cell_atlas
+    repo_url: https://github.com/Swarbricklab-code/BrCa_cell_atlas
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -1381,13 +1383,23 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
+    name: sc-SHC
+    repo_url: https://github.com/igrabski/sc-SHC
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
     name: bioc2016singlecell
     repo_url: https://github.com/drisso/bioc2016singlecell
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: sc-SHC
-    repo_url: https://github.com/igrabski/sc-SHC
+    name: PISCES
+    repo_url: https://github.com/califano-lab/PISCES
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://theislab.github.io/destiny/
+    name: destiny
+    repo_url: https://github.com/theislab/destiny
   - category:
       - related-tools-github-query-result
     homepage_url: http://jef.works/MUDAN/
@@ -1400,16 +1412,6 @@ projects:
     repo_url: https://github.com/Bioconductor/OrchestratingSingleCellAnalysis
   - category:
       - related-tools-github-query-result
-    homepage_url: https://theislab.github.io/destiny/
-    name: destiny
-    repo_url: https://github.com/theislab/destiny
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: PISCES
-    repo_url: https://github.com/califano-lab/PISCES
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: scPipe
     repo_url: https://github.com/LuyiTian/scPipe
@@ -1420,19 +1422,29 @@ projects:
     repo_url: https://github.com/ucagenomix/sicelore
   - category:
       - related-tools-github-query-result
-    homepage_url: https://www.nature.com/articles/s41421-022-00415-0
-    name: RenalTumor
-    repo_url: https://github.com/Dragonlongzhilin/RenalTumor
-  - category:
-      - related-tools-github-query-result
     homepage_url: https://rapids-singlecell.readthedocs.io/
     name: rapids_singlecell
     repo_url: https://github.com/scverse/rapids_singlecell
   - category:
       - related-tools-github-query-result
+    homepage_url: https://pertpy.readthedocs.io/en/latest/
+    name: pertpy
+    repo_url: https://github.com/theislab/pertpy
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://www.nature.com/articles/s41421-022-00415-0
+    name: RenalTumor
+    repo_url: https://github.com/Dragonlongzhilin/RenalTumor
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: multinichenetr
+    repo_url: https://github.com/saeyslab/multinichenetr
+  - category:
+      - related-tools-github-query-result
     homepage_url: null
-    name: tenx
-    repo_url: https://github.com/sansomlab/tenx
+    name: metacells
+    repo_url: https://github.com/tanaylab/metacells
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -1441,23 +1453,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: metacells
-    repo_url: https://github.com/tanaylab/metacells
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://pertpy.readthedocs.io/en/latest/
-    name: pertpy
-    repo_url: https://github.com/theislab/pertpy
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: multinichenetr
-    repo_url: https://github.com/saeyslab/multinichenetr
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://combiz.github.io/scFlow/
-    name: scFlow
-    repo_url: https://github.com/combiz/scFlow
+    name: tenx
+    repo_url: https://github.com/sansomlab/tenx
   - category:
       - related-tools-github-query-result
     homepage_url: https://immunedynamics.github.io/spectre/
@@ -1465,14 +1462,19 @@ projects:
     repo_url: https://github.com/ImmuneDynamics/Spectre
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: scRNA-seq-pipelines
-    repo_url: https://github.com/bvieth/scRNA-seq-pipelines
+    homepage_url: https://combiz.github.io/scFlow/
+    name: scFlow
+    repo_url: https://github.com/combiz/scFlow
   - category:
       - related-tools-github-query-result
     homepage_url: ''
     name: ItClust
     repo_url: https://github.com/jianhuupenn/ItClust
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: scRNA-seq-pipelines
+    repo_url: https://github.com/bvieth/scRNA-seq-pipelines
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -1490,24 +1492,24 @@ projects:
     repo_url: https://github.com/robertaboukhalil/ginkgo
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: scETM
-    repo_url: https://github.com/hui2000ji/scETM
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://theislab.github.io/scib-reproducibility/
-    name: scib-reproducibility
-    repo_url: https://github.com/theislab/scib-reproducibility
-  - category:
-      - related-tools-github-query-result
     homepage_url: https://scimap.xyz/
     name: scimap
     repo_url: https://github.com/labsyspharm/scimap
   - category:
       - related-tools-github-query-result
+    homepage_url: ''
+    name: scETM
+    repo_url: https://github.com/hui2000ji/scETM
+  - category:
+      - related-tools-github-query-result
     homepage_url: null
     name: SCAFE
     repo_url: https://github.com/chung-lab/SCAFE
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://theislab.github.io/scib-reproducibility/
+    name: scib-reproducibility
+    repo_url: https://github.com/theislab/scib-reproducibility
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -1520,24 +1522,9 @@ projects:
     repo_url: https://github.com/bedapub/besca
   - category:
       - related-tools-github-query-result
-    homepage_url: http://costalab.github.io/CrossTalkeR
-    name: CrossTalkeR
-    repo_url: https://github.com/CostaLab/CrossTalkeR
-  - category:
-      - related-tools-github-query-result
     homepage_url: https://github.com/statgen/popscle/wiki
     name: popscle
     repo_url: https://github.com/statgen/popscle
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: ISMB2019_SingleCellTutorial
-    repo_url: https://github.com/rhondabacher/ISMB2019_SingleCellTutorial
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: cna
-    repo_url: https://github.com/immunogenomics/cna
   - category:
       - related-tools-github-query-result
     homepage_url: https://mzkit.org
@@ -1545,9 +1532,34 @@ projects:
     repo_url: https://github.com/xieguigang/mzkit
   - category:
       - related-tools-github-query-result
+    homepage_url: ''
+    name: CellChat
+    repo_url: https://github.com/jinworks/CellChat
+  - category:
+      - related-tools-github-query-result
+    homepage_url: http://costalab.github.io/CrossTalkeR
+    name: CrossTalkeR
+    repo_url: https://github.com/CostaLab/CrossTalkeR
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: cna
+    repo_url: https://github.com/immunogenomics/cna
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: ISMB2019_SingleCellTutorial
+    repo_url: https://github.com/rhondabacher/ISMB2019_SingleCellTutorial
+  - category:
+      - related-tools-github-query-result
     homepage_url: https://quasildr.readthedocs.io/en/latest/main.html
     name: quasildr
     repo_url: https://github.com/jzhoulab/quasildr
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: mouse_organogenesis_10x_multiome_publication
+    repo_url: https://github.com/rargelaguet/mouse_organogenesis_10x_multiome_publication
   - category:
       - related-tools-github-query-result
     homepage_url: https://academic.oup.com/bioinformatics/article/32/14/2219/1743130/SCell-integrated-analysis-of-single-cell-RNA-seq
@@ -1560,24 +1572,29 @@ projects:
     repo_url: https://github.com/TaylorResearchLab/scedar
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: scDHA
-    repo_url: https://github.com/duct317/scDHA
-  - category:
-      - related-tools-github-query-result
     homepage_url: https://osca.bioconductor.org
     name: OrchestratingSingleCellAnalysis-release
     repo_url: https://github.com/Bioconductor/OrchestratingSingleCellAnalysis-release
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: Scasat
-    repo_url: https://github.com/ManchesterBioinference/Scasat
+    name: sccomp
+    repo_url: https://github.com/stemangiola/sccomp
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: mouse_organogenesis_10x_multiome_publication
-    repo_url: https://github.com/rargelaguet/mouse_organogenesis_10x_multiome_publication
+    name: SPARK
+    repo_url: https://github.com/xzhoulab/SPARK
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: scDHA
+    repo_url: https://github.com/duct317/scDHA
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: Scasat
+    repo_url: https://github.com/ManchesterBioinference/Scasat
   - category:
       - related-tools-github-query-result
     homepage_url: https://jackbibby1.github.io/SCPA/
@@ -1586,13 +1603,18 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: SPARK
-    repo_url: https://github.com/xzhoulab/SPARK
+    name: Platypus
+    repo_url: https://github.com/alexyermanos/Platypus
   - category:
       - related-tools-github-query-result
     homepage_url: https://github.com/nolanlab/vortex/releases
     name: vortex
     repo_url: https://github.com/nolanlab/vortex
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: DNBelab_C_Series_HT_scRNA-analysis-software
+    repo_url: https://github.com/MGI-tech-bioinformatics/DNBelab_C_Series_HT_scRNA-analysis-software
   - category:
       - related-tools-github-query-result
     homepage_url: http://nasqar.abudhabi.nyu.edu/SeuratV3Wizard
@@ -1606,23 +1628,23 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: Platypus
-    repo_url: https://github.com/alexyermanos/Platypus
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
     name: 2019_scWorkshop
     repo_url: https://github.com/broadinstitute/2019_scWorkshop
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: DNBelab_C_Series_HT_scRNA-analysis-software
-    repo_url: https://github.com/MGI-tech-bioinformatics/DNBelab_C_Series_HT_scRNA-analysis-software
   - category:
       - related-tools-github-query-result
     homepage_url: https://vitkl.github.io/ParetoTI/
     name: ParetoTI
     repo_url: https://github.com/vitkl/ParetoTI
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://schist.readthedocs.io
+    name: schist
+    repo_url: https://github.com/dawe/schist
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: scITD
+    repo_url: https://github.com/kharchenkolab/scITD
   - category:
       - related-tools-github-query-result
     homepage_url: https://bioinformatics.sph.harvard.edu/bcbioSingleCell
@@ -1636,8 +1658,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: scITD
-    repo_url: https://github.com/kharchenkolab/scITD
+    name: SingCellaR
+    repo_url: https://github.com/supatt-lab/SingCellaR
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -1646,18 +1668,23 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: SingCellaR
-    repo_url: https://github.com/supatt-lab/SingCellaR
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: sccomp
-    repo_url: https://github.com/stemangiola/sccomp
+    name: DeepTree
+    repo_url: https://github.com/KristinaUlicna/DeepTree
   - category:
       - related-tools-github-query-result
     homepage_url: ''
     name: crc-immune-hubs
     repo_url: https://github.com/matanhofree/crc-immune-hubs
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://lhqing.github.io/ALLCools/intro.html
+    name: ALLCools
+    repo_url: https://github.com/lhqing/ALLCools
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: single-cell-rcc-pipeline
+    repo_url: https://github.com/Aleksobrad/single-cell-rcc-pipeline
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -1671,43 +1698,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: DeepTree
-    repo_url: https://github.com/KristinaUlicna/DeepTree
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: single_cell_analysis
-    repo_url: https://github.com/broadinstitute/single_cell_analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://sydneybiox.github.io/scdney/
-    name: scdney
-    repo_url: https://github.com/SydneyBioX/scdney
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: iDEA
-    repo_url: https://github.com/xzhoulab/iDEA
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: scrattch
-    repo_url: https://github.com/AllenInstitute/scrattch
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://schist.readthedocs.io
-    name: schist
-    repo_url: https://github.com/dawe/schist
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
     name: splatter-paper
     repo_url: https://github.com/Oshlack/splatter-paper
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://spatialtis.readthedocs.io/en/latest/
-    name: SpatialTis
-    repo_url: https://github.com/Mr-Milk/SpatialTis
   - category:
       - related-tools-github-query-result
     homepage_url: http://nasqar.abudhabi.nyu.edu
@@ -1716,13 +1708,18 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: scRNA-seq_analysis
-    repo_url: https://github.com/haniffalab/scRNA-seq_analysis
+    name: single_cell_analysis
+    repo_url: https://github.com/broadinstitute/single_cell_analysis
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: single-cell-rcc-pipeline
-    repo_url: https://github.com/Aleksobrad/single-cell-rcc-pipeline
+    name: scrnaseq
+    repo_url: https://github.com/ktrns/scrnaseq
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: iDEA
+    repo_url: https://github.com/xzhoulab/iDEA
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -1730,14 +1727,29 @@ projects:
     repo_url: https://github.com/ml4bio/CLEAR
   - category:
       - related-tools-github-query-result
+    homepage_url: null
+    name: scrattch
+    repo_url: https://github.com/AllenInstitute/scrattch
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://spatialtis.readthedocs.io/en/latest/
+    name: SpatialTis
+    repo_url: https://github.com/Mr-Milk/SpatialTis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: scRNA-seq_analysis
+    repo_url: https://github.com/haniffalab/scRNA-seq_analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: panpipes
+    repo_url: https://github.com/DendrouLab/panpipes
+  - category:
+      - related-tools-github-query-result
     homepage_url: https://doi.org/10.1186/s13059-020-1949-z
     name: FootprintMethods_on_scRNAseq
     repo_url: https://github.com/saezlab/FootprintMethods_on_scRNAseq
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: SpliZ_pipeline
-    repo_url: https://github.com/juliaolivieri/SpliZ_pipeline
   - category:
       - related-tools-github-query-result
     homepage_url: https://crop-seq.computational-epigenetics.org
@@ -1746,13 +1758,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: single_cell_pipeline
-    repo_url: https://github.com/shahcompbio/single_cell_pipeline
+    name: Alleloscope
+    repo_url: https://github.com/seasoncloud/Alleloscope
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: panpipes
-    repo_url: https://github.com/DendrouLab/panpipes
+    homepage_url: ''
+    name: single_cell_pipeline
+    repo_url: https://github.com/shahcompbio/single_cell_pipeline
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -1760,19 +1772,14 @@ projects:
     repo_url: https://github.com/theislab/Covid_meta_analysis
   - category:
       - related-tools-github-query-result
+    homepage_url: ''
+    name: SpliZ_pipeline
+    repo_url: https://github.com/juliaolivieri/SpliZ_pipeline
+  - category:
+      - related-tools-github-query-result
     homepage_url: https://github.com/himelmallick/Tweedieverse
     name: Tweedieverse
     repo_url: https://github.com/himelmallick/Tweedieverse
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: Alleloscope
-    repo_url: https://github.com/seasoncloud/Alleloscope
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://lhqing.github.io/ALLCools/intro.html
-    name: ALLCools
-    repo_url: https://github.com/lhqing/ALLCools
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -1786,6 +1793,16 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
+    name: scMultiome_analysis_vignette
+    repo_url: https://github.com/quadbio/scMultiome_analysis_vignette
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: scTyper
+    repo_url: https://github.com/omicsCore/scTyper
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
     name: CellBench
     repo_url: https://github.com/Shians/CellBench
   - category:
@@ -1796,6 +1813,11 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
+    name: CommPath
+    repo_url: https://github.com/yingyonghui/CommPath
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
     name: scTriangulate
     repo_url: https://github.com/frankligy/scTriangulate
   - category:
@@ -1803,6 +1825,21 @@ projects:
     homepage_url: null
     name: cshl-singlecell-2017
     repo_url: https://github.com/olgabot/cshl-singlecell-2017
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://asap.epfl.ch
+    name: ASAP
+    repo_url: https://github.com/DeplanckeLab/ASAP
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: ideas
+    repo_url: https://github.com/Sun-lab/ideas
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://bodenmillergroup.github.io/IMCDataAnalysis/
+    name: IMCDataAnalysis
+    repo_url: https://github.com/BodenmillerGroup/IMCDataAnalysis
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -1835,14 +1872,9 @@ projects:
     repo_url: https://github.com/adamh-broad/single_cell_intestine
   - category:
       - related-tools-github-query-result
-    homepage_url: https://asap.epfl.ch
-    name: ASAP
-    repo_url: https://github.com/DeplanckeLab/ASAP
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: scMultiome_analysis_vignette
-    repo_url: https://github.com/quadbio/scMultiome_analysis_vignette
+    homepage_url: null
+    name: scFunctions
+    repo_url: https://github.com/FloWuenne/scFunctions
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -1851,13 +1883,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: scTyper
-    repo_url: https://github.com/omicsCore/scTyper
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: ideas
-    repo_url: https://github.com/Sun-lab/ideas
+    name: singlet
+    repo_url: https://github.com/zdebruine/singlet
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -1865,39 +1892,29 @@ projects:
     repo_url: https://github.com/CostaLab/scopen
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: scChromHMM
-    repo_url: https://github.com/satijalab/scChromHMM
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: scFunctions
-    repo_url: https://github.com/FloWuenne/scFunctions
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: scrnaseq
-    repo_url: https://github.com/ktrns/scrnaseq
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://digital-cell-sorter.rtfd.io
-    name: DigitalCellSorter
-    repo_url: https://github.com/sdomanskyi/DigitalCellSorter
-  - category:
-      - related-tools-github-query-result
     homepage_url: https://doi.org/10.1242/dev.173807
     name: MouseSpinalCordAtlas
     repo_url: https://github.com/juliendelile/MouseSpinalCordAtlas
   - category:
       - related-tools-github-query-result
-    homepage_url: https://bodenmillergroup.github.io/IMCDataAnalysis/
-    name: IMCDataAnalysis
-    repo_url: https://github.com/BodenmillerGroup/IMCDataAnalysis
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: scAI
     repo_url: https://github.com/sqjin/scAI
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: scChromHMM
+    repo_url: https://github.com/satijalab/scChromHMM
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: popsicleR
+    repo_url: https://github.com/bicciatolab/popsicleR
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://digital-cell-sorter.rtfd.io
+    name: DigitalCellSorter
+    repo_url: https://github.com/sdomanskyi/DigitalCellSorter
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -1910,19 +1927,19 @@ projects:
     repo_url: https://github.com/ncbi/scPopCorn
   - category:
       - related-tools-github-query-result
+    homepage_url: null
+    name: UTechSCB-SCHNAPPs
+    repo_url: https://github.com/C3BI-pasteur-fr/UTechSCB-SCHNAPPs
+  - category:
+      - related-tools-github-query-result
     homepage_url: https://mellon.readthedocs.io
     name: Mellon
     repo_url: https://github.com/settylab/Mellon
   - category:
       - related-tools-github-query-result
-    homepage_url: http://www.kanaverse.org/scran.js/
-    name: scran.js
-    repo_url: https://github.com/kanaverse/scran.js
-  - category:
-      - related-tools-github-query-result
     homepage_url: ''
-    name: singlet
-    repo_url: https://github.com/zdebruine/singlet
+    name: scAmpi_single_cell_RNA
+    repo_url: https://github.com/ETH-NEXUS/scAmpi_single_cell_RNA
   - category:
       - related-tools-github-query-result
     homepage_url: https://towardsdatascience.com/integrative-analysis-of-single-cell-multi-omics-data-using-deep-learning-66a61a3448c5
@@ -1940,29 +1957,19 @@ projects:
     repo_url: https://github.com/vallotlab/scChIPseq
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: SoptSC
-    repo_url: https://github.com/WangShuxiong/SoptSC
-  - category:
-      - related-tools-github-query-result
     homepage_url: https://alona.panglaodb.se
     name: alona
     repo_url: https://github.com/oscar-franzen/alona
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: UTechSCB-SCHNAPPs
-    repo_url: https://github.com/C3BI-pasteur-fr/UTechSCB-SCHNAPPs
+    homepage_url: ''
+    name: SoptSC
+    repo_url: https://github.com/WangShuxiong/SoptSC
   - category:
       - related-tools-github-query-result
     homepage_url: https://www.cell.com/cell/fulltext/S0092-8674(19)30896-7
     name: martin_et_al_cell_2019
     repo_url: https://github.com/effiken/martin_et_al_cell_2019
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: popsicleR
-    repo_url: https://github.com/bicciatolab/popsicleR
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -1975,19 +1982,24 @@ projects:
     repo_url: https://github.com/effiken/scDissector
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: scAmpi_single_cell_RNA
-    repo_url: https://github.com/ETH-NEXUS/scAmpi_single_cell_RNA
+    homepage_url: http://www.kanaverse.org/scran.js/
+    name: scran.js
+    repo_url: https://github.com/kanaverse/scran.js
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: PseudoreplicationPaper
-    repo_url: https://github.com/kdzimm/PseudoreplicationPaper
+    homepage_url: https://vertesy.github.io/Seurat.utils
+    name: Seurat.utils
+    repo_url: https://github.com/vertesy/Seurat.utils
   - category:
       - related-tools-github-query-result
     homepage_url: ''
     name: sc-toolbox
     repo_url: https://github.com/schillerlab/sc-toolbox
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: PseudoreplicationPaper
+    repo_url: https://github.com/kdzimm/PseudoreplicationPaper
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -2005,14 +2017,14 @@ projects:
     repo_url: https://github.com/karthikj89/humanpdac
   - category:
       - related-tools-github-query-result
-    homepage_url: https://vertesy.github.io/Seurat.utils
-    name: Seurat.utils
-    repo_url: https://github.com/vertesy/Seurat.utils
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: awesome-AI4SingleCell
     repo_url: https://github.com/sallyqus/awesome-AI4SingleCell
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: fusca
+    repo_url: https://github.com/edroaldo/fusca
   - category:
       - related-tools-github-query-result
     homepage_url: http://hrpi.ddnetbio.com/
@@ -2040,49 +2052,9 @@ projects:
     repo_url: https://github.com/GenomicsNX/IKAP
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: fusca
-    repo_url: https://github.com/edroaldo/fusca
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: single_cell_analysis
-    repo_url: https://github.com/TimothyTickle/single_cell_analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: scrna_seurat_pipeline
-    repo_url: https://github.com/CostaLab/scrna_seurat_pipeline
-  - category:
-      - related-tools-github-query-result
     homepage_url: ''
     name: bioscrape
     repo_url: https://github.com/biocircuits/bioscrape
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: copykit
-    repo_url: https://github.com/navinlabcode/copykit
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: bioscrape
-    repo_url: https://github.com/ananswam/bioscrape
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: scNT-seq
-    repo_url: https://github.com/wulabupenn/scNT-seq
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: pySpacell
-    repo_url: https://github.com/biocompibens/pySpacell
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: lung-development-cancer-progression
-    repo_url: https://github.com/dpeerlab/lung-development-cancer-progression
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -2101,13 +2073,53 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: singlecellworkflow
-    repo_url: https://github.com/fperraudeau/singlecellworkflow
+    name: single_cell_analysis
+    repo_url: https://github.com/TimothyTickle/single_cell_analysis
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: CommPath
-    repo_url: https://github.com/yingyonghui/CommPath
+    name: scrna_seurat_pipeline
+    repo_url: https://github.com/CostaLab/scrna_seurat_pipeline
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: container-galaxy-sc-tertiary
+    repo_url: https://github.com/ebi-gene-expression-group/container-galaxy-sc-tertiary
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: bioscrape
+    repo_url: https://github.com/ananswam/bioscrape
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: scNT-seq
+    repo_url: https://github.com/wulabupenn/scNT-seq
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: copykit
+    repo_url: https://github.com/navinlabcode/copykit
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: pySpacell
+    repo_url: https://github.com/biocompibens/pySpacell
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: lung-development-cancer-progression
+    repo_url: https://github.com/dpeerlab/lung-development-cancer-progression
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://sites.google.com/yale.edu/sceval
+    name: scEval
+    repo_url: https://github.com/HelloWorldLTY/scEval
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: singlecellworkflow
+    repo_url: https://github.com/fperraudeau/singlecellworkflow
   - category:
       - related-tools-github-query-result
     homepage_url: https://gsea-msigdb.org
@@ -2116,13 +2128,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: singlecell_tutorial
-    repo_url: https://github.com/hwanglab/singlecell_tutorial
+    name: sc_MTOP
+    repo_url: https://github.com/fuscc-deep-path/sc_MTOP
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: container-galaxy-sc-tertiary
-    repo_url: https://github.com/ebi-gene-expression-group/container-galaxy-sc-tertiary
+    name: singlecell_tutorial
+    repo_url: https://github.com/hwanglab/singlecell_tutorial
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -2150,14 +2162,24 @@ projects:
     repo_url: https://github.com/dongxuemin666/RNA-combine
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: adv_singlecell_2022
-    repo_url: https://github.com/fmicompbio/adv_singlecell_2022
+    homepage_url: https://schicexplorer.readthedocs.io/
+    name: scHiCExplorer
+    repo_url: https://github.com/joachimwolff/scHiCExplorer
   - category:
       - related-tools-github-query-result
     homepage_url: ''
     name: mosaic
     repo_url: https://github.com/MissionBio/mosaic
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: adv_singlecell_2022
+    repo_url: https://github.com/fmicompbio/adv_singlecell_2022
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: scRNA-seq-Analysis-of-Prostate-Cancer-Samples
+    repo_url: https://github.com/angelussong/scRNA-seq-Analysis-of-Prostate-Cancer-Samples
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -2180,6 +2202,11 @@ projects:
     repo_url: https://github.com/eddiecg/T-cell-effectorness
   - category:
       - related-tools-github-query-result
+    homepage_url: https://erilu.github.io/single-cell-rnaseq-analysis/
+    name: single-cell-rnaseq-analysis
+    repo_url: https://github.com/erilu/single-cell-rnaseq-analysis
+  - category:
+      - related-tools-github-query-result
     homepage_url: ''
     name: 2020-Advanced_Single_Cell_RNA_Seq
     repo_url: https://github.com/ucdavis-bioinformatics-training/2020-Advanced_Single_Cell_RNA_Seq
@@ -2188,6 +2215,11 @@ projects:
     homepage_url: null
     name: ascend
     repo_url: https://github.com/powellgenomicslab/ascend
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: LineagePulse
+    repo_url: https://github.com/YosefLab/LineagePulse
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -2205,9 +2237,14 @@ projects:
     repo_url: https://github.com/asmagen/robustSingleCell
   - category:
       - related-tools-github-query-result
-    homepage_url: https://schicexplorer.readthedocs.io/
-    name: scHiCExplorer
-    repo_url: https://github.com/joachimwolff/scHiCExplorer
+    homepage_url: null
+    name: scbeta_indrops
+    repo_url: https://github.com/meltonlab/scbeta_indrops
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://gabrielhoffman.github.io/dreamlet
+    name: dreamlet
+    repo_url: https://github.com/GabrielHoffman/dreamlet
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -2220,11 +2257,6 @@ projects:
     repo_url: https://github.com/ElkonLab/scAPA
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: scbeta_indrops
-    repo_url: https://github.com/meltonlab/scbeta_indrops
-  - category:
-      - related-tools-github-query-result
     homepage_url: http://nasqar.abudhabi.nyu.edu
     name: SeuratWizard
     repo_url: https://github.com/nasqar/SeuratWizard
@@ -2235,19 +2267,14 @@ projects:
     repo_url: https://github.com/juliendelile/Antler
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: scRNA-seq-Analysis-of-Prostate-Cancer-Samples
-    repo_url: https://github.com/angelussong/scRNA-seq-Analysis-of-Prostate-Cancer-Samples
+    homepage_url: https://xinhe-lab.github.io/GSFA/
+    name: GSFA
+    repo_url: https://github.com/xinhe-lab/GSFA
   - category:
       - related-tools-github-query-result
     homepage_url: null
     name: Single-cell-RNA-seq-data-analysis-2018
     repo_url: https://github.com/bishwaG/Single-cell-RNA-seq-data-analysis-2018
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://erilu.github.io/single-cell-rnaseq-analysis/
-    name: single-cell-rnaseq-analysis
-    repo_url: https://github.com/erilu/single-cell-rnaseq-analysis
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -2265,9 +2292,9 @@ projects:
     repo_url: https://github.com/marcalva/hcc_sc_2022
   - category:
       - related-tools-github-query-result
-    homepage_url: https://gabrielhoffman.github.io/dreamlet
-    name: dreamlet
-    repo_url: https://github.com/GabrielHoffman/dreamlet
+    homepage_url: https://katsevich-lab.github.io/sceptre/
+    name: sceptre
+    repo_url: https://github.com/Katsevich-Lab/sceptre
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -2278,11 +2305,6 @@ projects:
     homepage_url: null
     name: reanalysis_Mathys_2019
     repo_url: https://github.com/neurogenomics/reanalysis_Mathys_2019
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://xinhe-lab.github.io/GSFA/
-    name: GSFA
-    repo_url: https://github.com/xinhe-lab/GSFA
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -2296,11 +2318,6 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: LineagePulse
-    repo_url: https://github.com/YosefLab/LineagePulse
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
     name: destin
     repo_url: https://github.com/urrutiag/destin
   - category:
@@ -2310,14 +2327,34 @@ projects:
     repo_url: https://github.com/fperraudeau/bioc2017singlecell
   - category:
       - related-tools-github-query-result
+    homepage_url: ''
+    name: TallyNN
+    repo_url: https://github.com/Acribbs/TallyNN
+  - category:
+      - related-tools-github-query-result
     homepage_url: null
     name: scRNA_GBM
     repo_url: https://github.com/mbourgey/scRNA_GBM
   - category:
       - related-tools-github-query-result
+    homepage_url: https://www.sc-meta.com
+    name: SCMeTA
+    repo_url: https://github.com/SCMeTA/SCMeTA
+  - category:
+      - related-tools-github-query-result
     homepage_url: ''
     name: FCA_bone_marrow
     repo_url: https://github.com/haniffalab/FCA_bone_marrow
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: Analyze_CyTOF_Using_Seurat
+    repo_url: https://github.com/praneet1988/Analyze_CyTOF_Using_Seurat
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Sentiment_Analysis_with_Insights
+    repo_url: https://github.com/Jai-Agarwal-04/Sentiment_Analysis_with_Insights
   - category:
       - related-tools-github-query-result
     homepage_url: https://scbean.readthedocs.io
@@ -2345,19 +2382,39 @@ projects:
     repo_url: https://github.com/JiaruiMi/SingleCell_template
   - category:
       - related-tools-github-query-result
+    homepage_url: https://muon-tutorials.rtfd.io/
+    name: muon-tutorials
+    repo_url: https://github.com/scverse/muon-tutorials
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: mouse_brain_2020
+    repo_url: https://github.com/lhqing/mouse_brain_2020
+  - category:
+      - related-tools-github-query-result
     homepage_url: ''
     name: URSM
     repo_url: https://github.com/lingxuez/URSM
   - category:
       - related-tools-github-query-result
-    homepage_url: https://sites.google.com/yale.edu/sceval
-    name: scEval
-    repo_url: https://github.com/HelloWorldLTY/scEval
+    homepage_url: https://compbioNJU.github.io/scPlant
+    name: scPlant
+    repo_url: https://github.com/compbioNJU/scPlant
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: SignatuR
+    repo_url: https://github.com/carmonalab/SignatuR
   - category:
       - related-tools-github-query-result
     homepage_url: ''
     name: NIFA
     repo_url: https://github.com/wgmao/NIFA
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: cellanova
+    repo_url: https://github.com/Janezjz/cellanova
   - category:
       - related-tools-github-query-result
     homepage_url: https://stevexniu.github.io/spots/
@@ -2370,9 +2427,14 @@ projects:
     repo_url: https://github.com/LKremer/scbs
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: Analyze_CyTOF_Using_Seurat
-    repo_url: https://github.com/praneet1988/Analyze_CyTOF_Using_Seurat
+    homepage_url: null
+    name: FluoroCellTrack
+    repo_url: https://github.com/Manibarathi/FluoroCellTrack
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://jlaffy.github.io/scalop
+    name: scalop
+    repo_url: https://github.com/jlaffy/scalop
   - category:
       - related-tools-github-query-result
     homepage_url: http://bioinformatics.mdc-berlin.de/pigx
@@ -2390,19 +2452,24 @@ projects:
     repo_url: https://github.com/buenrostrolab/dscATAC_analysis_code
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: scRNAseq_workflow_benchmark
-    repo_url: https://github.com/Novartis/scRNAseq_workflow_benchmark
-  - category:
-      - related-tools-github-query-result
     homepage_url: ''
-    name: TallyNN
-    repo_url: https://github.com/Acribbs/TallyNN
+    name: CellScopes.jl
+    repo_url: https://github.com/HaojiaWu/CellScopes.jl
   - category:
       - related-tools-github-query-result
     homepage_url: ''
     name: multiome_analysis
     repo_url: https://github.com/kpatel427/multiome_analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: scRNAseq_workflow_benchmark
+    repo_url: https://github.com/Novartis/scRNAseq_workflow_benchmark
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: sceQTL
+    repo_url: https://github.com/immunogenomics/sceQTL
   - category:
       - related-tools-github-query-result
     homepage_url: https://yusuke-imoto-lab.github.io/RECODE/
@@ -2415,19 +2482,9 @@ projects:
     repo_url: https://github.com/MarioniLab/scHOT2019
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: mouse_brain_2020
-    repo_url: https://github.com/lhqing/mouse_brain_2020
-  - category:
-      - related-tools-github-query-result
     homepage_url: ''
     name: panorama
     repo_url: https://github.com/ParkerICI/panorama
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://muon-tutorials.rtfd.io/
-    name: muon-tutorials
-    repo_url: https://github.com/scverse/muon-tutorials
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -2435,14 +2492,19 @@ projects:
     repo_url: https://github.com/epigen/scifiRNA-seq_publication
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: SignatuR
-    repo_url: https://github.com/carmonalab/SignatuR
+    homepage_url: https://alexandria-scrna-data-library.readthedocs.io/en/latest/
+    name: alexandria
+    repo_url: https://github.com/ShalekLab/alexandria
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: sceQTL
-    repo_url: https://github.com/immunogenomics/sceQTL
+    name: scDiff
+    repo_url: https://github.com/OmicsML/scDiff
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: hWAT_singlecell
+    repo_url: https://github.com/lmassier/hWAT_singlecell
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -2455,16 +2517,6 @@ projects:
     repo_url: https://github.com/vertesy/pseudoBulk
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: FluoroCellTrack
-    repo_url: https://github.com/Manibarathi/FluoroCellTrack
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://jlaffy.github.io/scalop
-    name: scalop
-    repo_url: https://github.com/jlaffy/scalop
-  - category:
-      - related-tools-github-query-result
     homepage_url: ''
     name: Single-cell-analysis-flow-cytometry
     repo_url: https://github.com/janinemelsen/Single-cell-analysis-flow-cytometry
@@ -2473,6 +2525,11 @@ projects:
     homepage_url: ''
     name: scRNASeq-bulkRNASeq
     repo_url: https://github.com/cemalley/scRNASeq-bulkRNASeq
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: scGENA
+    repo_url: https://github.com/zpliulab/scGENA
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -2526,38 +2583,18 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
+    name: COVID-19
+    repo_url: https://github.com/QuKunLab/COVID-19
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
     name: CELL-technical-seminars
     repo_url: https://github.com/CELL-group/CELL-technical-seminars
   - category:
       - related-tools-github-query-result
-    homepage_url: https://compbioNJU.github.io/scPlant
-    name: scPlant
-    repo_url: https://github.com/compbioNJU/scPlant
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://www.sc-meta.com
-    name: SCMeTA
-    repo_url: https://github.com/SCMeTA/SCMeTA
-  - category:
-      - related-tools-github-query-result
     homepage_url: ''
-    name: cellanova
-    repo_url: https://github.com/Janezjz/cellanova
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://alexandria-scrna-data-library.readthedocs.io/en/latest/
-    name: alexandria
-    repo_url: https://github.com/ShalekLab/alexandria
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: Bioinformatics-Software
-    repo_url: https://github.com/bretonics/Bioinformatics-Software
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: hWAT_singlecell
-    repo_url: https://github.com/lmassier/hWAT_singlecell
+    name: decipher
+    repo_url: https://github.com/azizilab/decipher
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -2571,18 +2608,18 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
+    name: Bioinformatics-Software
+    repo_url: https://github.com/bretonics/Bioinformatics-Software
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
     name: iasva
     repo_url: https://github.com/UcarLab/iasva
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: Sentiment_Analysis_with_Insights
-    repo_url: https://github.com/Jai-Agarwal-04/Sentiment_Analysis_with_Insights
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: scGENA
-    repo_url: https://github.com/zpliulab/scGENA
+    homepage_url: ''
+    name: SingleCells_SLE_paper
+    repo_url: https://github.com/dnehar/SingleCells_SLE_paper
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -2600,11 +2637,6 @@ projects:
     repo_url: https://github.com/Yatir-Solan/Single-cell-RNA-sequencing-analysis
   - category:
       - related-tools-github-query-result
-    homepage_url: https://fmicompbio.github.io/SIB_scRNA-seq_Tutorial_2018/
-    name: SIB_scRNA-seq_Tutorial_2018
-    repo_url: https://github.com/fmicompbio/SIB_scRNA-seq_Tutorial_2018
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: single-cell-studies
     repo_url: https://github.com/vals/single-cell-studies
@@ -2620,9 +2652,19 @@ projects:
     repo_url: https://github.com/Teichlab/spectrum-of-differentiation-supplements
   - category:
       - related-tools-github-query-result
+    homepage_url: https://fmicompbio.github.io/SIB_scRNA-seq_Tutorial_2018/
+    name: SIB_scRNA-seq_Tutorial_2018
+    repo_url: https://github.com/fmicompbio/SIB_scRNA-seq_Tutorial_2018
+  - category:
+      - related-tools-github-query-result
     homepage_url: null
     name: scRNAseq_course
     repo_url: https://github.com/GKild/scRNAseq_course
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: AnanseSeurat
+    repo_url: https://github.com/JGASmits/AnanseSeurat
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -2636,13 +2678,18 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: COVID-19
-    repo_url: https://github.com/QuKunLab/COVID-19
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
     name: cardiac-progenitors
     repo_url: https://github.com/loosolab/cardiac-progenitors
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://10xgenomics.com/support/software/cell-ranger
+    name: scan-rs
+    repo_url: https://github.com/10XGenomics/scan-rs
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://www.nature.com/articles/s41467-023-36383-6
+    name: genomap
+    repo_url: https://github.com/xinglab-ai/genomap
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -2660,6 +2707,11 @@ projects:
     repo_url: https://github.com/jumphone/scRef
   - category:
       - related-tools-github-query-result
+    homepage_url: https://aquila.cheunglab.org
+    name: Aquila-next
+    repo_url: https://github.com/Mr-Milk/Aquila-next
+  - category:
+      - related-tools-github-query-result
     homepage_url: ''
     name: StabMap2021
     repo_url: https://github.com/MarioniLab/StabMap2021
@@ -2671,13 +2723,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: nf-core-scflow
-    repo_url: https://github.com/combiz/nf-core-scflow
+    name: COMPASS
+    repo_url: https://github.com/RGLab/COMPASS
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: SingleCells_SLE_paper
-    repo_url: https://github.com/dnehar/SingleCells_SLE_paper
+    homepage_url: null
+    name: nf-core-scflow
+    repo_url: https://github.com/combiz/nf-core-scflow
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -2686,23 +2738,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: R-Bioconductor-for-single-cell-RNAseq-data-analysis
-    repo_url: https://github.com/JEFworks/R-Bioconductor-for-single-cell-RNAseq-data-analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: AnanseSeurat
-    repo_url: https://github.com/JGASmits/AnanseSeurat
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
     name: scNetViz
     repo_url: https://github.com/RBVI/scNetViz
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: CellScopes.jl
-    repo_url: https://github.com/HaojiaWu/CellScopes.jl
+    homepage_url: null
+    name: R-Bioconductor-for-single-cell-RNAseq-data-analysis
+    repo_url: https://github.com/JEFworks/R-Bioconductor-for-single-cell-RNAseq-data-analysis
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -2725,6 +2767,11 @@ projects:
     repo_url: https://github.com/gtca/single-cell-reading-list
   - category:
       - related-tools-github-query-result
+    homepage_url: null
+    name: Targeted_transcriptomics
+    repo_url: https://github.com/MairFlo/Targeted_transcriptomics
+  - category:
+      - related-tools-github-query-result
     homepage_url: ''
     name: SMGR
     repo_url: https://github.com/QSong-github/SMGR
@@ -2738,11 +2785,6 @@ projects:
     homepage_url: ''
     name: Lymph_node_project
     repo_url: https://github.com/PierreBSC/Lymph_node_project
-  - category:
-      - related-tools-github-query-result
-    homepage_url: http://oshlacklab.com/combes-organoid-paper
-    name: combes-organoid-paper
-    repo_url: https://github.com/Oshlack/combes-organoid-paper
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -2765,19 +2807,24 @@ projects:
     repo_url: https://github.com/MingBit/PySCNet
   - category:
       - related-tools-github-query-result
+    homepage_url: http://oshlacklab.com/combes-organoid-paper
+    name: combes-organoid-paper
+    repo_url: https://github.com/Oshlack/combes-organoid-paper
+  - category:
+      - related-tools-github-query-result
     homepage_url: null
     name: Clonal_Analysis
     repo_url: https://github.com/lianchye/Clonal_Analysis
   - category:
       - related-tools-github-query-result
+    homepage_url: null
+    name: COVID19_2020
+    repo_url: https://github.com/vijaybioinfo/COVID19_2020
+  - category:
+      - related-tools-github-query-result
     homepage_url: ''
     name: SLEMI
     repo_url: https://github.com/sysbiosig/SLEMI
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://aquila.cheunglab.org
-    name: Aquila-next
-    repo_url: https://github.com/Mr-Milk/Aquila-next
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -2800,11 +2847,6 @@ projects:
     repo_url: https://github.com/ksimeono/macsGESTALT
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: COVID19_2020
-    repo_url: https://github.com/vijaybioinfo/COVID19_2020
-  - category:
-      - related-tools-github-query-result
     homepage_url: ''
     name: GIANT
     repo_url: https://github.com/chenhcs/GIANT
@@ -2815,19 +2857,19 @@ projects:
     repo_url: https://github.com/lawrenson-lab/AtlasEndometriosis
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: COMPASS
-    repo_url: https://github.com/RGLab/COMPASS
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: 2021-August-Single-Cell-RNA-Seq-Analysis
-    repo_url: https://github.com/ucdavis-bioinformatics-training/2021-August-Single-Cell-RNA-Seq-Analysis
+    homepage_url: https://genocraft.stanford.edu/
+    name: GenoCraft
+    repo_url: https://github.com/futianfan/GenoCraft
   - category:
       - related-tools-github-query-result
     homepage_url: null
     name: 17-testis-single-cell-R-github-data
     repo_url: https://github.com/zlyingithub/17-testis-single-cell-R-github-data
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: 2021-August-Single-Cell-RNA-Seq-Analysis
+    repo_url: https://github.com/ucdavis-bioinformatics-training/2021-August-Single-Cell-RNA-Seq-Analysis
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -2838,6 +2880,11 @@ projects:
     homepage_url: ''
     name: indrop
     repo_url: https://github.com/biocorecrg/indrop
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: SingleCellNotes
+    repo_url: https://github.com/pdmoerland/SingleCellNotes
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -2861,18 +2908,23 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: Hajdarovic_And_Yu_et_al_2022
-    repo_url: https://github.com/Webb-Laboratory/Hajdarovic_And_Yu_et_al_2022
+    name: SCPCompanion
+    repo_url: https://github.com/scp-ms/SCPCompanion
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: MINT_sPLSDA
-    repo_url: https://github.com/aljabadi/MINT_sPLSDA
+    name: Hajdarovic_And_Yu_et_al_2022
+    repo_url: https://github.com/Webb-Laboratory/Hajdarovic_And_Yu_et_al_2022
   - category:
       - related-tools-github-query-result
     homepage_url: https://r.acidgenomics.com/packages/pointillism/
     name: r-pointillism
     repo_url: https://github.com/acidgenomics/r-pointillism
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: MINT_sPLSDA
+    repo_url: https://github.com/aljabadi/MINT_sPLSDA
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -2893,11 +2945,6 @@ projects:
     homepage_url: ''
     name: single_cell_eQTL
     repo_url: https://github.com/joshsbloom/single_cell_eQTL
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: SingleCellNotes
-    repo_url: https://github.com/pdmoerland/SingleCellNotes
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -2925,14 +2972,14 @@ projects:
     repo_url: https://github.com/cellarium-ai/cellarium-ml
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: Targeted_transcriptomics
-    repo_url: https://github.com/MairFlo/Targeted_transcriptomics
+    homepage_url: ''
+    name: HBEC_SARS-CoV-2_scRNA-seq
+    repo_url: https://github.com/vandijklab/HBEC_SARS-CoV-2_scRNA-seq
   - category:
       - related-tools-github-query-result
-    homepage_url: https://www.nature.com/articles/s41467-023-36383-6
-    name: genomap
-    repo_url: https://github.com/xinglab-ai/genomap
+    homepage_url: ''
+    name: DCCA
+    repo_url: https://github.com/cmzuo11/DCCA
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -2956,8 +3003,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: CovidPBMC
-    repo_url: https://github.com/MarioniLab/CovidPBMC
+    name: scRNAseq-LungCancer
+    repo_url: https://github.com/nyuhuyang/scRNAseq-LungCancer
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: ccNet
+    repo_url: https://github.com/Just-Jia/ccNet
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -2966,13 +3018,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: SCPCompanion
-    repo_url: https://github.com/scp-ms/SCPCompanion
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: scRNAseq-LungCancer
-    repo_url: https://github.com/nyuhuyang/scRNAseq-LungCancer
+    name: CovidPBMC
+    repo_url: https://github.com/MarioniLab/CovidPBMC
   - category:
       - related-tools-github-query-result
     homepage_url: https://pubmed.ncbi.nlm.nih.gov/31968262/
@@ -2980,14 +3027,14 @@ projects:
     repo_url: https://github.com/felixhorns/SingleBCell-FluVaccine
   - category:
       - related-tools-github-query-result
+    homepage_url: ''
+    name: PorcinePBMCs_bulkRNAseq_scRNAseq
+    repo_url: https://github.com/USDA-FSEPRU/PorcinePBMCs_bulkRNAseq_scRNAseq
+  - category:
+      - related-tools-github-query-result
     homepage_url: https://lazappi.github.io/phd-thesis-analysis
     name: phd-thesis-analysis
     repo_url: https://github.com/lazappi/phd-thesis-analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://bodenmillergroup.github.io/histocat-web
-    name: histocat-web
-    repo_url: https://github.com/BodenmillerGroup/histocat-web
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -2995,19 +3042,24 @@ projects:
     repo_url: https://github.com/lubianat/FCBF
   - category:
       - related-tools-github-query-result
+    homepage_url: https://bodenmillergroup.github.io/histocat-web
+    name: histocat-web
+    repo_url: https://github.com/BodenmillerGroup/histocat-web
+  - category:
+      - related-tools-github-query-result
     homepage_url: null
     name: scPSM
     repo_url: https://github.com/eleozzr/scPSM
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: DCCA
-    repo_url: https://github.com/cmzuo11/DCCA
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: DOL_project
     repo_url: https://github.com/PierreBSC/DOL_project
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: scrnaVis
+    repo_url: https://github.com/jackxiong2020/scrnaVis
   - category:
       - related-tools-github-query-result
     homepage_url: https://juliasinglecellomics.github.io/OmicsProfiles.jl/stable/
@@ -3025,9 +3077,14 @@ projects:
     repo_url: https://github.com/CTR-BFX/2018_Bacon_Charnock-Jones
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: BIOC281
-    repo_url: https://github.com/ktravaglini/BIOC281
+    homepage_url: https://kundajelab.github.io/reprogramming-browser/home.html
+    name: scATAC-reprog
+    repo_url: https://github.com/kundajelab/scATAC-reprog
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://fungenomics.github.io/HGG-oncohistones/
+    name: HGG-oncohistones
+    repo_url: https://github.com/fungenomics/HGG-oncohistones
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3036,13 +3093,18 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
+    name: BIOC281
+    repo_url: https://github.com/ktravaglini/BIOC281
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
     name: scdeep
     repo_url: https://github.com/bayeslabs/scdeep
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: single-cell-primers
-    repo_url: https://github.com/settylab/single-cell-primers
+    homepage_url: https://jlduan.github.io/fba/
+    name: fba
+    repo_url: https://github.com/jlduan/fba
   - category:
       - related-tools-github-query-result
     homepage_url: https://StatBiomed.github.io/HKU-single-cell-workshop/
@@ -3051,13 +3113,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: single_cell_airway
-    repo_url: https://github.com/adamh-broad/single_cell_airway
+    name: single-cell-primers
+    repo_url: https://github.com/settylab/single-cell-primers
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: prostateimmuneatlas
-    repo_url: https://github.com/clatworthylab/prostateimmuneatlas
+    name: single_cell_airway
+    repo_url: https://github.com/adamh-broad/single_cell_airway
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -3066,8 +3128,23 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
+    name: prostateimmuneatlas
+    repo_url: https://github.com/clatworthylab/prostateimmuneatlas
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: FLAMES
+    repo_url: https://github.com/mritchielab/FLAMES
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
     name: OOSAP
     repo_url: https://github.com/bimberlabinternal/OOSAP
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: ICARUS
+    repo_url: https://github.com/Enjewl/ICARUS
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3081,6 +3158,11 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
+    name: single-cell-analysis
+    repo_url: https://github.com/neural-data-science-course/single-cell-analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
     name: Single-Cell-RNA-Analysis
     repo_url: https://github.com/balqees-mansour/Single-Cell-RNA-Analysis
   - category:
@@ -3088,6 +3170,11 @@ projects:
     homepage_url: null
     name: qSR
     repo_url: https://github.com/cisselab/qSR
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: Transcriptomics
+    repo_url: https://github.com/cortex-lab/Transcriptomics
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -3116,8 +3203,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: HBEC_SARS-CoV-2_scRNA-seq
-    repo_url: https://github.com/vandijklab/HBEC_SARS-CoV-2_scRNA-seq
+    name: Human_Epi
+    repo_url: https://github.com/WangShuxiong/Human_Epi
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3130,14 +3217,24 @@ projects:
     repo_url: https://github.com/imperial-genomics-facility/scanpy-notebook-image
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: Transcriptomics
-    repo_url: https://github.com/cortex-lab/Transcriptomics
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: single-cell-RNAseq-HSV1
     repo_url: https://github.com/nirdrayman/single-cell-RNAseq-HSV1
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://fungenomics.github.io/cytobox/
+    name: cytobox
+    repo_url: https://github.com/fungenomics/cytobox
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: nmp-liver
+    repo_url: https://github.com/icbi-lab/nmp-liver
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: ORN_seq
+    repo_url: https://github.com/colleenmclaughlin/ORN_seq
   - category:
       - related-tools-github-query-result
     homepage_url: https://bioinformatics-core-shared-training.github.io/CRUK_CI_Summer_School_2021_ScRnaSeq/
@@ -3146,8 +3243,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: nmp-liver
-    repo_url: https://github.com/icbi-lab/nmp-liver
+    name: BiTSC2
+    repo_url: https://github.com/ucasdp/BiTSC2
   - category:
       - related-tools-github-query-result
     homepage_url: https://saezlab.github.io/MOFAcellulaR/
@@ -3155,9 +3252,14 @@ projects:
     repo_url: https://github.com/saezlab/MOFAcellulaR
   - category:
       - related-tools-github-query-result
+    homepage_url: https://keshav-motwani.github.io/scanalysis/
+    name: scanalysis
+    repo_url: https://github.com/keshav-motwani/scanalysis
+  - category:
+      - related-tools-github-query-result
     homepage_url: ''
     name: CellLayers
-    repo_url: https://github.com/zerosum-bias/CellLayers
+    repo_url: https://github.com/a3blair5/CellLayers
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -3171,11 +3273,6 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: ccNet
-    repo_url: https://github.com/Just-Jia/ccNet
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
     name: Decoding-neuronal-diversification-by-multiplexed-single-cell-RNA-seq
     repo_url: https://github.com/JoachimLu/Decoding-neuronal-diversification-by-multiplexed-single-cell-RNA-seq
   - category:
@@ -3183,6 +3280,11 @@ projects:
     homepage_url: ''
     name: SC_KidneyOrganoid_ACE2
     repo_url: https://github.com/jpromeror/SC_KidneyOrganoid_ACE2
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: TREASMO
+    repo_url: https://github.com/ChaozhongLiu/TREASMO
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -3215,9 +3317,9 @@ projects:
     repo_url: https://github.com/wanglab-georgetown/JOINT
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: Human_Epi
-    repo_url: https://github.com/WangShuxiong/Human_Epi
+    homepage_url: null
+    name: Circulation.-2020-142-1374-1388
+    repo_url: https://github.com/LI-Yan-Ming/Circulation.-2020-142-1374-1388
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -3231,11 +3333,6 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: tcrgp_manu_hcc
-    repo_url: https://github.com/janihuuh/tcrgp_manu_hcc
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
     name: scANNA
     repo_url: https://github.com/SindiLab/scANNA
   - category:
@@ -3243,6 +3340,11 @@ projects:
     homepage_url: null
     name: scrnaseq_python_2023
     repo_url: https://github.com/Functional-Genomics/scrnaseq_python_2023
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: tcrgp_manu_hcc
+    repo_url: https://github.com/janihuuh/tcrgp_manu_hcc
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3260,24 +3362,9 @@ projects:
     repo_url: https://github.com/KChen-lab/bcd
   - category:
       - related-tools-github-query-result
-    homepage_url: https://fungenomics.github.io/cytobox/
-    name: cytobox
-    repo_url: https://github.com/fungenomics/cytobox
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: ORN_seq
-    repo_url: https://github.com/colleenmclaughlin/ORN_seq
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: SCS_testis
     repo_url: https://github.com/slukassen/SCS_testis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: BiTSC2
-    repo_url: https://github.com/ucasdp/BiTSC2
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3286,18 +3373,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: scrnaVis
-    repo_url: https://github.com/jackxiong2020/scrnaVis
+    name: SCALA
+    repo_url: https://github.com/PavlopoulosLab/SCALA
   - category:
       - related-tools-github-query-result
     homepage_url: ''
     name: Diaz2019
     repo_url: https://github.com/wagnerde/Diaz2019
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://keshav-motwani.github.io/scanalysis/
-    name: scanalysis
-    repo_url: https://github.com/keshav-motwani/scanalysis
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3330,16 +3412,6 @@ projects:
     repo_url: https://github.com/mccoy-lab/rhapsodi
   - category:
       - related-tools-github-query-result
-    homepage_url: https://fungenomics.github.io/HGG-oncohistones/
-    name: HGG-oncohistones
-    repo_url: https://github.com/fungenomics/HGG-oncohistones
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: sc_MTOP
-    repo_url: https://github.com/fuscc-deep-path/sc_MTOP
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: Cell-Cycle-on-C1
     repo_url: https://github.com/Population-Transcriptomics/Cell-Cycle-on-C1
@@ -3360,11 +3432,6 @@ projects:
     repo_url: https://github.com/brianjohnhaas/singleCellRNASeq
   - category:
       - related-tools-github-query-result
-    homepage_url: https://jlduan.github.io/fba/
-    name: fba
-    repo_url: https://github.com/jlduan/fba
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: scRNA-seq-workshop
     repo_url: https://github.com/YOU-k/scRNA-seq-workshop
@@ -3376,6 +3443,16 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
+    name: rms_analysis
+    repo_url: https://github.com/qinqian/rms_analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://scrunchy.hesselberthlab.org/
+    name: scrunchy
+    repo_url: https://github.com/hesselberthlab/scrunchy
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
     name: Introduction-to-Seurat-Package
     repo_url: https://github.com/brandonyph/Introduction-to-Seurat-Package
   - category:
@@ -3383,11 +3460,6 @@ projects:
     homepage_url: null
     name: mca_data_analysis
     repo_url: https://github.com/ggjlab/mca_data_analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: ICARUS
-    repo_url: https://github.com/Enjewl/ICARUS
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -3406,21 +3478,6 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: scTPA
-    repo_url: https://github.com/sulab-wmu/scTPA
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://scrunchy.hesselberthlab.org/
-    name: scrunchy
-    repo_url: https://github.com/hesselberthlab/scrunchy
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: scRNA-pipe
-    repo_url: https://github.com/single-cell-BGI/scRNA-pipe
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
     name: SingleCellAnalysisToolbox
     repo_url: https://github.com/cc36/SingleCellAnalysisToolbox
   - category:
@@ -3430,9 +3487,19 @@ projects:
     repo_url: https://github.com/edwinv87/feats
   - category:
       - related-tools-github-query-result
+    homepage_url: null
+    name: scTPA
+    repo_url: https://github.com/sulab-wmu/scTPA
+  - category:
+      - related-tools-github-query-result
     homepage_url: ''
     name: SELMA
     repo_url: https://github.com/Tarela/SELMA
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: HPA_SingleCellClassification_Analysis
+    repo_url: https://github.com/trangle1302/HPA_SingleCellClassification_Analysis
   - category:
       - related-tools-github-query-result
     homepage_url: https://robertamezquita.github.io/orchestratingSingleCellAnalysis/
@@ -3445,11 +3512,6 @@ projects:
     repo_url: https://github.com/manuyavuz/single-cell-analysis
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: single-cell-analysis
-    repo_url: https://github.com/hong-hui-zhao/single-cell-analysis
-  - category:
-      - related-tools-github-query-result
     homepage_url: ''
     name: Single-Cell-Data-Analysis
     repo_url: https://github.com/gozsari/Single-Cell-Data-Analysis
@@ -3457,7 +3519,7 @@ projects:
       - related-tools-github-query-result
     homepage_url: null
     name: single-cell-analysis
-    repo_url: https://github.com/neural-data-science-course/single-cell-analysis
+    repo_url: https://github.com/hong-hui-zhao/single-cell-analysis
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -3485,9 +3547,9 @@ projects:
     repo_url: https://github.com/p-CMRC-LAB/SCALPEL
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: scrnaseq-gan
-    repo_url: https://github.com/akashram1/scrnaseq-gan
+    homepage_url: null
+    name: Severo.jl
+    repo_url: https://github.com/ExaScience/Severo.jl
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3495,14 +3557,14 @@ projects:
     repo_url: https://github.com/saliba-lab/covid19-profibrotic-macrophages
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: Severo.jl
-    repo_url: https://github.com/ExaScience/Severo.jl
+    homepage_url: ''
+    name: scrnaseq-gan
+    repo_url: https://github.com/akashram1/scrnaseq-gan
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: rms_analysis
-    repo_url: https://github.com/qinqian/rms_analysis
+    name: 2020-August-Advanced-scRNAseq
+    repo_url: https://github.com/ucdavis-bioinformatics-training/2020-August-Advanced-scRNAseq
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -3516,13 +3578,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: 2020-August-Advanced-scRNAseq
-    repo_url: https://github.com/ucdavis-bioinformatics-training/2020-August-Advanced-scRNAseq
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
     name: scRNA_pipeline
     repo_url: https://github.com/abcsFrederick/scRNA_pipeline
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://ycl6.github.io/scRUtils/
+    name: scRUtils
+    repo_url: https://github.com/ycl6/scRUtils
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -3540,9 +3602,14 @@ projects:
     repo_url: https://github.com/theislab/sc_analysis_template
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: PorcinePBMCs_bulkRNAseq_scRNAseq
-    repo_url: https://github.com/USDA-FSEPRU/PorcinePBMCs_bulkRNAseq_scRNAseq
+    homepage_url: null
+    name: CN_and_SV
+    repo_url: https://github.com/chengzhongzhangDFCI/CN_and_SV
+  - category:
+      - related-tools-github-query-result
+    homepage_url: http://sc-contextualized.ml
+    name: scContextualized
+    repo_url: https://github.com/blengerich/scContextualized
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3556,21 +3623,6 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: CN_and_SV
-    repo_url: https://github.com/chengzhongzhangDFCI/CN_and_SV
-  - category:
-      - related-tools-github-query-result
-    homepage_url: http://sc-contextualized.ml
-    name: scContextualized
-    repo_url: https://github.com/blengerich/scContextualized
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: TREASMO
-    repo_url: https://github.com/ChaozhongLiu/TREASMO
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
     name: sc-spectrum
     repo_url: https://github.com/jssong-lab/sc-spectrum
   - category:
@@ -3581,13 +3633,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: sc_binary_splicing
-    repo_url: https://github.com/lareaulab/sc_binary_splicing
+    name: FHSingleCellWorkshops
+    repo_url: https://github.com/RGLab/FHSingleCellWorkshops
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: FHSingleCellWorkshops
-    repo_url: https://github.com/RGLab/FHSingleCellWorkshops
+    name: sc_binary_splicing
+    repo_url: https://github.com/lareaulab/sc_binary_splicing
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3603,6 +3655,11 @@ projects:
     homepage_url: ''
     name: htsimaging
     repo_url: https://github.com/rraadd88/htsimaging
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: scRNA-pipe
+    repo_url: https://github.com/single-cell-BGI/scRNA-pipe
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -3631,8 +3688,18 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
+    name: BMBL-analysis-notebooks
+    repo_url: https://github.com/OSU-BMBL/BMBL-analysis-notebooks
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
     name: cell-to-cell-variability-changes-in-ageing
     repo_url: https://github.com/huiwenzh/cell-to-cell-variability-changes-in-ageing
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: alzGPSnet
+    repo_url: https://github.com/ChengF-Lab/alzGPSnet
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3641,18 +3708,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: Circulation.-2020-142-1374-1388
-    repo_url: https://github.com/LI-Yan-Ming/Circulation.-2020-142-1374-1388
+    name: COVID-19
+    repo_url: https://github.com/ZilongZhang44/COVID-19
   - category:
       - related-tools-github-query-result
     homepage_url: null
     name: scRNAscATAC
     repo_url: https://github.com/KunFang93/scRNAscATAC
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: COVID-19
-    repo_url: https://github.com/ZilongZhang44/COVID-19
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3666,13 +3728,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: GBM_scRNA_seq
-    repo_url: https://github.com/Axiuf/GBM_scRNA_seq
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
     name: Bio-10X
     repo_url: https://github.com/yejg2017/Bio-10X
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: sc_benchmark_metaanalysis
+    repo_url: https://github.com/markrobinsonuzh/sc_benchmark_metaanalysis
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3680,9 +3742,14 @@ projects:
     repo_url: https://github.com/namini94/SimCD
   - category:
       - related-tools-github-query-result
+    homepage_url: ''
+    name: GBM_scRNA_seq
+    repo_url: https://github.com/Axiuf/GBM_scRNA_seq
+  - category:
+      - related-tools-github-query-result
     homepage_url: null
-    name: sc_benchmark_metaanalysis
-    repo_url: https://github.com/markrobinsonuzh/sc_benchmark_metaanalysis
+    name: D-CE
+    repo_url: https://github.com/JackieHanLab/D-CE
   - category:
       - related-tools-github-query-result
     homepage_url: https://github.com/ImmuneDynamics/Spectre
@@ -3696,23 +3763,18 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: D-CE
-    repo_url: https://github.com/JackieHanLab/D-CE
+    name: DTWscore
+    repo_url: https://github.com/xiaoxiaoxier/DTWscore
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: DTWscore
-    repo_url: https://github.com/xiaoxiaoxier/DTWscore
+    name: marsgt
+    repo_url: https://github.com/mtduan/marsgt
   - category:
       - related-tools-github-query-result
     homepage_url: ''
     name: Ma_2020
     repo_url: https://github.com/MillerLab-CPHG/Ma_2020
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: TeamVecna-scDehashR
-    repo_url: https://github.com/u-brite/TeamVecna-scDehashR
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3721,8 +3783,18 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
+    name: TeamVecna-scDehashR
+    repo_url: https://github.com/u-brite/TeamVecna-scDehashR
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
     name: thymusatlastools2
     repo_url: https://github.com/maehrlab/thymusatlastools2
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://rupress.org/jcb/article/221/11/e202109100/213501/In-vivo-3D-profiling-of-site-specific-human-cancer
+    name: 3dCellShape
+    repo_url: https://github.com/DanuserLab/3dCellShape
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3730,9 +3802,9 @@ projects:
     repo_url: https://github.com/Ginnay/CBLRR
   - category:
       - related-tools-github-query-result
-    homepage_url: https://rupress.org/jcb/article/221/11/e202109100/213501/In-vivo-3D-profiling-of-site-specific-human-cancer
-    name: 3dCellShape
-    repo_url: https://github.com/DanuserLab/3dCellShape
+    homepage_url: null
+    name: 5xFAD-sNucSeq
+    repo_url: https://github.com/naomihabiblab/5xFAD-sNucSeq
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -3745,24 +3817,29 @@ projects:
     repo_url: https://github.com/bioinformatics-polito/PhyliCS
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: alzGPSnet
-    repo_url: https://github.com/ChengF-Lab/alzGPSnet
-  - category:
-      - related-tools-github-query-result
     homepage_url: ''
     name: MB_scSeq
     repo_url: https://github.com/PMBio/MB_scSeq
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: 5xFAD-sNucSeq
-    repo_url: https://github.com/naomihabiblab/5xFAD-sNucSeq
+    name: TransCluster
+    repo_url: https://github.com/Danica123/TransCluster
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: thymus_spatial_atlas
+    repo_url: https://github.com/Teichlab/thymus_spatial_atlas
   - category:
       - related-tools-github-query-result
     homepage_url: ''
     name: multiomics-misc
     repo_url: https://github.com/cihangenome/multiomics-misc
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Enrichment
+    repo_url: https://github.com/madhubioinformatics/Enrichment
   - category:
       - related-tools-github-query-result
     homepage_url: https://carpentries-incubator.github.io/scrna-seq-analysis/
@@ -3776,28 +3853,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: JUMP-single-cell
-    repo_url: https://github.com/WayScience/JUMP-single-cell
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
     name: Single-cell-analysis-of-nasopharyngeal-carcinoma
     repo_url: https://github.com/LanqiGong/Single-cell-analysis-of-nasopharyngeal-carcinoma
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: Docker-single-cell-analysis
-    repo_url: https://github.com/dsb-lab/Docker-single-cell-analysis
-  - category:
-      - related-tools-github-query-result
     homepage_url: ''
-    name: cyt3
-    repo_url: https://github.com/dpeerlab/cyt3
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: furry-couscous
-    repo_url: https://github.com/codyheiser/furry-couscous
+    name: JUMP-single-cell
+    repo_url: https://github.com/WayScience/JUMP-single-cell
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3806,13 +3868,33 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
+    name: TASC
+    repo_url: https://github.com/scrna-seq/TASC
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Docker-single-cell-analysis
+    repo_url: https://github.com/dsb-lab/Docker-single-cell-analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: furry-couscous
+    repo_url: https://github.com/codyheiser/furry-couscous
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: cyt3
+    repo_url: https://github.com/dpeerlab/cyt3
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
     name: sctools
     repo_url: https://github.com/charliex210/sctools
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: TASC
-    repo_url: https://github.com/scrna-seq/TASC
+    homepage_url: https://jhk0530.github.io/CellEnrich/
+    name: CellEnrich
+    repo_url: https://github.com/unistbig/CellEnrich
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3825,24 +3907,24 @@ projects:
     repo_url: https://github.com/PolinaPavlovich/CONCLUS
   - category:
       - related-tools-github-query-result
-    homepage_url: https://jhk0530.github.io/CellEnrich/
-    name: CellEnrich
-    repo_url: https://github.com/unistbig/CellEnrich
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: Bagnoli_2017
     repo_url: https://github.com/cziegenhain/Bagnoli_2017
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: SingleCell_Morphological_Analysis
-    repo_url: https://github.com/broadinstitute/SingleCell_Morphological_Analysis
+    homepage_url: ''
+    name: SAKURA
+    repo_url: https://github.com/hahaschool/SAKURA
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: HPA_SingleCellClassification_Analysis
-    repo_url: https://github.com/trangle1302/HPA_SingleCellClassification_Analysis
+    name: scseq
+    repo_url: https://github.com/sansomlab/scseq
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: SingleCell_Morphological_Analysis
+    repo_url: https://github.com/broadinstitute/SingleCell_Morphological_Analysis
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -3851,13 +3933,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: single_cell_loop_analysis
-    repo_url: https://github.com/latkins/single_cell_loop_analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: NKT-Single-Cell-Analysis
-    repo_url: https://github.com/krovi137/NKT-Single-Cell-Analysis
+    name: Single-Cell-Analysis
+    repo_url: https://github.com/K-ee-nn/Single-Cell-Analysis
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3871,8 +3948,18 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: Single-Cell-Analysis
-    repo_url: https://github.com/K-ee-nn/Single-Cell-Analysis
+    name: single_cell_loop_analysis
+    repo_url: https://github.com/latkins/single_cell_loop_analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: NKT-Single-Cell-Analysis
+    repo_url: https://github.com/krovi137/NKT-Single-Cell-Analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: MGC-BioSB-SingleCellAnalysis2023
+    repo_url: https://github.com/LeidenCBC/MGC-BioSB-SingleCellAnalysis2023
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3895,11 +3982,6 @@ projects:
     repo_url: https://github.com/clintko/DukeDataPlus2018_DLSC
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: scseq
-    repo_url: https://github.com/sansomlab/scseq
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: scBFA
     repo_url: https://github.com/quon-titative-biology/scBFA
@@ -3910,9 +3992,9 @@ projects:
     repo_url: https://github.com/leeju-umich/Park_et_al_Cell_Reports_2020
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: singlecell
-    repo_url: https://github.com/roryk/singlecell
+    homepage_url: https://www.nature.com/articles/ncomms15081
+    name: BreastCancer-SingleCell
+    repo_url: https://github.com/KyriakosPsa/BreastCancer-SingleCell
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -3920,9 +4002,14 @@ projects:
     repo_url: https://github.com/WeiqiangZhou/SCDV
   - category:
       - related-tools-github-query-result
+    homepage_url: ''
+    name: singlecell
+    repo_url: https://github.com/roryk/singlecell
+  - category:
+      - related-tools-github-query-result
     homepage_url: null
     name: Single-cell-deconvolution
-    repo_url: https://github.com/sofiarandelin/Single-cell-deconvolution
+    repo_url: https://github.com/sofiakeitaanniemi/Single-cell-deconvolution
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -3950,24 +4037,19 @@ projects:
     repo_url: https://github.com/zlyingithub/single-cell-R-analysis-of-17-testis
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: single-cell-RNA-Seq-analysis-python
-    repo_url: https://github.com/shehbeel/single-cell-RNA-Seq-analysis-python
-  - category:
-      - related-tools-github-query-result
     homepage_url: https://scanpy.readthedocs.io/en/stable/
     name: Scanpy-Based-Single-Cell-RNA-Seq.-Analysis
     repo_url: https://github.com/OrcunSamiTandogan/Scanpy-Based-Single-Cell-RNA-Seq.-Analysis
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: Single-cell-reciter
-    repo_url: https://github.com/u-brite/Single-cell-reciter
+    homepage_url: null
+    name: single-cell-RNA-Seq-analysis-python
+    repo_url: https://github.com/shehbeel/single-cell-RNA-Seq-analysis-python
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: scASAP
-    repo_url: https://github.com/cfusterot/scASAP
+    name: Single-cell-reciter
+    repo_url: https://github.com/u-brite/Single-cell-reciter
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -3976,8 +4058,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: FlyThirst
-    repo_url: https://github.com/sims-lab/FlyThirst
+    name: scASAP
+    repo_url: https://github.com/cfusterot/scASAP
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -3985,19 +4067,24 @@ projects:
     repo_url: https://github.com/yan-cri/scRICA
   - category:
       - related-tools-github-query-result
-    homepage_url: https://ycl6.github.io/scRUtils/
-    name: scRUtils
-    repo_url: https://github.com/ycl6/scRUtils
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: docker-R-singlecell
     repo_url: https://github.com/chrisamiller/docker-R-singlecell
   - category:
       - related-tools-github-query-result
+    homepage_url: ''
+    name: FlyThirst
+    repo_url: https://github.com/sims-lab/FlyThirst
+  - category:
+      - related-tools-github-query-result
     homepage_url: null
     name: DEAPLOG
     repo_url: https://github.com/ZhangHongbo-Lab/DEAPLOG
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: scroutines
+    repo_url: https://github.com/FangmingXie/scroutines
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -4035,29 +4122,14 @@ projects:
     repo_url: https://github.com/ucdavis-bioinformatics-training/2021-March-Advanced-Topics-in-Single-Cell-RNA-Seq-VDJ
   - category:
       - related-tools-github-query-result
-    homepage_url: https://fredhutchio.github.io/scRNAseq/
-    name: scRNAseq
-    repo_url: https://github.com/fredhutchio/scRNAseq
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: scRNA-seq_human_erythroid
     repo_url: https://github.com/Changlu-Xu/scRNA-seq_human_erythroid
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: malko
-    repo_url: https://github.com/adelomana/malko
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: OSCABioc2019
-    repo_url: https://github.com/robertamezquita/OSCABioc2019
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: scRNASeq_Pipeline
-    repo_url: https://github.com/QingfeiPan/scRNASeq_Pipeline
+    homepage_url: https://fredhutchio.github.io/scRNAseq/
+    name: scRNAseq
+    repo_url: https://github.com/fredhutchio/scRNAseq
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -4068,6 +4140,21 @@ projects:
     homepage_url: ''
     name: ruichenlabcodes
     repo_url: https://github.com/Kur1sutaru/ruichenlabcodes
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: locpatterns
+    repo_url: https://github.com/pelkmanslab/locpatterns
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: SCperturb
+    repo_url: https://github.com/markowetzlab/SCperturb
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: scRNASeq_Pipeline
+    repo_url: https://github.com/QingfeiPan/scRNASeq_Pipeline
   - category:
       - related-tools-github-query-result
     homepage_url: https://github.com/YosefLab/LineagePulse
@@ -4086,18 +4173,18 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: locpatterns
-    repo_url: https://github.com/pelkmanslab/locpatterns
+    name: malko
+    repo_url: https://github.com/adelomana/malko
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: SCperturb
-    repo_url: https://github.com/markowetzlab/SCperturb
+    name: OSCABioc2019
+    repo_url: https://github.com/robertamezquita/OSCABioc2019
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: Basic_CNV_SNV
-    repo_url: https://github.com/seasoncloud/Basic_CNV_SNV
+    homepage_url: ''
+    name: scelephant
+    repo_url: https://github.com/ahs2202/scelephant
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -4116,13 +4203,18 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: scnn
-    repo_url: https://github.com/KrishnaswamyLab/scnn
+    name: Basic_CNV_SNV
+    repo_url: https://github.com/seasoncloud/Basic_CNV_SNV
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: 785Project
-    repo_url: https://github.com/EricSDavis/785Project
+    name: ScSTA_tutorial
+    repo_url: https://github.com/arundasan91/ScSTA_tutorial
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: NC_scATAC
+    repo_url: https://github.com/Austin-s-h/NC_scATAC
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -4131,8 +4223,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: NC_scATAC
-    repo_url: https://github.com/Austin-s-h/NC_scATAC
+    name: scnn
+    repo_url: https://github.com/KrishnaswamyLab/scnn
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: 785Project
+    repo_url: https://github.com/EricSDavis/785Project
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -4155,6 +4252,11 @@ projects:
     repo_url: https://github.com/Kafri-Lab/Cell-Image-Analysis
   - category:
       - related-tools-github-query-result
+    homepage_url: null
+    name: scSNPdemux
+    repo_url: https://github.com/wkljohn/scSNPdemux
+  - category:
+      - related-tools-github-query-result
     homepage_url: ''
     name: DH_paper_public_code
     repo_url: https://github.com/linnarsson-lab/DH_paper_public_code
@@ -4166,8 +4268,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: BMBL-analysis-notebooks
-    repo_url: https://github.com/OSU-BMBL/BMBL-analysis-notebooks
+    name: time_series_analysis
+    repo_url: https://github.com/bjbouman/time_series_analysis
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -4175,9 +4277,14 @@ projects:
     repo_url: https://github.com/kasumaz/AdultOLgenesis
   - category:
       - related-tools-github-query-result
+    homepage_url: https://neurobioinfo.github.io/scrnabox/site/
+    name: scrnabox
+    repo_url: https://github.com/neurobioinfo/scrnabox
+  - category:
+      - related-tools-github-query-result
     homepage_url: null
-    name: hashtag-demux-paper
-    repo_url: https://github.com/Oshlack/hashtag-demux-paper
+    name: Analysing-single-cell-RNA-and-ATAC-sequence-data
+    repo_url: https://github.com/paveethranswam/Analysing-single-cell-RNA-and-ATAC-sequence-data
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -4191,28 +4298,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: sars-cov2
-    repo_url: https://github.com/caramirezal/sars-cov2
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: covid_brain_sc
-    repo_url: https://github.com/howchihlee/covid_brain_sc
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: wilcoxauc
-    repo_url: https://github.com/bioqxu/wilcoxauc
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: cellfindR
-    repo_url: https://github.com/otoky/cellfindR
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: scPhylocancer
-    repo_url: https://github.com/jmfa/scPhylocancer
+    name: hashtag-demux-paper
+    repo_url: https://github.com/Oshlack/hashtag-demux-paper
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -4225,39 +4312,29 @@ projects:
     repo_url: https://github.com/zhangjing1123/scrnapip
   - category:
       - related-tools-github-query-result
+    homepage_url: null
+    name: sars-cov2
+    repo_url: https://github.com/caramirezal/sars-cov2
+  - category:
+      - related-tools-github-query-result
     homepage_url: ''
-    name: PopCorn
-    repo_url: https://github.com/wyjhxq/PopCorn
+    name: cellfindR
+    repo_url: https://github.com/otoky/cellfindR
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: covid_brain_sc
+    repo_url: https://github.com/howchihlee/covid_brain_sc
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: scToolbox
-    repo_url: https://github.com/patrickfletcher/scToolbox
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://jdime.github.io/CBW_2021_CAN_M7/
-    name: CBW_2021_CAN_M7
-    repo_url: https://github.com/jdime/CBW_2021_CAN_M7
+    name: scPhylocancer
+    repo_url: https://github.com/jmfa/scPhylocancer
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: MASTtools
-    repo_url: https://github.com/BenaroyaResearch/MASTtools
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: CellO_UniWork
-    repo_url: https://github.com/ChiaraSolito/CellO_UniWork
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: data-exploration-gui
-    repo_url: https://github.com/soorajachar/data-exploration-gui
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: SCALA
-    repo_url: https://github.com/PavlopoulosLab/SCALA
+    name: wilcoxauc
+    repo_url: https://github.com/bioqxu/wilcoxauc
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -4268,6 +4345,36 @@ projects:
     homepage_url: null
     name: scRepeats
     repo_url: https://github.com/FelixKrueger/scRepeats
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: MASTtools
+    repo_url: https://github.com/BenaroyaResearch/MASTtools
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: scToolbox
+    repo_url: https://github.com/patrickfletcher/scToolbox
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: data-exploration-gui
+    repo_url: https://github.com/soorajachar/data-exploration-gui
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://jdime.github.io/CBW_2021_CAN_M7/
+    name: CBW_2021_CAN_M7
+    repo_url: https://github.com/jdime/CBW_2021_CAN_M7
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: PopCorn
+    repo_url: https://github.com/wyjhxq/PopCorn
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: CellO_UniWork
+    repo_url: https://github.com/ChiaraSolito/CellO_UniWork
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -4290,24 +4397,24 @@ projects:
     repo_url: https://github.com/CostaLab/phlower
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: wheat_singlecellAtlas
-    repo_url: https://github.com/hcph/wheat_singlecellAtlas
-  - category:
-      - related-tools-github-query-result
     homepage_url: ''
     name: BSc_thesis
     repo_url: https://github.com/merclehoczky/BSc_thesis
   - category:
       - related-tools-github-query-result
-    homepage_url: https://www.nature.com/articles/s41467-018-04215-7
-    name: X-Reactivation
-    repo_url: https://github.com/vertesy/X-Reactivation
+    homepage_url: null
+    name: wheat_singlecellAtlas
+    repo_url: https://github.com/hcph/wheat_singlecellAtlas
   - category:
       - related-tools-github-query-result
     homepage_url: null
     name: Immune_PPARd_scRNA
     repo_url: https://github.com/Vyoming/Immune_PPARd_scRNA
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://www.nature.com/articles/s41467-018-04215-7
+    name: X-Reactivation
+    repo_url: https://github.com/vertesy/X-Reactivation
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -4330,14 +4437,14 @@ projects:
     repo_url: https://github.com/sam-uofl/SwarnSeq
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: LADC
-    repo_url: https://github.com/ZilongZhang44/LADC
-  - category:
-      - related-tools-github-query-result
     homepage_url: ''
     name: scpy
     repo_url: https://github.com/hanruijiang/scpy
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: LADC
+    repo_url: https://github.com/ZilongZhang44/LADC
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -4350,14 +4457,19 @@ projects:
     repo_url: https://github.com/archavan/covid-placenta
   - category:
       - related-tools-github-query-result
+    homepage_url: ''
+    name: earlycross
+    repo_url: https://github.com/daskelly/earlycross
+  - category:
+      - related-tools-github-query-result
     homepage_url: null
     name: scRMD_Paper
     repo_url: https://github.com/ChongC1990/scRMD_Paper
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: earlycross
-    repo_url: https://github.com/daskelly/earlycross
+    homepage_url: null
+    name: scMultiome-TFBS-Analysis
+    repo_url: https://github.com/GibsonLab-GT/scMultiome-TFBS-Analysis
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -4378,11 +4490,6 @@ projects:
     homepage_url: null
     name: DroNc-seq
     repo_url: https://github.com/martinholub/DroNc-seq
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: TransCluster
-    repo_url: https://github.com/Danica123/TransCluster
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -4416,11 +4523,6 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: Enrichment
-    repo_url: https://github.com/madhubioinformatics/Enrichment
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
     name: hadoop---spark-bigdata-project
     repo_url: https://github.com/ERAMITDHOMNE/hadoop---spark-bigdata-project
   - category:
@@ -4428,6 +4530,11 @@ projects:
     homepage_url: ''
     name: 2021-March-Single-Cell-RNA-Seq-Analysis
     repo_url: https://github.com/ucdavis-bioinformatics-training/2021-March-Single-Cell-RNA-Seq-Analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Single_Cell_BALL_MRD
+    repo_url: https://github.com/Li-Xinqi/Single_Cell_BALL_MRD
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -4461,6 +4568,11 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
+    name: EwingSingleCellDataAnalysis
+    repo_url: https://github.com/sysbio-curie/EwingSingleCellDataAnalysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
     name: singleCellTools
     repo_url: https://github.com/alexcwsmith/singleCellTools
   - category:
@@ -4485,9 +4597,19 @@ projects:
     repo_url: https://github.com/hmutpw/scAS
   - category:
       - related-tools-github-query-result
+    homepage_url: ''
+    name: ImageAnalysis
+    repo_url: https://github.com/colganwi/ImageAnalysis
+  - category:
+      - related-tools-github-query-result
     homepage_url: null
     name: 2022-March-Single-Cell-RNA-Seq-Analysis
     repo_url: https://github.com/ucdavis-bioinformatics-training/2022-March-Single-Cell-RNA-Seq-Analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: single-cell-utils
+    repo_url: https://github.com/jessicading/single-cell-utils
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -4495,19 +4617,14 @@ projects:
     repo_url: https://github.com/VanAndelInstitute/single_cell_analyses
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: Single_Cell_BALL_MRD
-    repo_url: https://github.com/Li-Xinqi/Single_Cell_BALL_MRD
+    homepage_url: ''
+    name: ccdf
+    repo_url: https://github.com/Mgauth/ccdf
   - category:
       - related-tools-github-query-result
     homepage_url: ''
     name: MAESTRO
     repo_url: https://github.com/xinhuang420/MAESTRO
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: SAKURA
-    repo_url: https://github.com/hahaschool/SAKURA
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -4518,6 +4635,16 @@ projects:
     homepage_url: null
     name: SingleCell
     repo_url: https://github.com/Fredbio13/SingleCell
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: SingleCell
+    repo_url: https://github.com/Yu-Yue-SH/SingleCell
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: SingleCellAnalysis
+    repo_url: https://github.com/dnehar/SingleCellAnalysis
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -4532,12 +4659,17 @@ projects:
       - related-tools-github-query-result
     homepage_url: null
     name: SingleCellAnalysis
-    repo_url: https://github.com/dnehar/SingleCellAnalysis
+    repo_url: https://github.com/JohnstoneKats/SingleCellAnalysis
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: SingleCellAnalysis
-    repo_url: https://github.com/JohnstoneKats/SingleCellAnalysis
+    name: SingleCellPatchseqAnalysis
+    repo_url: https://github.com/neurohugo/SingleCellPatchseqAnalysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: SingleCell_Analysis_R
+    repo_url: https://github.com/xieshb/SingleCell_Analysis_R
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -4551,13 +4683,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: SingleCell_Analysis_R
-    repo_url: https://github.com/xieshb/SingleCell_Analysis_R
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: singleCellLongReadAnalysis
-    repo_url: https://github.com/Wellstein-lab/singleCellLongReadAnalysis
+    name: NCOMMS_NSCLC_scFibs
+    repo_url: https://github.com/cjh-lab/NCOMMS_NSCLC_scFibs
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -4570,9 +4697,14 @@ projects:
     repo_url: https://github.com/jhsiao999/singleCell-workflow
   - category:
       - related-tools-github-query-result
+    homepage_url: ''
+    name: scimap_phenotyping
+    repo_url: https://github.com/ohsu-comp-bio/scimap_phenotyping
+  - category:
+      - related-tools-github-query-result
     homepage_url: null
-    name: SingleCellAnalysisInR
-    repo_url: https://github.com/funpys/SingleCellAnalysisInR
+    name: singleCellLongReadAnalysis
+    repo_url: https://github.com/Wellstein-lab/singleCellLongReadAnalysis
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -4581,8 +4713,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: scimap_phenotyping
-    repo_url: https://github.com/ohsu-comp-bio/scimap_phenotyping
+    name: SingleCell-rnaseq-tools
+    repo_url: https://github.com/LamineTourelab/SingleCell-rnaseq-tools
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: SingleCellAnalysisInR
+    repo_url: https://github.com/funpys/SingleCellAnalysisInR
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -4611,93 +4748,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: Single-Cell-Analysis
-    repo_url: https://github.com/dikshashrestha/Single-Cell-Analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: single_cell_analysis_pipeline
-    repo_url: https://github.com/kkchau/single_cell_analysis_pipeline
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: Single-Cell-Analysis-Project
-    repo_url: https://github.com/server-crash/Single-Cell-Analysis-Project
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: Yuna_Single-Cell-Analysis
-    repo_url: https://github.com/Yuna214/Yuna_Single-Cell-Analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: single-cell-data-analysis
-    repo_url: https://github.com/GeoRouv/single-cell-data-analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: single-cell-analysis
-    repo_url: https://github.com/lixia2017/single-cell-analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: Single_Cell_Analysis
-    repo_url: https://github.com/JAMKuttan/Single_Cell_Analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
     name: Single_Cell_Analysis
     repo_url: https://github.com/lucasmerlicek/Single_Cell_Analysis
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: Single-Cell-Analysis-Pipeline
-    repo_url: https://github.com/TommyAhn16/Single-Cell-Analysis-Pipeline
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: Single_cell_analysis
-    repo_url: https://github.com/ntukirafang/Single_cell_analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
     name: Single-Cell-Analysis
     repo_url: https://github.com/Filippe1/Single-Cell-Analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: Single-Cell-Analysis-CTCL
-    repo_url: https://github.com/PinaColadast/Single-Cell-Analysis-CTCL
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: Single-cell-analysis
-    repo_url: https://github.com/Arshammik/Single-cell-analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: Single_Cell_Analysis_Toolkit
-    repo_url: https://github.com/danielsnider/Single_Cell_Analysis_Toolkit
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: Single-cell-RNASeq-analysis
-    repo_url: https://github.com/bapoorva/Single-cell-RNASeq-analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: single_cell_analysis
-    repo_url: https://github.com/anuprulez/single_cell_analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: single_cell_analysis
-    repo_url: https://github.com/waldeyr/single_cell_analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: Single_cell_data_analysis
-    repo_url: https://github.com/zhanzmr/Single_cell_data_analysis
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -4711,8 +4768,78 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
+    name: single-cell-data-analysis
+    repo_url: https://github.com/GeoRouv/single-cell-data-analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Single-Cell-Analysis-Project
+    repo_url: https://github.com/server-crash/Single-Cell-Analysis-Project
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Yuna_Single-Cell-Analysis
+    repo_url: https://github.com/Yuna214/Yuna_Single-Cell-Analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: single_cell_analysis_pipeline
+    repo_url: https://github.com/kkchau/single_cell_analysis_pipeline
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Single-Cell-Analysis-Pipeline
+    repo_url: https://github.com/TommyAhn16/Single-Cell-Analysis-Pipeline
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Single_cell_analysis
+    repo_url: https://github.com/ntukirafang/Single_cell_analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: single-cell-analysis
+    repo_url: https://github.com/lixia2017/single-cell-analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Single_Cell_Analysis
+    repo_url: https://github.com/JAMKuttan/Single_Cell_Analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Single-Cell-Analysis
+    repo_url: https://github.com/dikshashrestha/Single-Cell-Analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Single-Cell-Analysis-CTCL
+    repo_url: https://github.com/PinaColadast/Single-Cell-Analysis-CTCL
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Single-cell-analysis
+    repo_url: https://github.com/Arshammik/Single-cell-analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: Single_cell_data_analysis
+    repo_url: https://github.com/zhanzmr/Single_cell_data_analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
     name: Single-Cell-Analysis
     repo_url: https://github.com/bioinfosourabh/Single-Cell-Analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Single_Cell_Analysis_Toolkit
+    repo_url: https://github.com/danielsnider/Single_Cell_Analysis_Toolkit
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Single-cell-RNASeq-analysis
+    repo_url: https://github.com/bapoorva/Single-cell-RNASeq-analysis
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -4720,9 +4847,14 @@ projects:
     repo_url: https://github.com/vibscc/PlantSingleCellAnalysis
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: single_cell_CNV_scripts
-    repo_url: https://github.com/wchronister/single_cell_CNV_scripts
+    homepage_url: null
+    name: single_cell_analysis
+    repo_url: https://github.com/waldeyr/single_cell_analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: single_cell_analysis
+    repo_url: https://github.com/anuprulez/single_cell_analysis
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -4731,8 +4863,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: SingleCellNotes
-    repo_url: https://github.com/wangwl/SingleCellNotes
+    name: single_cell_CNV_scripts
+    repo_url: https://github.com/wchronister/single_cell_CNV_scripts
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -4740,9 +4872,9 @@ projects:
     repo_url: https://github.com/Lucas-Servi/sc_analysis
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: VEEV-single_cell
-    repo_url: https://github.com/saberyzy/VEEV-single_cell
+    homepage_url: ''
+    name: SingleCellNotes
+    repo_url: https://github.com/wangwl/SingleCellNotes
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -4751,8 +4883,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: 10XGenomics
-    repo_url: https://github.com/olgabane/10XGenomics
+    name: VEEV-single_cell
+    repo_url: https://github.com/saberyzy/VEEV-single_cell
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -4771,23 +4903,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: yucx
-    repo_url: https://github.com/117999/yucx
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: SatijaLab
-    repo_url: https://github.com/gbritt/SatijaLab
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: singlecellseq
-    repo_url: https://github.com/kkdey/singlecellseq
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: Lightbulb
-    repo_url: https://github.com/Arthurhe/Lightbulb
+    name: 10XGenomics
+    repo_url: https://github.com/olgabane/10XGenomics
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -4801,8 +4918,23 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: Multimodal-Single-Cell-Integration
-    repo_url: https://github.com/Gauranga2022/Multimodal-Single-Cell-Integration
+    name: yucx
+    repo_url: https://github.com/117999/yucx
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: singlecellseq
+    repo_url: https://github.com/kkdey/singlecellseq
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: SatijaLab
+    repo_url: https://github.com/gbritt/SatijaLab
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Lightbulb
+    repo_url: https://github.com/Arthurhe/Lightbulb
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -4813,6 +4945,11 @@ projects:
     homepage_url: null
     name: single_cell_R_scripts
     repo_url: https://github.com/asabjorklund/single_cell_R_scripts
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Multimodal-Single-Cell-Integration
+    repo_url: https://github.com/Gauranga2022/Multimodal-Single-Cell-Integration
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -4830,6 +4967,11 @@ projects:
     repo_url: https://github.com/BaselLaserMouse/HanSingleCell
   - category:
       - related-tools-github-query-result
+    homepage_url: ''
+    name: Single_Cell_Analysis_using_R
+    repo_url: https://github.com/Emechebe/Single_Cell_Analysis_using_R
+  - category:
+      - related-tools-github-query-result
     homepage_url: null
     name: single-cell-RNA-seq-analysis
     repo_url: https://github.com/Sherryli443/single-cell-RNA-seq-analysis
@@ -4840,39 +4982,9 @@ projects:
     repo_url: https://github.com/Angelos-Gk/single-cell-RNAseq-data-analysis
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: Single_Cell_Analysis_using_R
-    repo_url: https://github.com/Emechebe/Single_Cell_Analysis_using_R
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: QBC_Single_Cell_Analysis_NGS
     repo_url: https://github.com/bioinform/QBC_Single_Cell_Analysis_NGS
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: EwingSingleCellDataAnalysis
-    repo_url: https://github.com/sysbio-curie/EwingSingleCellDataAnalysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: Single-Cell-RNA-Seq-Analysis
-    repo_url: https://github.com/Brugmann-Lab/Single-Cell-RNA-Seq-Analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: GNNs-for-single-cell-analysis
-    repo_url: https://github.com/Dylan-Molho/GNNs-for-single-cell-analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: Single-Cell-RNA-Sequencing-Analysis
-    repo_url: https://github.com/a-fsh-r/Single-Cell-RNA-Sequencing-Analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: Analysis-of-Single-Cell-RNA
-    repo_url: https://github.com/rgawande/Analysis-of-Single-Cell-RNA
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -4901,6 +5013,26 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
+    name: Analysis-of-Single-Cell-RNA
+    repo_url: https://github.com/rgawande/Analysis-of-Single-Cell-RNA
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Single-Cell-RNA-Seq-Analysis
+    repo_url: https://github.com/Brugmann-Lab/Single-Cell-RNA-Seq-Analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: GNNs-for-single-cell-analysis
+    repo_url: https://github.com/Dylan-Molho/GNNs-for-single-cell-analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: Single-Cell-RNA-Sequencing-Analysis
+    repo_url: https://github.com/a-fsh-r/Single-Cell-RNA-Sequencing-Analysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
     name: Perl-js-scRNA-seq-analysis
     repo_url: https://github.com/HasiHays/Perl-js-scRNA-seq-analysis
   - category:
@@ -4925,11 +5057,6 @@ projects:
     repo_url: https://github.com/dzyim/single-cell-models
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: BenchmarkSingleCell
-    repo_url: https://github.com/himelmallick/BenchmarkSingleCell
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: Single-Cell-RNA-Seq
     repo_url: https://github.com/valentinastoma/Single-Cell-RNA-Seq
@@ -4941,13 +5068,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: SingleCellIsolationTool
-    repo_url: https://github.com/sarahvdb/SingleCellIsolationTool
+    name: BenchmarkSingleCell
+    repo_url: https://github.com/himelmallick/BenchmarkSingleCell
   - category:
       - related-tools-github-query-result
-    homepage_url: https://www.nature.com/articles/ncomms15081
-    name: BreastCancer-SingleCell
-    repo_url: https://github.com/KyriakosPsa/BreastCancer-SingleCell
+    homepage_url: ''
+    name: SingleCellIsolationTool
+    repo_url: https://github.com/sarahvdb/SingleCellIsolationTool
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -4960,14 +5087,19 @@ projects:
     repo_url: https://github.com/mpofukelvintafadzwa/scRNAseq
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: scTools
-    repo_url: https://github.com/TongZhou2017/scTools
-  - category:
-      - related-tools-github-query-result
     homepage_url: ''
     name: cellbro
     repo_url: https://github.com/lutrarutra/cellbro
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: scRNAseq_CAascites
+    repo_url: https://github.com/vclabsysbio/scRNAseq_CAascites
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: scTools
+    repo_url: https://github.com/TongZhou2017/scTools
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -4990,9 +5122,9 @@ projects:
     repo_url: https://github.com/cafalchio/mea_analysis
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: ImageAnalysis
-    repo_url: https://github.com/colganwi/ImageAnalysis
+    homepage_url: null
+    name: Single_cell_Prox_seq_data_analysis
+    repo_url: https://github.com/jjxia955/Single_cell_Prox_seq_data_analysis
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5005,19 +5137,14 @@ projects:
     repo_url: https://github.com/yxaxaxa/sle_and_hd_single_cell_analysis
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: Single-Cell-RNA-Sequence-Data-Analysis
-    repo_url: https://github.com/tahirdme/Single-Cell-RNA-Sequence-Data-Analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: Single_cell_Prox_seq_data_analysis
-    repo_url: https://github.com/jjxia955/Single_cell_Prox_seq_data_analysis
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: Awesome-Reproducible-Analysis-of-Single-Cell-Papers
     repo_url: https://github.com/XuYuanchi/Awesome-Reproducible-Analysis-of-Single-Cell-Papers
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: Single-Cell-RNA-Sequence-Data-Analysis
+    repo_url: https://github.com/tahirdme/Single-Cell-RNA-Sequence-Data-Analysis
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5026,23 +5153,23 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
+    name: Integrated-single-cell-RNA-sequencing-analysis-workflow
+    repo_url: https://github.com/iclemente99/Integrated-single-cell-RNA-sequencing-analysis-workflow
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
     name: Study-Murine-thymocytes--Single-cell-analysis
     repo_url: https://github.com/qiz218591/Study-Murine-thymocytes--Single-cell-analysis
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: Integrated-single-cell-RNA-sequencing-analysis-workflow
-    repo_url: https://github.com/iclemente99/Integrated-single-cell-RNA-sequencing-analysis-workflow
+    homepage_url: ''
+    name: CWL-workflow-for-single-cell-RNAseq-analysis
+    repo_url: https://github.com/JasonCharamis/CWL-workflow-for-single-cell-RNAseq-analysis
   - category:
       - related-tools-github-query-result
     homepage_url: ''
     name: Nakanishi_single_cell
     repo_url: https://github.com/kenichi-shimada/Nakanishi_single_cell
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: single-cell-utils
-    repo_url: https://github.com/jessicading/single-cell-utils
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5076,13 +5203,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: SingleCellOmics_Heidelberg_Apr2017
-    repo_url: https://github.com/davismcc/SingleCellOmics_Heidelberg_Apr2017
+    name: MINA
+    repo_url: https://github.com/SiyuanWangLab/MINA
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: R-AdhesionAnalysis2.0
-    repo_url: https://github.com/jaywarrick/R-AdhesionAnalysis2.0
+    name: SingleCellOmics_Heidelberg_Apr2017
+    repo_url: https://github.com/davismcc/SingleCellOmics_Heidelberg_Apr2017
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -5093,6 +5220,11 @@ projects:
     homepage_url: ''
     name: scATAC-seq-analysis-pipeline
     repo_url: https://github.com/znavidi/scATAC-seq-analysis-pipeline
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: R-AdhesionAnalysis2.0
+    repo_url: https://github.com/jaywarrick/R-AdhesionAnalysis2.0
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5111,23 +5243,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: ccdf
-    repo_url: https://github.com/Mgauth/ccdf
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: SINGLE
-    repo_url: https://github.com/mbgld/SINGLE
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
     name: MTsc
     repo_url: https://github.com/mtvector/MTsc
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: Viral-Seq
-    repo_url: https://github.com/loverend/Viral-Seq
+    name: SINGLE
+    repo_url: https://github.com/mbgld/SINGLE
   - category:
       - related-tools-github-query-result
     homepage_url: https://psl-winter-school-2021.github.io/01-monday-workshop-rna/introdution.html
@@ -5146,16 +5268,6 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: FAST
-    repo_url: https://github.com/dufourya/FAST
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: MUSIC-GCN
-    repo_url: https://github.com/LMC0705/MUSIC-GCN
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
     name: duurland2021_paper
     repo_url: https://github.com/icbi-lab/duurland2021_paper
   - category:
@@ -5166,8 +5278,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: sc_drug
-    repo_url: https://github.com/eathieniti/sc_drug
+    name: MUSIC-GCN
+    repo_url: https://github.com/LMC0705/MUSIC-GCN
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5176,13 +5288,33 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
+    name: sc_drug
+    repo_url: https://github.com/eathieniti/sc_drug
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Viral-Seq
+    repo_url: https://github.com/loverend/Viral-Seq
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: FAST
+    repo_url: https://github.com/dufourya/FAST
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://ddiez.github.io/scmisc/
+    name: scmisc
+    repo_url: https://github.com/ddiez/scmisc
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
     name: multipipe
     repo_url: https://github.com/SGMartin/multipipe
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: scroutines
-    repo_url: https://github.com/FangmingXie/scroutines
+    homepage_url: ''
+    name: FateMapper
+    repo_url: https://github.com/jiang-junyao/FateMapper
   - category:
       - related-tools-github-query-result
     homepage_url: https://cytomining.github.io/cytostats/
@@ -5205,14 +5337,14 @@ projects:
     repo_url: https://github.com/ycfni/RNAVelocityAnalysis
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: zebrahub_analysis
-    repo_url: https://github.com/czbiohub-sf/zebrahub_analysis
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: CWML-class-Single-cell-RNA-seq-analysis-tutorial-Seurat
     repo_url: https://github.com/Nur-Taz/CWML-class-Single-cell-RNA-seq-analysis-tutorial-Seurat
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: zebrahub_analysis
+    repo_url: https://github.com/czbiohub-sf/zebrahub_analysis
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5246,8 +5378,18 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: CellForest
-    repo_url: https://github.com/BioinformaticsCSU/CellForest
+    name: oposSOM.PT
+    repo_url: https://github.com/mschmidt000/oposSOM.PT
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: scHelper
+    repo_url: https://github.com/alexthiery/scHelper
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: pySpade
+    repo_url: https://github.com/Hon-lab/pySpade
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5266,63 +5408,18 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: oposSOM.PT
-    repo_url: https://github.com/mschmidt000/oposSOM.PT
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: scHelper
-    repo_url: https://github.com/alexthiery/scHelper
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: pySpade
-    repo_url: https://github.com/Hon-lab/pySpade
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: abdulrahman2021_paper
-    repo_url: https://github.com/icbi-lab/abdulrahman2021_paper
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: borst2021
-    repo_url: https://github.com/icbi-lab/borst2021
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: scRNAseq-AML
-    repo_url: https://github.com/PinaColadast/scRNAseq-AML
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://biocpy.github.io/scranpy/
-    name: scranpy
-    repo_url: https://github.com/BiocPy/scranpy
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://jinming-cheng.github.io/scTernary/
-    name: scTernary
-    repo_url: https://github.com/jinming-cheng/scTernary
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: scRNAseqLigandReceptor
-    repo_url: https://github.com/xianingz/scRNAseqLigandReceptor
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
     name: RETrace
     repo_url: https://github.com/cjwei/RETrace
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: Tristan_methods
-    repo_url: https://github.com/cemalley/Tristan_methods
+    name: r-singlecell-plus-img
+    repo_url: https://github.com/davismcc/r-singlecell-plus-img
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: r-singlecell-plus-img
-    repo_url: https://github.com/davismcc/r-singlecell-plus-img
+    name: Tristan_methods
+    repo_url: https://github.com/cemalley/Tristan_methods
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -5336,33 +5433,43 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: sbio_sc
-    repo_url: https://github.com/Superbio-ai/sbio_sc
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
     name: LaTeX-document-codes
     repo_url: https://github.com/qiz218591/LaTeX-document-codes
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: R-DATA-CLEANER
-    repo_url: https://github.com/hwchan/R-DATA-CLEANER
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: scanpySupport
-    repo_url: https://github.com/SamueleSoraggi/scanpySupport
+    name: sbio_sc
+    repo_url: https://github.com/Superbio-ai/sbio_sc
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: myscripts
-    repo_url: https://github.com/npicciani/myscripts
+    name: scRNAseq-AML
+    repo_url: https://github.com/PinaColadast/scRNAseq-AML
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: borst2021
+    repo_url: https://github.com/icbi-lab/borst2021
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://jinming-cheng.github.io/scTernary/
+    name: scTernary
+    repo_url: https://github.com/jinming-cheng/scTernary
+  - category:
+      - related-tools-github-query-result
+    homepage_url: https://biocpy.github.io/scranpy/
+    name: scranpy
+    repo_url: https://github.com/BiocPy/scranpy
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: Development_2023_Crosse_etal
-    repo_url: https://github.com/ecrosse01/Development_2023_Crosse_etal
+    name: Nuwa
+    repo_url: https://github.com/ch1ru/Nuwa
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: abdulrahman2021_paper
+    repo_url: https://github.com/icbi-lab/abdulrahman2021_paper
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5376,8 +5483,48 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: SCSeqFxs
-    repo_url: https://github.com/iddryg/SCSeqFxs
+    name: R-DATA-CLEANER
+    repo_url: https://github.com/hwchan/R-DATA-CLEANER
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: myscripts
+    repo_url: https://github.com/npicciani/myscripts
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: scanpySupport
+    repo_url: https://github.com/SamueleSoraggi/scanpySupport
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Black-Hole
+    repo_url: https://github.com/iChronostasis/Black-Hole
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: scRNAseq-AAE
+    repo_url: https://github.com/emolinaro/scRNAseq-AAE
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: scqc
+    repo_url: https://github.com/gillislab/scqc
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Thalamus-scRNAseq
+    repo_url: https://github.com/mathewsummers/Thalamus-scRNAseq
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: SIB-ASAP-2023
+    repo_url: https://github.com/DeplanckeLab/SIB-ASAP-2023
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: scRNAseqLigandReceptor
+    repo_url: https://github.com/xianingz/scRNAseqLigandReceptor
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -5400,19 +5547,19 @@ projects:
     repo_url: https://github.com/CBIIT/nci-webtools-ccr-scatlas-lc
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: scRNAseq-AAE
-    repo_url: https://github.com/emolinaro/scRNAseq-AAE
+    homepage_url: ''
+    name: Development_2023_Crosse_etal
+    repo_url: https://github.com/ecrosse01/Development_2023_Crosse_etal
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: Thalamus-scRNAseq
-    repo_url: https://github.com/mathewsummers/Thalamus-scRNAseq
+    name: SCSeqFxs
+    repo_url: https://github.com/iddryg/SCSeqFxs
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: scqc
-    repo_url: https://github.com/gillislab/scqc
+    homepage_url: ''
+    name: SC_lncRNA
+    repo_url: https://github.com/davhg96/SC_lncRNA
   - category:
       - related-tools-github-query-result
     homepage_url: https://github.com/jsxlei/SCALE
@@ -5421,18 +5568,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: SC_lncRNA
-    repo_url: https://github.com/davhg96/SC_lncRNA
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: Bsn_scRNA-seq
-    repo_url: https://github.com/INIMS/Bsn_scRNA-seq
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: GFPA
-    repo_url: https://github.com/studentiz/GFPA
+    name: Longcell
+    repo_url: https://github.com/yuntianf/Longcell
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -5443,6 +5580,16 @@ projects:
     homepage_url: null
     name: panobinostat
     repo_url: https://github.com/federicogiorgi/panobinostat
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: Bsn_scRNA-seq
+    repo_url: https://github.com/INIMS/Bsn_scRNA-seq
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: GFPA
+    repo_url: https://github.com/studentiz/GFPA
   - category:
       - related-tools-github-query-result
     homepage_url: https://gradonion.github.io/CROP-seq/
@@ -5458,6 +5605,11 @@ projects:
     homepage_url: ''
     name: CITEMO
     repo_url: https://github.com/studentiz/CITEMO
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: FUCCItrack
+    repo_url: https://github.com/hubert-taieb/FUCCItrack
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5496,18 +5648,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: scSNPdemux
-    repo_url: https://github.com/wkljohn/scSNPdemux
+    name: Single_Cell_Analysis_w_Seurat_of_the_data_Zhao_Q_et_al_2022
+    repo_url: https://github.com/yekazci/Single_Cell_Analysis_w_Seurat_of_the_data_Zhao_Q_et_al_2022
   - category:
       - related-tools-github-query-result
     homepage_url: null
     name: Single-Cell-RNA-Seq-Data-Analysis-for-Akgul-Caglar-et-al.-2022
     repo_url: https://github.com/yekazci/Single-Cell-RNA-Seq-Data-Analysis-for-Akgul-Caglar-et-al.-2022
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: Single_Cell_Analysis_w_Seurat_of_the_data_Zhao_Q_et_al_2022
-    repo_url: https://github.com/yekazci/Single_Cell_Analysis_w_Seurat_of_the_data_Zhao_Q_et_al_2022
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5526,28 +5673,23 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: Multiome_PBMC_3k_ATAC_RNA
-    repo_url: https://github.com/deevdevil88/Multiome_PBMC_3k_ATAC_RNA
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
     name: Multi-Objective-Genetic-Algorithm-for-Cluster-Analysis
     repo_url: https://github.com/SheltonZhaoK/Multi-Objective-Genetic-Algorithm-for-Cluster-Analysis
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: 10XGenomicsDataAnalysis
-    repo_url: https://github.com/mattmadgwick/10XGenomicsDataAnalysis
-  - category:
-      - related-tools-github-query-result
     homepage_url: ''
-    name: time_series_analysis
-    repo_url: https://github.com/bjbouman/time_series_analysis
+    name: Multiome_PBMC_3k_ATAC_RNA
+    repo_url: https://github.com/deevdevil88/Multiome_PBMC_3k_ATAC_RNA
   - category:
       - related-tools-github-query-result
     homepage_url: null
     name: linkedMeasurementAnalysis
     repo_url: https://github.com/rjkimmer/linkedMeasurementAnalysis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: 10XGenomicsDataAnalysis
+    repo_url: https://github.com/mattmadgwick/10XGenomicsDataAnalysis
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5575,14 +5717,14 @@ projects:
     repo_url: https://github.com/Christophe29-BZH/ImmuBat_ERB_Blood
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: Stem-Cell-Signature-Explorer
-    repo_url: https://github.com/Elsaveram/Stem-Cell-Signature-Explorer
-  - category:
-      - related-tools-github-query-result
     homepage_url: null
     name: S3-CIMA
     repo_url: https://github.com/sepidehbabaei/S3-CIMA
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: Stem-Cell-Signature-Explorer
+    repo_url: https://github.com/Elsaveram/Stem-Cell-Signature-Explorer
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5590,19 +5732,19 @@ projects:
     repo_url: https://github.com/caramirezal/interaction_DC-pathogens
   - category:
       - related-tools-github-query-result
-    homepage_url: https://neurobioinfo.github.io/scrnabox/site/
-    name: scrnabox
-    repo_url: https://github.com/neurobioinfo/scrnabox
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: Analysing-single-cell-RNA-and-ATAC-sequence-data
-    repo_url: https://github.com/paveethranswam/Analysing-single-cell-RNA-and-ATAC-sequence-data
+    homepage_url: ''
+    name: CellForest
+    repo_url: https://github.com/BioinformaticsCSU/CellForest
   - category:
       - related-tools-github-query-result
     homepage_url: ''
     name: MultiSpace
     repo_url: https://github.com/Changzhanhe/MultiSpace
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: singlecell-TE
+    repo_url: https://github.com/imtiyazhariyani/singlecell-TE
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5621,28 +5763,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: ScRNA-Seq_HER2
-    repo_url: https://github.com/xmc811/ScRNA-Seq_HER2
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: nPOP
-    repo_url: https://github.com/Andrew-Leduc/nPOP
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: 10Xgenome_gawadlab_CerebellumDev
-    repo_url: https://github.com/XpanCat/10Xgenome_gawadlab_CerebellumDev
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: scRNAseq_CRC
-    repo_url: https://github.com/mkumar45/scRNAseq_CRC
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: scgmt
-    repo_url: https://github.com/ShengFang-0829/scgmt
+    name: scelephant.js
+    repo_url: https://github.com/ahs2202/scelephant.js
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5675,14 +5797,19 @@ projects:
     repo_url: https://github.com/powellgenomicslab/Braque
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: LateRelapsedHCC
-    repo_url: https://github.com/JerrySijia/LateRelapsedHCC
-  - category:
-      - related-tools-github-query-result
     homepage_url: ''
     name: vec-gastric
     repo_url: https://github.com/lishaolab/vec-gastric
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: scRNAseq_CRC
+    repo_url: https://github.com/mkumar45/scRNAseq_CRC
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: scgmt
+    repo_url: https://github.com/ShengFang-0829/scgmt
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5691,23 +5818,43 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: mcsnac
-    repo_url: https://github.com/dweth/mcsnac
+    name: TimeCoursePaperWorkflow
+    repo_url: https://github.com/jinming-cheng/TimeCoursePaperWorkflow
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: Yak_adaptation
-    repo_url: https://github.com/GaoXue96/Yak_adaptation
+    name: 10Xgenome_gawadlab_CerebellumDev
+    repo_url: https://github.com/XpanCat/10Xgenome_gawadlab_CerebellumDev
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: ScRNA-Seq_HER2
+    repo_url: https://github.com/xmc811/ScRNA-Seq_HER2
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: nPOP
+    repo_url: https://github.com/Andrew-Leduc/nPOP
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: isoscelles
+    repo_url: https://github.com/MethodsDev/isoscelles
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: kanapi
-    repo_url: https://github.com/kanaverse/kanapi
+    name: covid-bulk-scrna-integrated
+    repo_url: https://github.com/sjohri20/covid-bulk-scrna-integrated
   - category:
       - related-tools-github-query-result
-    homepage_url: ''
-    name: scMuscle2
-    repo_url: https://github.com/mckellardw/scMuscle2
+    homepage_url: https://villani.mgh.harvard.edu/ircolitis
+    name: ircolitis
+    repo_url: https://github.com/villani-lab/ircolitis
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: scRNAseq-DE-comparison
+    repo_url: https://github.com/Tianmou/scRNAseq-DE-comparison
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5716,8 +5863,8 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: 2021-Injury-Responsive-Tregs
-    repo_url: https://github.com/LedererLab-Trauma-Immunology/2021-Injury-Responsive-Tregs
+    name: tapestri.tools
+    repo_url: https://github.com/northNomad/tapestri.tools
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5725,19 +5872,34 @@ projects:
     repo_url: https://github.com/felixpacheco/CoDA_scRNAseq
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: in_vivo_p53_dynamics
-    repo_url: https://github.com/alinasimerzin/in_vivo_p53_dynamics
+    homepage_url: ''
+    name: 2021-Injury-Responsive-Tregs
+    repo_url: https://github.com/LedererLab-Trauma-Immunology/2021-Injury-Responsive-Tregs
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: tapestri.tools
-    repo_url: https://github.com/northNomad/tapestri.tools
+    name: BENGAL_reproducibility
+    repo_url: https://github.com/Functional-Genomics/BENGAL_reproducibility
   - category:
       - related-tools-github-query-result
     homepage_url: null
     name: dpi
     repo_url: https://github.com/studentiz/dpi
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: in_vivo_p53_dynamics
+    repo_url: https://github.com/alinasimerzin/in_vivo_p53_dynamics
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: CoSync-TestVersion
+    repo_url: https://github.com/TTYE/CoSync-TestVersion
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: PSCAP
+    repo_url: https://github.com/shubhamkmr47/PSCAP
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5760,9 +5922,29 @@ projects:
     repo_url: https://github.com/Teichlab/sctkr
   - category:
       - related-tools-github-query-result
+    homepage_url: ''
+    name: mcsnac
+    repo_url: https://github.com/dweth/mcsnac
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: scMuscle2
+    repo_url: https://github.com/mckellardw/scMuscle2
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: kanapi
+    repo_url: https://github.com/kanaverse/kanapi
+  - category:
+      - related-tools-github-query-result
     homepage_url: null
-    name: scRNAseq-DE-comparison
-    repo_url: https://github.com/Tianmou/scRNAseq-DE-comparison
+    name: Yak_adaptation
+    repo_url: https://github.com/GaoXue96/Yak_adaptation
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: cell-cycle-1d
+    repo_url: https://github.com/dmattek/cell-cycle-1d
   - category:
       - related-tools-github-query-result
     homepage_url: http://stemsysbio.bmc.lu.se/SCexV/
@@ -5771,43 +5953,18 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: GINS_NCB2023
-    repo_url: https://github.com/stevehxf/GINS_NCB2023
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
     name: scAnalyzeR
     repo_url: https://github.com/sarwarchy20/scAnalyzeR
   - category:
       - related-tools-github-query-result
-    homepage_url: null
-    name: CoSync-TestVersion
-    repo_url: https://github.com/TTYE/CoSync-TestVersion
+    homepage_url: ''
+    name: SAPAS
+    repo_url: https://github.com/YY-TMU/SAPAS
   - category:
       - related-tools-github-query-result
     homepage_url: ''
-    name: PSCAP
-    repo_url: https://github.com/shubhamkmr47/PSCAP
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: covid-bulk-scrna-integrated
-    repo_url: https://github.com/sjohri20/covid-bulk-scrna-integrated
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://villani.mgh.harvard.edu/ircolitis
-    name: ircolitis
-    repo_url: https://github.com/villani-lab/ircolitis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: isoscelles
-    repo_url: https://github.com/MethodsDev/isoscelles
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: cell-cycle-1d
-    repo_url: https://github.com/dmattek/cell-cycle-1d
+    name: GINS_NCB2023
+    repo_url: https://github.com/stevehxf/GINS_NCB2023
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5818,6 +5975,11 @@ projects:
     homepage_url: null
     name: scNMT
     repo_url: https://github.com/jw156605/scNMT
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: MERFISH-mouse-comparison
+    repo_url: https://github.com/czbiohub-sf/MERFISH-mouse-comparison
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -5831,13 +5993,13 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: MERFISH-mouse-comparison
-    repo_url: https://github.com/czbiohub-sf/MERFISH-mouse-comparison
+    name: BoneMarrow_MScProject
+    repo_url: https://github.com/resabut/BoneMarrow_MScProject
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: marsgt
-    repo_url: https://github.com/mtduan/marsgt
+    name: SCARP
+    repo_url: https://github.com/Wu-Lab/SCARP
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5860,6 +6022,11 @@ projects:
     repo_url: https://github.com/veltenlab/scTAM-seq-scripts
   - category:
       - related-tools-github-query-result
+    homepage_url: null
+    name: Reproducible-DNB-downstream-analysis
+    repo_url: https://github.com/SuDong19970612/Reproducible-DNB-downstream-analysis
+  - category:
+      - related-tools-github-query-result
     homepage_url: ''
     name: sc-net-analysis
     repo_url: https://github.com/SergioAlias/sc-net-analysis
@@ -5868,11 +6035,6 @@ projects:
     homepage_url: https://emosca-cnr.github.io/scMuffin/
     name: scMuffin
     repo_url: https://github.com/emosca-cnr/scMuffin
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: scRNAseq_CAascites
-    repo_url: https://github.com/vclabsysbio/scRNAseq_CAascites
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -5891,13 +6053,18 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: ncRNA_of_scRNA
-    repo_url: https://github.com/sudhsudhi/ncRNA_of_scRNA
+    name: Dual-TCR-in-cancer
+    repo_url: https://github.com/RogersLabGroup/Dual-TCR-in-cancer
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: cnmf
-    repo_url: https://github.com/codyheiser/cnmf
+    name: Azizi_Nuno_AML_Relapse_Chromatin
+    repo_url: https://github.com/armonazizi/Azizi_Nuno_AML_Relapse_Chromatin
+  - category:
+      - related-tools-github-query-result
+    homepage_url: ''
+    name: Notaras_MolPsy
+    repo_url: https://github.com/abcwcm/Notaras_MolPsy
   - category:
       - related-tools-github-query-result
     homepage_url: null
@@ -5908,6 +6075,11 @@ projects:
     homepage_url: ''
     name: MPL-in-COVID-19
     repo_url: https://github.com/SinhaI/MPL-in-COVID-19
+  - category:
+      - related-tools-github-query-result
+    homepage_url: null
+    name: cnmf
+    repo_url: https://github.com/codyheiser/cnmf
   - category:
       - related-tools-github-query-result
     homepage_url: ''
@@ -5921,180 +6093,5 @@ projects:
   - category:
       - related-tools-github-query-result
     homepage_url: null
-    name: Drug.rep_BC
-    repo_url: https://github.com/ElyasMo/Drug.rep_BC
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: PBMC10K_multi
-    repo_url: https://github.com/HoSingFredLo/PBMC10K_multi
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: PatchSeq
-    repo_url: https://github.com/danielmk/PatchSeq
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: SCPA
-    repo_url: https://github.com/heshidian/SCPA
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: GScpter
-    repo_url: https://github.com/NewtontheNeuron/GScpter
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: SCseqtools
-    repo_url: https://github.com/atakanekiz/SCseqtools
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: tascCODA_reproducibility
-    repo_url: https://github.com/bio-datascience/tascCODA_reproducibility
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: scRNA-seq-CWGPM-22
-    repo_url: https://github.com/Harsheen98/scRNA-seq-CWGPM-22
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: MAPBS
-    repo_url: https://github.com/CTLife/MAPBS
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: scMultiome-TFBS-Analysis
-    repo_url: https://github.com/GibsonLab-GT/scMultiome-TFBS-Analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: NDP-KO-SC
-    repo_url: https://github.com/califano-lab/NDP-KO-SC
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: RoopSeq
-    repo_url: https://github.com/sam-uofl/RoopSeq
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: GenomicsProject
-    repo_url: https://github.com/lisafournier/GenomicsProject
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: transmission-distortion
-    repo_url: https://github.com/mccoy-lab/transmission-distortion
-  - category:
-      - related-tools-github-query-result
-    homepage_url: https://exp-cancertherapy.med.tum.de/en
-    name: combinatorial_treatment_analysis
-    repo_url: https://github.com/stefanie-baerthel/combinatorial_treatment_analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: CellPi
-    repo_url: https://github.com/testaibot/CellPi
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: Canine_Leukocyte_scRNA
-    repo_url: https://github.com/dyammons/Canine_Leukocyte_scRNA
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: scEqualization-Paper
-    repo_url: https://github.com/rhondabacher/scEqualization-Paper
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: sceptre_paper
-    repo_url: https://github.com/johnm434/sceptre_paper
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: NCOMMS_NSCLC_scFibs
-    repo_url: https://github.com/cjh-lab/NCOMMS_NSCLC_scFibs
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: Frontiers_in_Genetics_2019
-    repo_url: https://github.com/N0toriou5/Frontiers_in_Genetics_2019
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: patel2014gliohuman
-    repo_url: https://github.com/willtownes/patel2014gliohuman
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: corvo
-    repo_url: https://github.com/scenerygraphics/corvo
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: dropseqDB
-    repo_url: https://github.com/katrinakalantar/dropseqDB
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: scSeq_convalescentCovid
-    repo_url: https://github.com/LSSI-ETH/scSeq_convalescentCovid
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: scRNA-seq-and-spatial-transcriptomics
-    repo_url: https://github.com/konkalaitzidis/scRNA-seq-and-spatial-transcriptomics
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: test-environment
-    repo_url: https://github.com/FASTGenomics/test-environment
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: CEDAR
-    repo_url: https://github.com/arjun0502/CEDAR
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: scRAN-seq-project
-    repo_url: https://github.com/amsinfor/scRAN-seq-project
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: GeneExpressMap
-    repo_url: https://github.com/coreyflynn/GeneExpressMap
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: h-iPSCs-MNI
-    repo_url: https://github.com/regan-hamel/h-iPSCs-MNI
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: Vaccine-associated-enhanced-respiratory-pathology-in-COVID-19-hamsters-after-TH2-biased-immunization
-    repo_url: https://github.com/Berlin-Hamster-Single-Cell-Consortium/Vaccine-associated-enhanced-respiratory-pathology-in-COVID-19-hamsters-after-TH2-biased-immunization
-  - category:
-      - related-tools-github-query-result
-    homepage_url: null
-    name: Marmoset_FetalBrain_singlecellRNAseq
-    repo_url: https://github.com/parulvarma123/Marmoset_FetalBrain_singlecellRNAseq
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: Myotome-volume-Nucleus-count-and-Color-analysis
-    repo_url: https://github.com/peggyscshu/Myotome-volume-Nucleus-count-and-Color-analysis
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: thymus_spatial_atlas
-    repo_url: https://github.com/Teichlab/thymus_spatial_atlas
-  - category:
-      - related-tools-github-query-result
-    homepage_url: ''
-    name: scRNAseq_PBMCs
-    repo_url: https://github.com/jwiarda/scRNAseq_PBMCs
+    name: ncRNA_of_scRNA
+    repo_url: https://github.com/sudhsudhi/ncRNA_of_scRNA
